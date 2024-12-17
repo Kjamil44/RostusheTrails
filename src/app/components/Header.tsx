@@ -2,24 +2,25 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import logoPic from "../../assets/images/logo.jpg";
 
 export default function Header() {
   return (
-    <header className="flex items-center justify-between px-6 py-4 bg-white shadow-md">
+    <header className="bg-white shadow-md">
       {/* Logo */}
-      <div className="flex items-center">
+      <div className="flex justify-center py-4">
         <Image
-          src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png"
+          src={logoPic}
           alt="Logo"
-          width={100}
-          height={50}
+          width={200}
+          height={100}
           className="object-contain"
         />
       </div>
 
       {/* Navigation */}
-      <nav>
-        <ul className="flex items-center space-x-8 text-gray-700">
+      <nav className="bg-gray-50 py-4 shadow-sm">
+        <ul className="flex justify-center space-x-8 text-gray-700 font-medium relative">
           <li>
             <Link href="/" className="hover:text-blue-500">
               Home
@@ -31,10 +32,12 @@ export default function Header() {
             </Link>
           </li>
           <li className="relative group">
+            {/* Parent Menu */}
             <span className="cursor-pointer hover:text-blue-500">
               Trails
             </span>
-            <ul className="absolute hidden group-hover:block mt-2 bg-white shadow-md border border-gray-200 rounded-lg">
+            {/* Dropdown Menu */}
+            <ul className="absolute left-1/2 -translate-x-1/2 mt-2 bg-white shadow-lg border border-gray-200 rounded-lg text-sm z-10 hidden group-hover:flex flex-col">
               <li className="px-4 py-2 hover:bg-gray-100">
                 <Link href="/trails/ten-km">10 km</Link>
               </li>

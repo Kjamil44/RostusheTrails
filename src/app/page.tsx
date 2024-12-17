@@ -4,13 +4,6 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center">
       <div className="flex flex-col items-center gap-4 py-16 px-8 text-center">
-        <Image
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={38}
-          className="dark:invert"
-        />
         <h1 className="text-4xl font-bold text-gray-800">Welcome to Rostushe Trails</h1>
         <p className="text-gray-600">
           Discover the beauty of nature and the excitement of our trails.
