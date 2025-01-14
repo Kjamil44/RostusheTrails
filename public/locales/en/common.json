@@ -1,0 +1,12 @@
+{
+    "menu": {
+        "home": "Home",
+        "about-us": "About Us",
+        "trails": "Trails",
+        "guide": "Guide",
+        "registered-runners": "runners Runners",
+        "contact": "Contact",
+        "accommodation": "Accommodation",
+        "sponsors": "Sponsors"
+    }
+}
