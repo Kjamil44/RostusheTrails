@@ -1,8 +1,10 @@
 // app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import Header from "./components/Header";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,17 +21,23 @@ export const metadata: Metadata = {
   description: "Discover the beauty of nature and the excitement of our trails.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-}: {
+  params: { locale },
+}: Readonly<{
   children: React.ReactNode;
-}) {
+  params: { locale: string };
+}>) {
+  const messages = await getMessages();
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {/* Include the header as a Client Component */}
-        <Header />
-        <main className="min-h-screen">{children}</main>
+        <NextIntlClientProvider messages={messages}>
+          <div className="min-h-screen">
+            <Header locale={locale} />
+            {children}
+          </div>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

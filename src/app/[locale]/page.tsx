@@ -1,10 +1,13 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 export default function Home() {
+  const t = useTranslations("home");
+
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center">
       <div className="flex flex-col items-center gap-4 py-16 px-8 text-center">
-        <h1 className="text-4xl font-bold text-gray-800">Welcome to Rostushe Trails</h1>
+        <h1 className="text-4xl font-bold text-gray-800">{t("welcome")}</h1>
         <p className="text-gray-600">
           Discover the beauty of nature and the excitement of our trails.
         </p>

@@ -1,0 +1,20 @@
+{
+    "menu": {
+        "home": "Home",
+        "about-us": "About Us",
+        "trails": "Trails",
+        "guide": "Guide",
+        "registered-runners": "runners Runners",
+        "contact": "Contact",
+        "accommodation": "Accommodation",
+        "sponsors": "Sponsors"
+    },
+    "home": {
+        "welcome": "Welcome to Rostushe Trails",
+        "discover": "Discover the beauty of nature and the excitement of our trails.",
+        "10km-trail": "10 Km Trail",
+        "10km-description": "Explore the short trail through scenic landscapes.",
+        "24km-trail": "24 Km Trail",
+        "24km-description": "Challenge yourself with the extended adventure."
+    }
+}
