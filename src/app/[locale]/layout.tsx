@@ -5,6 +5,8 @@ import "../globals.css";
 import Header from "./components/Header";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import { Locale, routing } from "../../../i18n/routing";
+import { notFound } from "next/navigation";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,20 +25,26 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-  params: { locale },
+  params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: string };
+  params: { locale: Locale };
 }>) {
+  const { locale } = await params;
+  if (!routing.locales.includes(locale as Locale)) {
+    notFound();
+  }
+  // Providing all messages to the client
+  // side is the easiest way to get started
   const messages = await getMessages();
   return (
     <html lang={locale}>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         <NextIntlClientProvider messages={messages}>
-          <div className="min-h-screen">
-            <Header locale={locale} />
-            {children}
-          </div>
+          <Header locale={locale} params={params} />
+          {children}
         </NextIntlClientProvider>
       </body>
     </html>
