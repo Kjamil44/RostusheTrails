@@ -11,10 +11,158 @@
     },
     "home": {
         "welcome": "Welcome to Rostushe Trails",
-        "discover": "Discover the beauty of nature and the excitement of our trails.",
-        "10km-trail": "10 Km Trail",
-        "10km-description": "Explore the short trail through scenic landscapes.",
-        "24km-trail": "24 Km Trail",
-        "24km-description": "Challenge yourself with the extended adventure."
+        "description": "Discover the beauty of nature and the excitement of our trails.",
+        "locale": "en",
+        "ten_km": {
+            "title": "10 Km Trail",
+            "description": "Explore the short trail through scenic landscapes.",
+            "alt": "Image of the 10 km trail"
+        },
+        "twentyfour_km": {
+            "title": "24 Km Trail",
+            "description": "Challenge yourself with the extended adventure.",
+            "alt": "Image of the 24 km trail"
+        }
+    },
+    "about-us": {
+        "rostushe": "Rostushe",
+        "rostushe_description": "Rostushe is a village in Western Macedonia, located near the Radika River, which is known for its beauty and natural resources. The village is situated in a mountainous region, making it a pleasant place for nature lovers and hikers. Rostushe is known for its traditional architecture, hospitality, and still-preserved ancient customs and culture. Most of the village’s residents have moved to Western European countries (Italy, Germany, Switzerland, etc.), but during the summer and winter periods, they return to their homeland. Tourism is developing in this region thanks to its natural beauty and opportunities for active tourism, such as hiking and visiting historical and cultural sites. Below are some of the natural and cultural landmarks in Rostushe:",
+        "landmark_1": "Duf Waterfall – near the village",
+        "landmark_2": "The Old Hospital in Rostushe",
+        "landmark_3": "The Old Mosque in Rostushe",
+        "landmark_4": "Bigorski Monastery near Rostushe",
+        "rostushe_image": "Image of the village Rostushe",
+        "association": "Association EVERSTING ROSTUSHE",
+        "association_description": "The sports association ‘Everesting Rostushe’ is an organization formed by citizens passionate about sports. It was established by a group of adult individuals who share a love for sports, with the goal of engaging in organized sports activities and competitions at all levels—municipal, national, and international. This association consists of adult members from the village of Rostushe and other sports enthusiasts who work towards achieving goals and objectives in the field of sports and physical activities. The headquarters of EVERSTING ROSTUSHE is located in the village of Rostushe, Municipality of Mavrovo and Rostushe.",
+        "association_image": "Image of the Everesting Club",
+        "team": "Our Team"
+    },
+    "contact-us": {
+        "title": "Contact Us",
+        "get_in_touch": "Get in Touch",
+        "phone": "Phone",
+        "email": "Email",
+        "send_message": "Send Us a Message",
+        "form": {
+            "name": "Name",
+            "name_placeholder": "Your Name",
+            "email": "Email",
+            "email_placeholder": "Your Email",
+            "message": "Message",
+            "message_placeholder": "Your Message",
+            "submit": "Send Message"
+        }
+    },
+    "footer": {
+        "home": "Home",
+        "about-us": "About Us",
+        "trails": "Trails",
+        "contact": "Contact",
+        "rights_reserved": "All rights reserved."
+    },
+    "ten-km": {
+        "title": "Apply for 10km Race",
+        "rules": {
+            "title": "Rules and Regulations",
+            "description": "Please read the following rules carefully before applying.",
+            "point1": "Participants must be at least 15 years old.",
+            "point2": "The race will take place on July 26, 2025.",
+            "point3": "Participants must follow the marked trails."
+        },
+        "registration": {
+            "title": "Registration Process",
+            "description": "Follow these steps to register for the 10km race:",
+            "step1": "Fill out the registration form.",
+            "step2": "Pay the registration fee.",
+            "step3": "Receive your race number and starter pack."
+        },
+        "equipment": {
+            "title": "Mandatory Equipment",
+            "item1": "Trail running shoes.",
+            "item2": "Water bottle or hydration pack.",
+            "item3": "Emergency blanket."
+        },
+        "route": {
+            "title": "Route and GPX File",
+            "description": "Download the GPX file and view the route map below.",
+            "download": "Download GPX File",
+            "image_alt": "Route map for the 10km race"
+        },
+        "form": {
+            "title": "Registration Form",
+            "name": "Name",
+            "name_placeholder": "Enter your full name",
+            "email": "Email",
+            "email_placeholder": "Enter your email address",
+            "age": "Age",
+            "age_placeholder": "Enter your age",
+            "submit": "Register"
+        }
+    },
+    "twentyfour-km": {
+        "title": "Пријави се за трката од 10 км",
+        "rules": {
+            "title": "Правила и прописи",
+            "description": "Ве молиме внимателно прочитајте ги следните правила пред да се пријавите.",
+            "point1": "Учесниците мора да имаат најмалку 15 години.",
+            "point2": "Трката ќе се одржи на 26 јули 2025 година.",
+            "point3": "Учесниците мора да ги следат обележаните патеки."
+        },
+        "registration": {
+            "title": "Процес на пријавување",
+            "description": "Следете ги овие чекори за да се пријавите за трката од 10 км:",
+            "step1": "Пополнете ја формата за пријавување.",
+            "step2": "Извршете уплата на стартнината.",
+            "step3": "Преземете го вашиот стартен број и стартен пакет."
+        },
+        "equipment": {
+            "title": "Задолжителна опрема",
+            "item1": "Патики за планинско трчање.",
+            "item2": "Шише за вода или хидратациски пакет.",
+            "item3": "Фолија за преживување."
+        },
+        "route": {
+            "title": "Патека и GPX датотека",
+            "description": "Преземете ја GPX датотеката и погледнете ја мапата на патеката подолу.",
+            "download": "Преземи GPX датотека",
+            "image_alt": "Мапа на патеката за трката од 10 км"
+        },
+        "form": {
+            "title": "Форма за регистрација",
+            "name": "Име",
+            "name_placeholder": "Внесете го вашето целосно име",
+            "email": "Е-пошта",
+            "email_placeholder": "Внесете ја вашата е-пошта",
+            "age": "Возраст",
+            "age_placeholder": "Внесете ја вашата возраст",
+            "submit": "Регистрирај се"
+        }
+    },
+    "guide": {
+        "title": "Guide for Rostushe Trails",
+        "introduction": {
+            "title": "Introduction",
+            "description": "Explore the trails and prepare for an unforgettable experience."
+        },
+        "gpx": {
+            "title": "GPX Files",
+            "twentyfour_km": "Download GPX for 24km Race",
+            "ten_km": "Download GPX for 10km Race"
+        },
+        "pictures": {
+            "title": "Trail Pictures",
+            "placeholder": "Picture Placeholder"
+        }
+    },
+    "registered-runners": {
+        "title": "Registered Runners",
+        "table": {
+            "number": "#",
+            "name": "Name",
+            "age": "Age",
+            "race": "Race",
+            "country": "Country"
+        },
+        "no_runners": "No runners registered yet."
     }
 }

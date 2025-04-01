@@ -17,7 +17,8 @@ body {
   color: var(--foreground);
 }
 
-header, nav {
+header,
+nav {
   background: var(--background);
 }
 
@@ -27,4 +28,15 @@ a {
 
 a:hover {
   color: #0070f3;
+}
+
+/* Smooth transition for the menu */
+nav {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Center dropdown menu */
+nav ul li.relative ul {
+  min-width: 200px;
+  text-align: left;
 }

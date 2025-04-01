@@ -14,14 +14,14 @@ export default async function Home() {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-8">
         <a
-          href="/trails/ten-km"
+          href={`/${t("locale")}/trails/ten-km`}
           className="block bg-white shadow-md rounded-lg p-6 text-gray-800 hover:shadow-lg hover:scale-105 transition"
         >
           <h2 className="text-2xl font-semibold">10 Km Trail</h2>
           <p>Explore the short trail through scenic landscapes.</p>
         </a>
         <a
-          href="/trails/twentyfour-km"
+          href={`/${t("locale")}/trails/twentyfour-km`}
           className="block bg-white shadow-md rounded-lg p-6 text-gray-800 hover:shadow-lg hover:scale-105 transition"
         >
           <h2 className="text-2xl font-semibold">24 Km Trail</h2>

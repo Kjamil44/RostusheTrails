@@ -1,5 +1,80 @@
-function generateStaticParams() {}
- 
+import { useTranslations } from "next-intl";
+
 export default function Page() {
-  return <h1>Hello, Contact Page!</h1>
+  const t = useTranslations("contact-us");
+
+  return (
+    <div className="bg-gray-50 min-h-screen p-6 flex flex-col items-center">
+      <h1 className="text-4xl font-bold text-green-700 mb-8">{t("title")}</h1>
+      
+      {/* Contact Information */}
+      <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-md mb-8">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-4">{t("get_in_touch")}</h2>
+        <p className="text-gray-700 mb-2">
+          {t("phone")}:{" "}
+          <a href="tel:+38970123456" className="text-blue-500 hover:underline">
+            +389 70 123 456
+          </a>
+        </p>
+        <p className="text-gray-700">
+          {t("email")}:{" "}
+          <a href="mailto:info@rostushetrails.com" className="text-blue-500 hover:underline">
+            info@rostushetrails.com
+          </a>
+        </p>
+      </div>
+
+      {/* Contact Form */}
+      <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-md">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-4">{t("send_message")}</h2>
+        <form className="space-y-4">
+          <div>
+            <label htmlFor="name" className="block text-gray-700 font-medium mb-1">
+              {t("form.name")}
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+              placeholder={t("form.name_placeholder")}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="email" className="block text-gray-700 font-medium mb-1">
+              {t("form.email")}
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+              placeholder={t("form.email_placeholder")}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="message" className="block text-gray-700 font-medium mb-1">
+              {t("form.message")}
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows={4}
+              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+              placeholder={t("form.message_placeholder")}
+              required
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            className="w-full bg-green-700 text-white font-medium py-2 rounded-md hover:bg-green-800 transition"
+          >
+            {t("form.submit")}
+          </button>
+        </form>
+      </div>
+    </div>
+  );
 }

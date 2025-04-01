@@ -1,8 +1,11 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 export default function Page() {
+  const t = useTranslations("about-us");
+
   const teamMembers = [
     {
       name: "Харис Беќири (основач на тимот)",
@@ -116,52 +119,32 @@ export default function Page() {
     <div className="bg-gray-50 p-6">
       {/* Section: За Росуше */}
       <section className="flex flex-col lg:flex-row items-center mb-16">
-        {/* Image Placeholder */}
         <div className="w-full lg:w-1/2 mb-6 lg:mb-0 lg:mr-6">
           <div className="bg-gray-300 rounded-lg h-64 flex items-center justify-center">
-            <span className="text-gray-600">Слика за Ростуше</span>
+            <span className="text-gray-600">{t("rostushe_image")}</span>
           </div>
         </div>
-        {/* Text Content */}
         <div className="w-full lg:w-1/2">
-          <h2 className="text-3xl font-semibold text-green-700 mb-4">
-            За Ростуше
-          </h2>
-          <p className="text-gray-700 leading-relaxed">
-            Ростуше е село во Западна Македонија, се наоѓа во близина на` Реката Радика, која е позната по својата убавина и природни ресурси. Селото се сместено во планински регион што го прави пријатно место за љубителите на природата и пешачењето.
-            Ростуше е познато по својата традиционална архитектура, гостопримство и се уште зачувани старински обичаи и култура. Поголем дел од жителите на селото се преселени во Западно – Европските земји ( Италија, Германија, Швајцарија и тн. ) но во летниот и зимскиот период истиот се враќаат во својот роден крај.
-            Туризмот се развива во овој крај благодарение на природните убавини и можностите за активен туризам, како планинарење и посета на историските и културни локалитети.
-            Во прилог  дел од природните убавини и културни знаменитости во Ростуше:
-          </p>
+          <h2 className="text-3xl font-semibold text-green-700 mb-4">{t("rostushe")}</h2>
+          <p className="text-gray-700 leading-relaxed">{t("rostushe_description")}</p>
           <ul className="list-disc list-inside text-gray-700">
-              <li>Водопадот Дуф – во билина на селото</li>
-              <li>Старата Болница во Ростуше</li>
-              <li>Старата Џамија во Ростуше</li>
-              <li>Бигорски Манастир во близина на Ростуше</li>
-            </ul>
+            <li>{t("landmark_1")}</li>
+            <li>{t("landmark_2")}</li>
+            <li>{t("landmark_3")}</li>
+            <li>{t("landmark_4")}</li>
+          </ul>
         </div>
       </section>
 
-      {/* Section: За Здружението Everesting Rostushe */}
       <section className="flex flex-col lg:flex-row-reverse items-center mb-16">
-        {/* Image Placeholder */}
         <div className="w-full lg:w-1/2 mb-6 lg:mb-0 lg:ml-6">
           <div className="bg-gray-300 rounded-lg h-64 flex items-center justify-center">
-            <span className="text-gray-600">Слика за Здружението</span>
+            <span className="text-gray-600">{t("association_image")}</span>
           </div>
         </div>
-        {/* Text Content */}
         <div className="w-full lg:w-1/2">
-          <h2 className="text-3xl font-semibold text-green-700 mb-4">
-            За здружението ЕВЕРЕСТИНГ РОСТУШЕ
-          </h2>
-          <p className="text-gray-700 leading-relaxed">
-            Спортското здружение <b>„Еверестинг Ростуше“</b> е здружение на граѓани од областа на спортот настанато по иницијатива на слободно здружени полнолетни граѓани, љубители на спортот, заради организирано бавење со спорт и спортски активности како и организирање на спортски натпревари и манифестации од сите нивоа во Општината, Републиката и меѓународен план.
-
-            Во ова здружение членуваат полнолетни граѓани од с.Ростуше и други љубители на спортот, кои делуваат на остварување на целите и задачите во областа на спортот и спортските активности.
-            Седиштето на ЕВЕРЕСТИНГ РОСТУШЕ е во с.Ростуше, општина Маврово и Ростуше.
-
-          </p>
+          <h2 className="text-3xl font-semibold text-green-700 mb-4">{t("association")}</h2>
+          <p className="text-gray-700 leading-relaxed">{t("association_description")}</p>
         </div>
       </section>
 
