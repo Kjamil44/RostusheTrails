@@ -8,6 +8,7 @@ import { getMessages } from "next-intl/server";
 import { Locale, routing } from "../../../i18n/routing";
 import { notFound } from "next/navigation";
 import Footer from "./components/Footer";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,6 +45,23 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
+          <Toaster
+            position="top-center"
+            toastOptions={{
+              success: {
+                style: {
+                  background: "#d4edda", // Light green
+                  color: "#155724", // Dark green text
+                },
+              },
+              error: {
+                style: {
+                  background: "#f8d7da", // Light red
+                  color: "#721c24", // Dark red text
+                },
+              },
+            }}
+          />
           <Header locale={locale} params={params} />
           {children}
           <Footer locale={locale} params={params} />

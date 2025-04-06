@@ -16,7 +16,6 @@ export default function Page() {
   const [runners, setRunners] = useState<Runner[]>([]);
 
   useEffect(() => {
-    debugger
     const fetchRunners = async () => {
       const res = await fetch("/api/runners");
       const data = await res.json();

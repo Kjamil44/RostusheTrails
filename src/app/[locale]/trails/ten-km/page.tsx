@@ -1,7 +1,64 @@
-import { useTranslations } from "next-intl";
+"use client";
+
+import { useLocale, useTranslations } from "next-intl";
+import { useState } from "react";
+import CountrySelect from "../../components/CountrySelect";
+import toast from "react-hot-toast";
+import { CheckCircle } from "lucide-react";
 
 export default function Page() {
   const t = useTranslations("ten-km");
+  const t_api = useTranslations("api");
+
+  const currentLocale = useLocale();
+
+  const [loading, setLoading] = useState(false);
+  const [registered, setRegistered] = useState(false);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    age: "",
+    country: ""
+  });
+
+  const onRegistration = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const runnerData = {
+      fullName: formData.name,
+      email: formData.email,
+      age: parseInt(formData.age),
+      trail: "10km",
+      country: formData.country,
+    };
+
+    try {
+      const res = await fetch('/api/runners', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-locale': currentLocale
+        },
+        body: JSON.stringify(runnerData),
+      });
+
+      if (res.ok) {
+        toast.success(t_api("registration_success"));
+        setRegistered(true);
+      } else {
+        const error = await res.json();
+        toast.error(`${error.error}`);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      toast.error(t_api("catch_error"));
+    } finally {
+      setLoading(false);
+    }
+  };
+
 
   return (
     <div className="bg-gray-50 min-h-screen p-6 flex flex-col items-center">
@@ -17,6 +74,7 @@ export default function Page() {
           <li>{t("rules.point3")}</li>
         </ul>
       </section>
+
 
       {/* Registration Process */}
       <section className="bg-white shadow-md rounded-lg p-6 w-full max-w-3xl mb-8">
@@ -62,53 +120,113 @@ export default function Page() {
       {/* Registration Form */}
       <section className="bg-white shadow-md rounded-lg p-6 w-full max-w-3xl">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">{t("form.title")}</h2>
-        <form className="space-y-4">
-          <div>
-            <label htmlFor="name" className="block text-gray-700 font-medium mb-1">
-              {t("form.name")}
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
-              placeholder={t("form.name_placeholder")}
-              required
-            />
+
+        {registered ? (
+          <div className="flex flex-col items-center justify-center text-center text-green-700 space-y-4">
+            <CheckCircle size={64} className="text-green-600" />
+            <p className="text-xl font-semibold">{t("form.success_message")}</p>
           </div>
-          <div>
-            <label htmlFor="email" className="block text-gray-700 font-medium mb-1">
-              {t("form.email")}
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
-              placeholder={t("form.email_placeholder")}
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="age" className="block text-gray-700 font-medium mb-1">
-              {t("form.age")}
-            </label>
-            <input
-              type="number"
-              id="age"
-              name="age"
-              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
-              placeholder={t("form.age_placeholder")}
-              required
-            />
-          </div>
-          <button
-            type="submit"
-            className="w-full bg-green-700 text-white font-medium py-2 rounded-md hover:bg-green-800 transition"
-          >
-            {t("form.submit")}
-          </button>
-        </form>
+        ) : (
+          <form className="space-y-4" onSubmit={onRegistration}>
+            {/* Name */}
+            <div>
+              <label htmlFor="name" className="block text-gray-700 font-medium mb-1">
+                {t("form.name")}
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                placeholder={t("form.name_placeholder")}
+                required
+              />
+            </div>
+
+            {/* Email */}
+            <div>
+              <label htmlFor="email" className="block text-gray-700 font-medium mb-1">
+                {t("form.email")}
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                placeholder={t("form.email_placeholder")}
+                required
+              />
+            </div>
+
+            {/* Age */}
+            <div>
+              <label htmlFor="age" className="block text-gray-700 font-medium mb-1">
+                {t("form.age")}
+              </label>
+              <input
+                type="number"
+                id="age"
+                name="age"
+                value={formData.age}
+                onChange={(e) => setFormData({ ...formData, age: e.target.value })}
+                className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                placeholder={t("form.age_placeholder")}
+                required
+              />
+            </div>
+
+            {/* Country */}
+            <div>
+              <label htmlFor="country" className="block text-gray-700 font-medium mb-1">
+                {t("form.country")}
+              </label>
+              <CountrySelect
+                id="country"
+                name="country"
+                value={formData.country}
+                onChange={(value) => setFormData((prev) => ({ ...prev, country: value }))}
+                className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                placeholder={t("form.country_placeholder")}
+                required
+              />
+            </div>
+
+            {/* Submit button with spinner */}
+            <button
+              type="submit"
+              className="w-full bg-green-700 text-white font-medium py-2 rounded-md hover:bg-green-800 transition flex items-center justify-center"
+              disabled={loading}
+            >
+              {loading && (
+                <svg
+                  className="animate-spin h-5 w-5 mr-2 text-white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8v8H4z"
+                  ></path>
+                </svg>
+              )}
+              {t("form.submit")}
+            </button>
+          </form>
+        )}
       </section>
     </div>
   );
