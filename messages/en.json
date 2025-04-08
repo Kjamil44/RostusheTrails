@@ -90,52 +90,58 @@
         },
         "form": {
             "title": "Registration Form",
-            "name": "Name",
+            "name": "Full Name",
             "name_placeholder": "Enter your full name",
             "email": "Email",
             "email_placeholder": "Enter your email address",
             "age": "Age",
             "age_placeholder": "Enter your age",
-            "submit": "Register"
+            "country": "Select your Country",
+            "country_placeholder": "Choose your country",
+            "submit": "Register",
+            "success_message": "Registration successful! Follow the instructions sent to your email."
         }
     },
     "twentyfour-km": {
-        "title": "Пријави се за трката од 10 км",
+        "title": "Apply for 24km Race",
         "rules": {
-            "title": "Правила и прописи",
-            "description": "Ве молиме внимателно прочитајте ги следните правила пред да се пријавите.",
-            "point1": "Учесниците мора да имаат најмалку 15 години.",
-            "point2": "Трката ќе се одржи на 26 јули 2025 година.",
-            "point3": "Учесниците мора да ги следат обележаните патеки."
+            "title": "Rules and Regulations",
+            "description": "Please read the following rules carefully before applying.",
+            "point1": "Participants must be at least 18 years old.",
+            "point2": "The race will take place on July 26, 2025.",
+            "point3": "Participants must follow the marked trails."
         },
         "registration": {
-            "title": "Процес на пријавување",
-            "description": "Следете ги овие чекори за да се пријавите за трката од 10 км:",
-            "step1": "Пополнете ја формата за пријавување.",
-            "step2": "Извршете уплата на стартнината.",
-            "step3": "Преземете го вашиот стартен број и стартен пакет."
+            "title": "Registration Process",
+            "description": "Follow these steps to register for the 24km race:",
+            "step1": "Fill out the registration form.",
+            "step2": "Pay the registration fee.",
+            "step3": "Receive your race number and starter pack."
         },
         "equipment": {
-            "title": "Задолжителна опрема",
-            "item1": "Патики за планинско трчање.",
-            "item2": "Шише за вода или хидратациски пакет.",
-            "item3": "Фолија за преживување."
+            "title": "Mandatory Equipment",
+            "item1": "Trail running shoes.",
+            "item2": "Water bottle or hydration pack.",
+            "item3": "Emergency blanket."
         },
         "route": {
-            "title": "Патека и GPX датотека",
-            "description": "Преземете ја GPX датотеката и погледнете ја мапата на патеката подолу.",
-            "download": "Преземи GPX датотека",
-            "image_alt": "Мапа на патеката за трката од 10 км"
+            "title": "Route and GPX File",
+            "description": "Download the GPX file and view the route map below.",
+            "download": "Download GPX File",
+            "image_alt": "Route map for the 24km race"
         },
         "form": {
-            "title": "Форма за регистрација",
-            "name": "Име",
-            "name_placeholder": "Внесете го вашето целосно име",
-            "email": "Е-пошта",
-            "email_placeholder": "Внесете ја вашата е-пошта",
-            "age": "Возраст",
-            "age_placeholder": "Внесете ја вашата возраст",
-            "submit": "Регистрирај се"
+            "title": "Registration Form",
+            "name": "Full Name",
+            "name_placeholder": "Enter your full name",
+            "email": "Email",
+            "email_placeholder": "Enter your email address",
+            "age": "Age",
+            "age_placeholder": "Enter your age",
+            "country": "Select your Country",
+            "country_placeholder": "Choose your country",
+            "submit": "Register",
+            "success_message": "Registration successful! Follow the instructions sent to your email."
         }
     },
     "guide": {
@@ -164,5 +170,14 @@
             "country": "Country"
         },
         "no_runners": "No runners registered yet."
+    },
+    "api": {
+        "fetch_error": "Failed to fetch runners.",
+        "all_fields_required": "All fields are required.",
+        "email_not_unique": "Runner is already registered.",
+        "age_restriction": "Runner is not eligible for this trail. Read Rules and Regulations section.",
+        "registration_success": "Registration successful!",
+        "create_error": "Failed to create runner.",
+        "catch_error": "Something went wrong. Please try again later."
     }
 }
