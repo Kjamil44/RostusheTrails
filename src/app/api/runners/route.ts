@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import prisma from "../../../../lib/prisma";
 import { RegisteredRunner } from "../../../../prisma/generated/prisma";
 import { getTranslations } from "next-intl/server";
+import { sendRegistrationEmail } from "../../../../lib/mailer";
 
 export async function GET(req: NextRequest) {
   const locale = req.headers.get("x-locale") || "en"; // fallback if needed
@@ -47,6 +48,8 @@ export async function POST(req: NextRequest) {
         country,
       },
     });
+
+    await sendRegistrationEmail({ to: email, runner: newRunner });
 
     return NextResponse.json({ success: t("registration_success") }, { status: 201 });
   } catch {
