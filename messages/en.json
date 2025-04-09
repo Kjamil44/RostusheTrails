@@ -12,17 +12,26 @@
     "home": {
         "welcome": "Welcome to Rostushe Trails",
         "description": "Discover the beauty of nature and the excitement of our trails.",
-        "locale": "en",
-        "ten_km": {
+        "ten_km_trail": {
             "title": "10 Km Trail",
-            "description": "Explore the short trail through scenic landscapes.",
-            "alt": "Image of the 10 km trail"
+            "description": "Explore the short trail through scenic landscapes."
         },
-        "twentyfour_km": {
+        "twentyfour_km_trail": {
             "title": "24 Km Trail",
-            "description": "Challenge yourself with the extended adventure.",
-            "alt": "Image of the 24 km trail"
-        }
+            "description": "Challenge yourself with the extended adventure."
+        },
+        "mountain_trail": {
+            "title": "Mountain Trail",
+            "description": "Experience the breathtaking views and serene atmosphere of the Rostushe mountain trail."
+        },
+        "rules": {
+            "title": "Rules and Regulations",
+            "point1": "All participants must register before the event.",
+            "point2": "Follow the designated trail markers at all times.",
+            "point3": "Respect the environment and fellow participants."
+        },
+        "mountain_trail_image_alt": "Mountain Trail",
+        "rules_image_alt": "Rules and Regulations"
     },
     "about-us": {
         "rostushe": "Rostushe",
@@ -35,22 +44,41 @@
         "association": "Association EVERSTING ROSTUSHE",
         "association_description": "The sports association ‘Everesting Rostushe’ is an organization formed by citizens passionate about sports. It was established by a group of adult individuals who share a love for sports, with the goal of engaging in organized sports activities and competitions at all levels—municipal, national, and international. This association consists of adult members from the village of Rostushe and other sports enthusiasts who work towards achieving goals and objectives in the field of sports and physical activities. The headquarters of EVERSTING ROSTUSHE is located in the village of Rostushe, Municipality of Mavrovo and Rostushe.",
         "association_image": "Image of the Everesting Club",
-        "team": "Our Team"
+        "team_title": "Our Team",
+        "team": {
+            "hariz": "Haris Bekiri (Team Founder)",
+            "oktay": "Oktaj Bekiri",
+            "bilal": "Bilal Ademi",
+            "ahmed": "Ahmed Ademi",
+            "kebir": "Kebir Islami",
+            "harun": "Harun Ademi",
+            "edah": "Edah Bekiri",
+            "sunaj": "Sunaj Mehmedi",
+            "imran": "Imran Idrizoski",
+            "mustafa": "Mustafa Idrizoski",
+            "semih": "Semih Bekiri",
+            "berin": "Berin Ademi",
+            "nermin": "Nermin Fejzuli",
+            "seval": "Sheval Miftari"
+        }
     },
     "contact-us": {
         "title": "Contact Us",
         "get_in_touch": "Get in Touch",
+        "send_message": "Send a Message",
         "phone": "Phone",
         "email": "Email",
-        "send_message": "Send Us a Message",
         "form": {
             "name": "Name",
-            "name_placeholder": "Your Name",
+            "name_placeholder": "Enter your name",
             "email": "Email",
-            "email_placeholder": "Your Email",
+            "email_placeholder": "Enter your email",
             "message": "Message",
-            "message_placeholder": "Your Message",
-            "submit": "Send Message"
+            "message_placeholder": "Enter your message",
+            "submit": "Send",
+            "sending": "Sending...",
+            "success_message": "Your message has been sent successfully!",
+            "error_message": "Failed to send your message. Please try again."
         }
     },
     "footer": {
@@ -179,5 +207,31 @@
         "registration_success": "Registration successful!",
         "create_error": "Failed to create runner.",
         "catch_error": "Something went wrong. Please try again later."
+    },
+    "sponsors": {
+        "title": "Our Sponsors",
+        "sponsor_alt": "Sponsor"
+    },
+    "accommodation": {
+        "title": "Accommodation Options",
+        "description": "Explore our selection of accommodations to make your stay comfortable and memorable.",
+        "accommodations": {
+            "0": {
+                "name": "Mountain View Hotel",
+                "description": "A cozy hotel with stunning mountain views."
+            },
+            "1": {
+                "name": "Forest Retreat",
+                "description": "A peaceful retreat surrounded by lush forests."
+            },
+            "2": {
+                "name": "Lakeside Cabin",
+                "description": "A charming cabin by the serene lake."
+            },
+            "3": {
+                "name": "Village Inn",
+                "description": "A traditional inn located in the heart of the village."
+            }
+        }
     }
 }

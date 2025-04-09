@@ -2,13 +2,15 @@
 
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import rostushepic from "../../../assets/images/rostushe-od-planina.jpg";
+import associationpic from "../../../assets/images/logo-detailed.jpg";
 
 export default function Page() {
   const t = useTranslations("about-us");
 
   const teamMembers = [
     {
-      name: "Харис Беќири (основач на тимот)",
+      name: t("team.hariz"),
       achievements: [
         "Искуство повеќе од 10 години активно планинарење, 5 години учесник на трки во нашата држава и на меѓународни трки",
         "Ohrid Ultra Trail – 2021 y – 20 km",
@@ -35,7 +37,7 @@ export default function Page() {
       ],
     },
     {
-      name: "Октај Беќири",
+      name: t("team.oktay"),
       achievements: [
         "Pelister Ultra Trail – 20 km – 09.2022 (1 место)",
         "High Scardus – 23 km – 09.2022",
@@ -47,7 +49,7 @@ export default function Page() {
       ],
     },
     {
-      name: "Билал Адеми",
+      name: t("team.bilal"),
       achievements: [
         "Rocky Trail Nish – 10 km – 11.2022",
         "Pelister Unique Marathon – 22 km – 06.2023",
@@ -56,7 +58,7 @@ export default function Page() {
       ],
     },
     {
-      name: "Ахмед Адеми",
+      name: t("team.ahmed"),
       achievements: [
         "Pelister Ultra Trail – 19 km – 09.2022",
         "Rocky Trail Nish – 10 km – 11.2022",
@@ -64,7 +66,7 @@ export default function Page() {
       ],
     },
     {
-      name: "Кебир Ислами",
+      name: t("team.kebir"),
       achievements: [
         "Pelister Ultra Trail – 19 km – 09.2022",
         "Rocky Trail Nish – 10 km – 11.2022",
@@ -73,39 +75,39 @@ export default function Page() {
       ],
     },
     {
-      name: "Харун Адеми",
+      name: t("team.harun"),
       achievements: ["High Scardus – 22 km – 09.2023"],
     },
     {
-      name: "Едах Беќири",
+      name: t("team.edah"),
       achievements: ["Ohrid Kids Race – 10 km – 05.2024"],
     },
     {
-      name: "Сунај Мехмеди",
+      name: t("team.sunaj"),
       achievements: ["Ohrid Kids Race – 10 km – 05.2024"],
     },
     {
-      name: "Имран Идризоски",
+      name: t("team.imran"),
       achievements: ["Ohrid Kids Race – 10 km – 05.2024"],
     },
     {
-      name: "Мустафа Идризоски",
+      name: t("team.mustafa"),
       achievements: ["Rocky Trail Nish – 10 km – 11.2022"],
     },
     {
-      name: "Семих Беќири",
+      name: t("team.semih"),
       achievements: ["Ohrid Kids Race – 05.2024"],
     },
     {
-      name: "Берин Адеми",
+      name: t("team.berin"),
       achievements: ["Pelister Ultra Trail – 20 km – 09.2022"],
     },
     {
-      name: "Нермин Фејзули",
+      name: t("team.nermin"),
       achievements: ["High Scardus – 20 km – 09.2022"],
     },
     {
-      name: "Шевал Мифтари",
+      name: t("team.seval"),
       achievements: [
         "Pelister Ultra Trail – 20 км – 09.2022 (1 место)",
         "High Scardus – 20 km – 09.2022",
@@ -120,8 +122,14 @@ export default function Page() {
       {/* Section: За Росуше */}
       <section className="flex flex-col lg:flex-row items-center mb-16">
         <div className="w-full lg:w-1/2 mb-6 lg:mb-0 lg:mr-6">
-          <div className="bg-gray-300 rounded-lg h-64 flex items-center justify-center">
-            <span className="text-gray-600">{t("rostushe_image")}</span>
+          <div className="h-64 flex items-center justify-center">
+            <Image
+              src={rostushepic}
+              alt={t("rostushe_image")}
+              width={600}
+              height={200}
+              className="object-contain rounded-lg"
+            />
           </div>
         </div>
         <div className="w-full lg:w-1/2">
@@ -138,8 +146,14 @@ export default function Page() {
 
       <section className="flex flex-col lg:flex-row-reverse items-center mb-16">
         <div className="w-full lg:w-1/2 mb-6 lg:mb-0 lg:ml-6">
-          <div className="bg-gray-300 rounded-lg h-64 flex items-center justify-center">
-            <span className="text-gray-600">{t("association_image")}</span>
+          <div className=" h-64 flex items-center justify-center">
+            <Image
+              src={associationpic}
+              alt={t("association_image")}
+              width={300}
+              height={100}
+              className="object-contain rounded-lg"
+            />
           </div>
         </div>
         <div className="w-full lg:w-1/2">

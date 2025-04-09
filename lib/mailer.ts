@@ -70,3 +70,25 @@ export const sendRegistrationEmail = async ({
     // ],
   });
 };
+
+export const sendContactEmail = async ({
+  name,
+  email,
+  message,
+}: {
+  name: string;
+  email: string;
+  message: string;
+}) => {
+  await transporter.sendMail({
+    from: `"Rostushe Trails" <${process.env.GMAIL_USER}>`,
+    to: process.env.GMAIL_USER || "info@rostushetrails.com",
+    subject: `RostusheTrails: New Contact Form Submission from ${name}`,
+    html: `
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Message:</strong></p>
+      <p>${message}</p>
+    `,
+  });
+};
