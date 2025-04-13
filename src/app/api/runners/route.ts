@@ -9,8 +9,9 @@ export async function GET(req: NextRequest) {
   const t = await getTranslations({ locale, namespace: "api" });
 
   try {
-    const runners = await prisma.registeredRunner.findMany();
-    return NextResponse.json(runners);
+    //const runners = await prisma.registeredRunner.findMany();
+    return NextResponse.json({ dbUrl: process.env.DATABASE_URL });
+    //return NextResponse.json(runners);
   } catch {
     return NextResponse.json({ error: t("fetch_error") }, { status: 500 });
   }
