@@ -6,7 +6,7 @@ import rulesImage from "../../assets/images/uludag_haris2.jpg"; // Replace with 
 export default async function Home() {
   const t = await getTranslations("home");
   const currentLocale = await getLocale();
-
+  console.log(process.env.DATABASE_URL);
   return (
     <div className="min-h-screen flex flex-col items-center">
       {/* Welcome Section */}
