@@ -39,7 +39,8 @@ export default function Page() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'x-locale': currentLocale
+          'x-locale': currentLocale,
+          'x-api-key': process.env.NEXT_PUBLIC_API_KEY ?? ""
         },
         body: JSON.stringify(runnerData),
       });

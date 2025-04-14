@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
@@ -15,6 +15,8 @@ export default function Page() {
 
   const [loading, setLoading] = useState(false);
 
+  const currentLocale = useLocale();
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -24,6 +26,8 @@ export default function Page() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          'x-locale': currentLocale,
+          'x-api-key': process.env.NEXT_PUBLIC_API_KEY ?? ""
         },
         body: JSON.stringify(formData),
       });

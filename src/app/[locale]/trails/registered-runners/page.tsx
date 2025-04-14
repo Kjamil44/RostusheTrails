@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import toast from "react-hot-toast";
 
 interface Runner {
   id: number;
@@ -15,11 +16,31 @@ export default function Page() {
   const t = useTranslations("registered-runners");
   const [runners, setRunners] = useState<Runner[]>([]);
 
+  const currentLocale = useLocale();
+
   useEffect(() => {
     const fetchRunners = async () => {
-      const res = await fetch("/api/runners");
-      const data = await res.json();
-      setRunners(data);
+      try {
+        debugger
+        const res = await fetch("/api/runners", {
+          method: "GET",
+          headers: {
+            'Content-Type': 'application/json',
+            'x-locale': currentLocale,
+            'x-api-key': process.env.NEXT_PUBLIC_API_KEY ?? "",
+          },
+        });
+
+        if (res.ok) {
+          const data = await res.json();
+          setRunners(data);
+        } else {
+          const error = await res.json();
+          toast.error(`${error.error}`);
+        }
+      } catch (err) {
+        toast.error(t("fetch_error"));
+      }
     };
 
     fetchRunners();
