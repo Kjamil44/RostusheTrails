@@ -5,6 +5,7 @@ import { useState } from "react";
 import CountrySelect from "../../components/CountrySelect";
 import toast from "react-hot-toast";
 import { CheckCircle } from "lucide-react";
+import countries from "i18n-iso-countries";
 
 export default function Page() {
   const t = useTranslations("ten-km");
@@ -26,12 +27,15 @@ export default function Page() {
     e.preventDefault();
     setLoading(true);
 
+    // Map the 2-letter country code to the 3-letter country code
+    const alpha3CountryCode = countries.alpha2ToAlpha3(formData.country);
+
     const runnerData = {
       fullName: formData.name,
       email: formData.email,
       age: parseInt(formData.age),
       trail: "10km",
-      country: formData.country,
+      country: alpha3CountryCode,
     };
 
     try {
