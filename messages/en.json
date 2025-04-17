@@ -3,6 +3,8 @@
         "home": "Home",
         "about-us": "About Us",
         "trails": "Trails",
+        "10km": "10 km - Bagrem Trail",
+        "24km": "24 km - Krchin Trail",
         "guide": "Guide",
         "registered-runners": "Registered Runners",
         "contact": "Contact",
@@ -13,11 +15,11 @@
         "welcome": "Welcome to Rostushe Trails",
         "description": "Discover the beauty of nature and the excitement of our trails.",
         "ten_km_trail": {
-            "title": "10 Km Trail",
+            "title": "10 km - Bagrem Trail",
             "description": "Explore the short trail through scenic landscapes."
         },
         "twentyfour_km_trail": {
-            "title": "24 Km Trail",
+            "title": "24 km - Krchin Trail",
             "description": "Challenge yourself with the extended adventure."
         },
         "mountain_trail": {
@@ -85,8 +87,16 @@
         "home": "Home",
         "about-us": "About Us",
         "trails": "Trails",
+        "10km": "10 km - Bagrem Trail",
+        "24km": "24 km - Krchin Trail",
+        "guide": "Guide",
+        "registered-runners": "Registered Runners",
         "contact": "Contact",
-        "rights_reserved": "All rights reserved."
+        "accommodation": "Accommodation",
+        "sponsors": "Sponsors",
+        "follow_us": "Follow Us",
+        "rights_reserved": "All rights reserved.",
+        "navigation": "Navigation"
     },
     "ten-km": {
         "title": "Apply for 10km Race",

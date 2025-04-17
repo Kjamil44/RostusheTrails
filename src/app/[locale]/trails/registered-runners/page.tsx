@@ -8,6 +8,8 @@ import {
   GridColDef,
   GridToolbar,
 } from "@mui/x-data-grid";
+import countries from "i18n-iso-countries";
+import WorldFlag from "react-world-flags";
 
 interface Runner {
   id: number;
@@ -47,14 +49,35 @@ export default function Page() {
     };
 
     fetchRunners();
-  }, []);
+  }, [currentLocale, t]);
 
   const columns: GridColDef[] = [
     { field: "id", headerName: t("table.number"), width: 100 },
     { field: "fullName", headerName: t("table.name"), width: 200 },
     { field: "age", headerName: t("table.age"), width: 120, type: "number" },
     { field: "trail", headerName: t("table.race"), width: 160 },
-    { field: "country", headerName: t("table.country"), width: 160,  flex: 1 },
+    {
+      field: "country",
+      headerName: t("table.country"),
+      width: 200,
+      flex: 1,
+      renderCell: (params) => {
+        const countryName = params.value;
+        const alpha2 = countries.alpha3ToAlpha2(countryName);
+
+        if (!alpha2) return countryName;
+
+        return (
+          <div className="flex items-center gap-2">
+            <WorldFlag
+              code={alpha2}
+              style={{ width: 24, height: 16, borderRadius: 2 }}
+            />
+            <span>{countryName}</span>
+          </div>
+        );
+      },
+    },
   ];
 
   return (
