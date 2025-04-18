@@ -4,19 +4,29 @@ import { getTranslations } from "next-intl/server";
 import { sendRegistrationEmail } from "../../../../lib/mailer";
 import { prisma } from "../../../../lib/prisma";
 
+const API_KEY = process.env.API_KEY;
+
 export async function GET(req: NextRequest) {
+  if (!isValidApiKey(req)) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
   const locale = req.headers.get("x-locale") || "en"; // fallback if needed
   const t = await getTranslations({ locale, namespace: "api" });
 
   try {
     const runners = await prisma.registeredRunner.findMany();
-    return NextResponse.json(runners);
+    return NextResponse.json(runners, { status: 201 });
   } catch {
     return NextResponse.json({ error: t("fetch_error") }, { status: 500 });
   }
 }
 
 export async function POST(req: NextRequest) {
+  if (!isValidApiKey(req)) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
   const locale = req.headers.get("x-locale") || "en";
   const t = await getTranslations({ locale, namespace: "api" });
 
@@ -55,6 +65,11 @@ export async function POST(req: NextRequest) {
   } catch {
     return NextResponse.json({ error: t("create_error") }, { status: 500 });
   }
+}
+
+function isValidApiKey(req: NextRequest): boolean {
+  const apiKey = req.headers.get("x-api-key");
+  return apiKey === API_KEY;
 }
 
 function checkUniqueEmail(runners: RegisteredRunner[], email: string) {

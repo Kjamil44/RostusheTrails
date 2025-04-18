@@ -118,54 +118,55 @@ export default function Page() {
   ];
 
   return (
-    <div className="bg-gray-50 p-6">
-      {/* Section: За Росуше */}
-      <section className="flex flex-col lg:flex-row items-center mb-16">
-        <div className="w-full lg:w-1/2 mb-6 lg:mb-0 lg:mr-6">
-          <div className="h-64 flex items-center justify-center">
-            <Image
-              src={rostushepic}
-              alt={t("rostushe_image")}
-              width={600}
-              height={200}
-              className="object-contain rounded-lg"
-            />
-          </div>
-        </div>
-        <div className="w-full lg:w-1/2">
-          <h2 className="text-3xl font-semibold text-green-700 mb-4">{t("rostushe")}</h2>
-          <p className="text-gray-700 leading-relaxed">{t("rostushe_description")}</p>
-          <ul className="list-disc list-inside text-gray-700">
-            <li>{t("landmark_1")}</li>
-            <li>{t("landmark_2")}</li>
-            <li>{t("landmark_3")}</li>
-            <li>{t("landmark_4")}</li>
-          </ul>
-        </div>
-      </section>
+    <div className="px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto">
 
-      <section className="flex flex-col lg:flex-row-reverse items-center mb-16">
-        <div className="w-full lg:w-1/2 mb-6 lg:mb-0 lg:ml-6">
-          <div className=" h-64 flex items-center justify-center">
-            <Image
-              src={associationpic}
-              alt={t("association_image")}
-              width={300}
-              height={100}
-              className="object-contain rounded-lg"
-            />
+        {/* Section: За Росуше */}
+        <section className="flex flex-col md:flex-col lg:flex-row items-start gap-8 mb-16 mt-16">
+          <div className="w-full lg:w-1/2">
+            <div className="w-full h-auto mb-4">
+              <Image
+                src={rostushepic}
+                alt={t("rostushe_image")}
+                width={600}
+                height={400}
+                className="w-full h-auto rounded-lg shadow-lg object-cover"
+              />
+            </div>
           </div>
-        </div>
-        <div className="w-full lg:w-1/2">
-          <h2 className="text-3xl font-semibold text-green-700 mb-4">{t("association")}</h2>
-          <p className="text-gray-700 leading-relaxed">{t("association_description")}</p>
-        </div>
-      </section>
+          <div className="w-full lg:w-1/2">
+            <h2 className="text-3xl font-semibold text-green-700 mb-4">{t("rostushe")}</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">{t("rostushe_description")}</p>
+            <ul className="list-disc list-inside text-gray-700 space-y-1">
+              <li>{t("landmark_1")}</li>
+              <li>{t("landmark_2")}</li>
+              <li>{t("landmark_3")}</li>
+              <li>{t("landmark_4")}</li>
+            </ul>
+          </div>
+        </section>
 
-      {/* Section: За Team Rostushe */}
-      <section className="flex flex-col lg:flex-row items-center">
-        {/* Image Placeholder */}
-        <div className="bg-gray-50 p-6">
+        {/* Section: За здружението */}
+        <section className="flex flex-col lg:flex-row-reverse items-start gap-8 mb-16">
+          <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
+            <div className="w-full max-w-[300px] md:max-w-[400px] lg:max-w-[450px]">
+              <Image
+                src={associationpic}
+                alt={t("association_image")}
+                width={450}
+                height={300}
+                className="w-full h-auto object-contain rounded-lg shadow-lg"
+              />
+            </div>
+          </div>
+          <div className="w-full lg:w-1/2">
+            <h2 className="text-3xl font-semibold text-green-700 mb-4">{t("association")}</h2>
+            <p className="text-gray-700 leading-relaxed">{t("association_description")}</p>
+          </div>
+        </section>
+
+        {/* Section: Team Rostushe */}
+        <section className="mb-16">
           <h2 className="text-3xl font-semibold text-green-700 mb-8">
             Team Rostushe
           </h2>
@@ -184,8 +185,10 @@ export default function Page() {
               </ul>
             </div>
           ))}
-        </div>
-      </section>
+        </section>
+
+      </div>
     </div>
+
   );
 }

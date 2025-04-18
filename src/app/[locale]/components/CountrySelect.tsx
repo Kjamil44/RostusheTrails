@@ -36,7 +36,7 @@ export default function CountrySelect({
   useEffect(() => {
     const countryObj = countries.getNames("en", { select: "official" });
     const countryList = Object.entries(countryObj).map(([code, name]) => ({
-      value: name,
+      value: code,
       label: name,
     }));
     setOptions(countryList);

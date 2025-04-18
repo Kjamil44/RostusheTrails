@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import { Toaster } from "react-hot-toast";
 import Image from "next/image";
 import bgpic from "../../.././public/background.svg";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -90,6 +91,7 @@ export default async function RootLayout({
             />
             <Header locale={locale} params={params} />
             {children}
+            <ScrollToTopButton />
             <Footer locale={locale} params={params} />
           </NextIntlClientProvider>
         </div>

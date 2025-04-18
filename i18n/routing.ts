@@ -15,11 +15,7 @@ export const routing = defineRouting({
         "/": {
             en: "/",
             mk: "/",
-        },
-        "/contact": {
-            en: "/contact-me",
-            mk: "/kontaktiere-mich",
-        },
+        }
     },
 });
 

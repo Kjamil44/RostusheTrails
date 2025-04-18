@@ -1,7 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { sendContactEmail } from "../../../../lib/mailer";
 
+const API_KEY = process.env.API_KEY;
+
 export async function POST(req: NextRequest) {
+  if (!isValidApiKey(req)) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
   const { name, email, message } = await req.json();
 
   try {
@@ -14,3 +20,7 @@ export async function POST(req: NextRequest) {
   }
 }
 
+function isValidApiKey(req: NextRequest): boolean {
+  const apiKey = req.headers.get("x-api-key");
+  return apiKey === API_KEY;
+}
