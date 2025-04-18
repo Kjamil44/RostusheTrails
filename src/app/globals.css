@@ -34,10 +34,6 @@ a {
   transition: color 0.2s ease-in-out;
 }
 
-a:hover {
-  color: #0070f3;
-}
-
 /* Smooth transition for the menu */
 nav {
   transition: all 0.3s ease-in-out;

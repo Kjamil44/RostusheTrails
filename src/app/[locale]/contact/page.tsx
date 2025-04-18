@@ -47,7 +47,7 @@ export default function Page() {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen p-6 flex flex-col items-center">
+    <div className="min-h-screen p-6 flex flex-col items-center">
       <h1 className="text-4xl font-bold text-green-700 mb-8">{t("title")}</h1>
 
       {/* Contact Information */}
@@ -61,8 +61,8 @@ export default function Page() {
         </p>
         <p className="text-gray-700">
           {t("email")}:{" "}
-          <a href="mailto:info@rostushetrails.com" className="text-blue-500 hover:underline">
-            info@rostushetrails.com
+          <a href="mailto:contact@rostushetrails.com" className="text-blue-500 hover:underline">
+            contact@rostushetrails.com
           </a>
         </p>
       </div>

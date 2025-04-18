@@ -81,7 +81,7 @@ export default function Page() {
   ];
 
   return (
-    <div className="bg-gray-50 min-h-screen p-6 flex flex-col items-center">
+    <div className="min-h-screen p-6 flex flex-col items-center">
       <h1 className="text-4xl font-bold text-green-700 mb-8">{t("title")}</h1>
 
       <div className="w-full max-w-6xl bg-white shadow-md rounded-lg p-6">

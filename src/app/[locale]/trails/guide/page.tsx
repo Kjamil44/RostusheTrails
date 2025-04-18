@@ -4,7 +4,7 @@ export default function Page() {
   const t = useTranslations("guide");
 
   return (
-    <div className="bg-gray-50 min-h-screen p-6 flex flex-col items-center">
+    <div className="min-h-screen p-6 flex flex-col items-center">
       <h1 className="text-4xl font-bold text-green-700 mb-8">{t("title")}</h1>
 
       {/* Introduction */}
