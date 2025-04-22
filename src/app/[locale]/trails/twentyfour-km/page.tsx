@@ -6,6 +6,8 @@ import toast from "react-hot-toast";
 import CountrySelect from "../../components/CountrySelect";
 import { CheckCircle } from "lucide-react";
 import countries from "i18n-iso-countries";
+import Image from 'next/image';
+import krchinTrailPic from '../../../../assets/images/krcin-trail-post.png';
 
 export default function Page() {
   const t = useTranslations("twentyfour-km");
@@ -113,11 +115,11 @@ export default function Page() {
           {t("route.download")}
         </a>
         <div className="mt-4">
-          <img
-            src="/images/twentyfour-km-route.jpg"
+          <Image src={krchinTrailPic}
             alt={t("route.image_alt")}
-            className="w-full rounded-lg shadow-md"
-          />
+            width={600}
+            height={1000}
+            className='rounded-lg shadow-md' />
         </div>
       </section>
 

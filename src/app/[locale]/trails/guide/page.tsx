@@ -1,4 +1,14 @@
+"use client";
+
 import { useTranslations } from "next-intl";
+import Image from 'next/image';
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import krchinTrailPic from "@/assets/images/golem krcin tabla.jpg"; // update with real path
+import trailPic2 from "@/assets/images/trail-run-logo.png"; // add as many as you want
+import trailPic3 from "@/assets/images/krchin-logo2.png";
+import trailPic4 from "@/assets/images/bagrem-trail-post.png";
+import trailPic5 from "@/assets/images/krcin-trail-post.png";
 
 export default function Page() {
   const t = useTranslations("guide");
@@ -38,17 +48,64 @@ export default function Page() {
         </ul>
       </section>
 
-      {/* Placeholder for Pictures */}
+      {/* Pictures Gallery */}
       <section className="bg-white shadow-md rounded-lg p-6 w-full max-w-3xl mb-8">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">{t("pictures.title")}</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-gray-300 rounded-lg h-48 flex items-center justify-center">
-            <span className="text-gray-600">{t("pictures.placeholder")}</span>
+    {/* TODO FIX IMAGE SIZES */}
+        <Carousel
+          showThumbs={false}
+          showStatus={false}
+          infiniteLoop
+          autoPlay
+          interval={4000}
+          className="rounded-lg shadow-md custom-carousel"
+        >
+          <div className="flex justify-center items-center h-[600px]">
+            <Image
+              src={krchinTrailPic}
+              alt="Golem Krchin Trail"
+              width={250}
+              height={250}
+              className="rounded-lg object-contain"
+            />
           </div>
-          <div className="bg-gray-300 rounded-lg h-48 flex items-center justify-center">
-            <span className="text-gray-600">{t("pictures.placeholder")}</span>
+          <div className="flex justify-center items-center h-[600px]">
+            <Image
+              src={trailPic2}
+              alt="Another view of the trail"
+              width={250}
+              height={250}
+              className="rounded-lg object-contain"
+            />
           </div>
-        </div>
+          <div className="flex justify-center items-center h-[600px]">
+            <Image
+              src={trailPic3}
+              alt="Scenic part of the route"
+              width={250}
+              height={250}
+              className="rounded-lg object-contain"
+            />
+          </div>
+          <div className="flex justify-center items-center h-[600px]">
+            <Image
+              src={trailPic4}
+              alt="Scenic part of the route"
+              width={250}
+              height={250}
+              className="rounded-lg object-contain"
+            />
+          </div>
+          <div className="flex justify-center items-center h-[600px]">
+            <Image
+              src={trailPic5}
+              alt="Scenic part of the route"
+              width={250}
+              height={250}
+              className="rounded-lg object-contain"
+            />
+          </div>
+        </Carousel>
       </section>
     </div>
   );

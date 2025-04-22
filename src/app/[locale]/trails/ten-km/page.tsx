@@ -1,11 +1,13 @@
 "use client";
 
+import Image from 'next/image';
 import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 import CountrySelect from "../../components/CountrySelect";
 import toast from "react-hot-toast";
 import { CheckCircle } from "lucide-react";
 import countries from "i18n-iso-countries";
+import bagremTrailPic from '../../../../assets/images/bagrem-trail-post.png';
 
 export default function Page() {
   const t = useTranslations("ten-km");
@@ -114,11 +116,11 @@ export default function Page() {
           {t("route.download")}
         </a>
         <div className="mt-4">
-          <img
-            src="/images/ten-km-route.jpg"
-            alt={t("route.image_alt")}
-            className="w-full rounded-lg shadow-md"
-          />
+          <Image src={bagremTrailPic} 
+                 alt={t("route.image_alt")} 
+                 width={600} 
+                 height={1000} 
+                 className='rounded-lg shadow-md'/>
         </div>
       </section>
 
