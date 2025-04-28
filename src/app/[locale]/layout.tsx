@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import { Toaster } from "react-hot-toast";
 import Image from "next/image";
 import bgpic from "../../.././public/background.svg";
+import linesPic from "../../.././public/lines.svg";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 
 const geistSans = Geist({
@@ -43,23 +44,29 @@ export default async function RootLayout({
   return (
     <html lang={locale} className="min-h-screen">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen relative bg-white`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen relative bg-gradient-to-b from-green-50 via-white to-white`}
       >
         {/* Background Design */}
         <div className="absolute inset-0 z-0 overflow-hidden">
-          {/* Green outer border */}
-          <div className="absolute top-0 left-0 w-full h-[6px] bg-green-700" />
-          <div className="absolute bottom-0 left-0 w-full h-[6px] bg-green-700" />
-          <div className="absolute top-0 left-0 h-full w-[6px] bg-green-700" />
-          <div className="absolute top-0 right-0 h-full w-[6px] bg-green-700" />
+          {/* Green gradient glow */}
+          <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-green-100 via-transparent to-transparent opacity-80 blur-2xl pointer-events-none" />
 
-          {/* Black thin border inside green */}
-          <div className="absolute top-[6px] left-[6px] w-[calc(100%-12px)] h-[calc(100%-12px)] border border-black pointer-events-none" />
+          {/* Lines SVG Layer */}
+          <div className="absolute inset-0 flex justify-center items-center opacity-5 pointer-events-none">
+            <Image
+              src={linesPic}
+              alt="Background Lines"
+              width={1200}
+              height={1200}
+              className="w-full h-full object-cover"
+              priority
+            />
+          </div>
 
-          {/* Mountain SVG in center */}
+          {/* Mountain SVG Layer */}
           <div className="absolute inset-0 flex justify-center items-center opacity-10 pointer-events-none">
             <Image
-              src="/background.svg"
+              src={bgpic} // <-- you should use a lighter version here
               alt="Mountain line"
               width={800}
               height={200}

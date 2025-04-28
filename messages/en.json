@@ -33,7 +33,10 @@
             "point3": "Respect the environment and fellow participants."
         },
         "mountain_trail_image_alt": "Mountain Trail",
-        "rules_image_alt": "Rules and Regulations"
+        "rules_image_alt": "Rules and Regulations",
+        "village_title": "Welcome to Rostushe",
+        "village_image_alt": "Village of Rostushe",
+        "village_description": "Rostushe is a picturesque village located in the heart of nature, surrounded by mountains and lush greenery. It offers a perfect escape for those seeking tranquility and adventure. The village is known for its rich cultural heritage and warm hospitality, making it an ideal destination for tourists and nature enthusiasts."
     },
     "about-us": {
         "rostushe": "Rostushe",
@@ -43,12 +46,14 @@
         "landmark_3": "The Old Mosque in Rostushe",
         "landmark_4": "Bigorski Monastery near Rostushe",
         "rostushe_image": "Image of the village Rostushe",
-        "association": "Association EVERSTING ROSTUSHE",
+        "association": "Association \"EVERESTING ROSTUSHE\"",
         "association_description": "The sports association ‘Everesting Rostushe’ is an organization formed by citizens passionate about sports. It was established by a group of adult individuals who share a love for sports, with the goal of engaging in organized sports activities and competitions at all levels—municipal, national, and international. This association consists of adult members from the village of Rostushe and other sports enthusiasts who work towards achieving goals and objectives in the field of sports and physical activities. The headquarters of EVERSTING ROSTUSHE is located in the village of Rostushe, Municipality of Mavrovo and Rostushe.",
         "association_image": "Image of the Everesting Club",
         "team_title": "Our Team",
         "team": {
-            "hariz": "Haris Bekiri (Team Founder)",
+            "haris": "Haris Bekiri (Team Founder)",
+            "haris_achievment1": "More than 10 years of active mountaineering experience, 5 years of participation in races in our country and international races",
+            "haris_achievment2": "First in our country to have organized an Everesting event, second in the Balkans, 613th in the world",
             "oktay": "Oktaj Bekiri",
             "bilal": "Bilal Ademi",
             "ahmed": "Ahmed Ademi",
@@ -61,7 +66,8 @@
             "semih": "Semih Bekiri",
             "berin": "Berin Ademi",
             "nermin": "Nermin Fejzuli",
-            "seval": "Sheval Miftari"
+            "seval": "Sheval Miftari",
+            "mirnes": "Mirnes Rashiti"
         }
     },
     "contact-us": {

@@ -8,6 +8,7 @@ import toast from "react-hot-toast";
 import { CheckCircle } from "lucide-react";
 import countries from "i18n-iso-countries";
 import bagremTrailPic from '../../../../assets/images/bagrem-trail-post.png';
+import { FaFileDownload } from 'react-icons/fa';
 
 export default function Page() {
   const t = useTranslations("ten-km");
@@ -105,22 +106,29 @@ export default function Page() {
       </section>
 
       {/* GPX File and Route */}
+      {/* GPX File and Route */}
       <section className="bg-white shadow-md rounded-lg p-6 w-full max-w-3xl mb-8">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">{t("route.title")}</h2>
         <p className="text-gray-700 mb-4">{t("route.description")}</p>
+
+        {/* Download Button */}
         <a
-          href="/files/ten-km-route.gpx"
+          href="/gpx/10km.gpx"
           download
-          className="text-blue-500 hover:underline"
+          className="inline-flex items-center bg-green-700 text-white font-medium py-3 px-6 rounded-lg shadow-md hover:bg-green-800 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-green-300"
         >
-          {t("route.download")}
+          <FaFileDownload className="h-5 w-5 mr-2" /> {t("route.download")}
         </a>
-        <div className="mt-4">
-          <Image src={bagremTrailPic} 
-                 alt={t("route.image_alt")} 
-                 width={600} 
-                 height={1000} 
-                 className='rounded-lg shadow-md'/>
+
+        {/* Route Image */}
+        <div className="mt-6">
+          <Image
+            src={bagremTrailPic}
+            alt={t("route.image_alt")}
+            width={600}
+            height={1000}
+            className="rounded-lg shadow-md"
+          />
         </div>
       </section>
 

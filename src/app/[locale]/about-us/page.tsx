@@ -4,19 +4,20 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import rostushepic from "../../../assets/images/rostushe-od-planina.jpg";
 import associationpic from "../../../assets/images/logo-detailed.jpg";
+import teamPic from "../../../assets/images/everesting-team-photo.jpg";
 
 export default function Page() {
   const t = useTranslations("about-us");
 
   const teamMembers = [
     {
-      name: t("team.hariz"),
+      name: t("team.haris"),
       achievements: [
-        "Искуство повеќе од 10 години активно планинарење, 5 години учесник на трки во нашата држава и на меѓународни трки",
-        "Ohrid Ultra Trail – 2021 y – 20 km",
+        t("team.haris_achievment1"),
+        "Ohrid Ultra Trail – 2021  – 20 km",
         "Ohrid Ultra Trail – 2022 – 20 km",
         "Pelister Unique Trail Marathon – 06.2022",
-        "Еверестинг Ростуше – 91,5 км Uphill / Downhill (прв во нашата држава кој што има направено Еверестинг, втор во Балканот, 613 во свет)",
+        `Everesting Rostushe – 91,5 км Uphill / Downhill (${t("team.haris_achievment2")}`,
         "High Scardus Ultra Trail – 54 km – 09.2022",
         "Pelister Ultra Trail – 47 km – 09.2022",
         "Rocky Trails – Nis – Serbia – 11.2022",
@@ -115,14 +116,20 @@ export default function Page() {
         "Ростушко – Корабска трансверзала – 51,5 км – 10.09.2023",
       ],
     },
+    {
+      name: t("team.mirnes"),
+      achievements: [
+        "Pelister Ultra Trail – 20 км – 09.2022",
+      ],
+    },
   ];
 
   return (
     <div className="px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
 
         {/* Section: За Росуше */}
-        <section className="flex flex-col md:flex-col lg:flex-row items-start gap-8 mb-16 mt-16">
+        <section className="flex flex-col md:flex-col lg:flex-row items-start gap-8 mb-20 mt-20">
           <div className="w-full lg:w-1/2">
             <div className="w-full h-auto mb-4">
               <Image
@@ -130,14 +137,14 @@ export default function Page() {
                 alt={t("rostushe_image")}
                 width={600}
                 height={400}
-                className="w-full h-auto rounded-lg shadow-lg object-cover"
+                className="w-full h-auto rounded-2xl shadow-2xl object-cover"
               />
             </div>
           </div>
           <div className="w-full lg:w-1/2">
-            <h2 className="text-3xl font-semibold text-green-700 mb-4">{t("rostushe")}</h2>
-            <p className="text-gray-700 leading-relaxed mb-4">{t("rostushe_description")}</p>
-            <ul className="list-disc list-inside text-gray-700 space-y-1">
+            <h2 className="text-4xl font-bold text-green-700 mb-6">{t("rostushe")}</h2>
+            <p className="text-gray-700 leading-relaxed mb-6">{t("rostushe_description")}</p>
+            <ul className="list-disc list-inside text-gray-700 space-y-2">
               <li>{t("landmark_1")}</li>
               <li>{t("landmark_2")}</li>
               <li>{t("landmark_3")}</li>
@@ -147,48 +154,62 @@ export default function Page() {
         </section>
 
         {/* Section: За здружението */}
-        <section className="flex flex-col lg:flex-row-reverse items-start gap-8 mb-16">
+        <section className="flex flex-col lg:flex-row-reverse items-start gap-8 mb-20">
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
-            <div className="w-full max-w-[300px] md:max-w-[400px] lg:max-w-[450px]">
+            <div className="w-full max-w-[400px]">
               <Image
                 src={associationpic}
                 alt={t("association_image")}
                 width={450}
                 height={300}
-                className="w-full h-auto object-contain rounded-lg shadow-lg"
+                className="w-full h-auto object-contain rounded-2xl shadow-2xl"
               />
             </div>
           </div>
           <div className="w-full lg:w-1/2">
-            <h2 className="text-3xl font-semibold text-green-700 mb-4">{t("association")}</h2>
+            <h2 className="text-4xl font-bold text-green-700 mb-6">{t("association")}</h2>
             <p className="text-gray-700 leading-relaxed">{t("association_description")}</p>
           </div>
         </section>
 
         {/* Section: Team Rostushe */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-semibold text-green-700 mb-8">
-            Team Rostushe
+        <section className="mb-24">
+          <h2 className="text-4xl font-bold text-green-700 mb-10 text-center">
+            {t("team_title")}
           </h2>
-          {teamMembers.map((member, index) => (
-            <div
-              key={index}
-              className="border-b border-gray-300 pb-6 mb-6 last:border-none last:pb-0 last:mb-0"
-            >
-              <h3 className="text-2xl font-semibold text-gray-800 mb-4">
-                {member.name}
-              </h3>
-              <ul className="list-disc list-inside text-gray-700 space-y-2">
-                {member.achievements.map((achievement, i) => (
-                  <li key={i}>{achievement}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </section>
 
+          {/* Team Image */}
+          <div className="flex justify-center mb-12">
+            <Image
+              src={teamPic}
+              alt="Team Rostushe"
+              width={900}
+              height={600}
+              className="rounded-2xl shadow-2xl object-cover w-full h-[400px] max-w-4xl"
+            />
+          </div>
+
+          {/* Team Members Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+            {teamMembers.map((member, index) => (
+              <div
+                key={index}
+                className={`${index % 2 === 0 ? "bg-green-100" : "bg-white"
+                  } rounded-2xl shadow-md p-6 flex flex-col`}
+              >
+                <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+                  {member.name}
+                </h3>
+                <ul className="list-disc list-inside text-gray-600 space-y-2 text-sm">
+                  {member.achievements.map((achievement, i) => (
+                    <li key={i}>{achievement}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
       </div>
     </div>
-
   );
 }
