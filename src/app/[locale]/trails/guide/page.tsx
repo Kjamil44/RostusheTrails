@@ -18,6 +18,7 @@ import "yet-another-react-lightbox/styles.css";
 
 export default function Page() {
   const t = useTranslations("guide");
+  
   const [open, setOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
