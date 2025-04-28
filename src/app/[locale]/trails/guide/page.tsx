@@ -10,7 +10,6 @@ import trailPic4 from "../../../../assets/images/bagrem-trail-post.png";
 import trailPic5 from "../../../../assets/images/krcin-trail-post.jpg";
 import trailPic6 from "../../../../assets/images/planina1.jpg";
 import trailPic7 from "../../../../assets/images/planina2.jpg";
-import trailPic8 from "../../../../assets/images/duf.jpg";
 import { FaFileDownload } from "react-icons/fa";
 import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
@@ -18,7 +17,7 @@ import "yet-another-react-lightbox/styles.css";
 
 export default function Page() {
   const t = useTranslations("guide");
-  
+
   const [open, setOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -29,8 +28,7 @@ export default function Page() {
     { src: trailPic4, alt: "Trail post" },
     { src: trailPic5, alt: "Another trail post" },
     { src: trailPic6, alt: "Another trail post" },
-    { src: trailPic7, alt: "Another trail post" },
-    { src: trailPic8, alt: "Another trail post" },
+    { src: trailPic7, alt: "Another trail post" }
   ];
 
   return (
