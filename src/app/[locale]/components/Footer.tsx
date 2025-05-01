@@ -43,11 +43,11 @@ export default function Footer({
                                 {t("24km")}
                             </Link>
                         </li>
-                        <li>
+                        {/* <li>
                             <Link href={`/${locale}/trails/registered-runners`} className="hover:text-green-500">
                                 {t("registered-runners")}
                             </Link>
-                        </li>
+                        </li> */}
                         <li>
                             <Link href={`/${locale}/trails/guide`} className="hover:text-green-500">
                                 {t("guide")}
@@ -66,7 +66,7 @@ export default function Footer({
                     <h3 className="text-lg font-semibold mb-3">{t("contact")}</h3>
                     <p>📍 Rostuše, Macedonia</p>
                     <p>📧 contact@rostushetrails.com</p>
-                    <p>📞 +389 70 123 456</p>
+                    <p>📞 +389 78 394 477</p>
                 </div>
 
                 {/* Social & Language Switch */}

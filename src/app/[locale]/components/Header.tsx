@@ -81,7 +81,7 @@ export default function Header({
     { label: t('10km'), href: 'trails/ten-km' },
     { label: t('24km'), href: 'trails/twentyfour-km' },
     { label: t('guide'), href: 'trails/guide' },
-    { label: t('registered-runners'), href: 'trails/registered-runners' },
+    // { label: t('registered-runners'), href: 'trails/registered-runners' },
   ];
 
   return (

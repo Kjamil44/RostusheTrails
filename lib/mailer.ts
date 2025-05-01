@@ -81,8 +81,8 @@ export const sendContactEmail = async ({
   message: string;
 }) => {
   await transporter.sendMail({
-    from: `"Rostushe Trails" <${process.env.GMAIL_USER}>`,
-    to: process.env.GMAIL_USER || "info@rostushetrails.com",
+    from: `"Rostushe Trails"`,
+    to: "contact@rostushetrails.com",
     subject: `RostusheTrails: New Contact Form Submission from ${name}`,
     html: `
       <p><strong>Name:</strong> ${name}</p>

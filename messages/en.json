@@ -105,103 +105,109 @@
         "navigation": "Navigation"
     },
     "ten-km": {
-        "title": "Apply for 10km Race",
-        "rules": {
-            "title": "Rules and Regulations",
-            "description": "Please read the following rules carefully before applying.",
-            "point1": "Participants must be at least 15 years old.",
-            "point2": "The race will take place on July 26, 2025.",
-            "point3": "Participants must follow the marked trails."
+        "overview": {
+            "title": "Bagrem Trail 10K / 520 D+",
+            "description": "Beginners and runners who enjoy dynamic and vivid sections will love our shortest trail — Bagrem Trail 10K. Starting from Rostushe village, it follows the Radika River, passes through authentic rural landscapes to Janche (checkpoint), then loops back via Adzievci to the finish in Rostushe."
         },
-        "registration": {
-            "title": "Registration Process",
-            "description": "Follow these steps to register for the 10km race:",
-            "step1": "Fill out the registration form.",
-            "step2": "Pay the registration fee.",
-            "step3": "Receive your race number and starter pack."
+        "race_info": {
+            "start": "Start: July 26, 2025, 09:30, Rostushe",
+            "distance": "Distance: 10 km",
+            "elevation": "Elevation gain/loss: 520 m",
+            "time_limit": "Time limit: 4 hours",
+            "aid_station": "Aid station: 1 (Janche – 5 km)",
+            "max_participants": "Max participants: 200"
         },
-        "equipment": {
-            "title": "Mandatory Equipment",
-            "item1": "Trail running shoes.",
-            "item2": "Water bottle or hydration pack.",
-            "item3": "Emergency blanket."
+        "pricing": {
+            "title": "Pricing",
+            "regular": "Regular registration: 800 MKD until July 21, 2025"
+        },
+        "starter_pack": {
+            "title": "Starter Pack",
+            "items": [
+                "Bib with timing chip",
+                "Dry-fit t-shirt",
+                "Finisher medal",
+                "Aid station on the trail",
+                "Awards for top male and female finishers"
+            ]
+        },
+        "audience": {
+            "title": "Who is it for?",
+            "description": "Bagrem Trail is ideal for recreational runners, families, and friends of participants in longer races who also want a taste of the mountain running experience."
         },
         "route": {
-            "title": "Route and GPX File",
-            "description": "Download the GPX file and view the route map below.",
-            "download": "Download GPX File",
-            "image_alt": "Route map for the 10km race"
+            "title": "Route & GPX File",
+            "description": "Download the GPX file and preview the route to prepare for your trail run.",
+            "download": "Download GPX",
+            "image_alt": "Bagrem Trail Route Image"
         },
-        "form": {
-            "title": "Registration Form",
-            "name": "Full Name",
-            "name_placeholder": "Enter your full name",
-            "email": "Email",
-            "email_placeholder": "Enter your email address",
-            "age": "Age",
-            "age_placeholder": "Enter your age",
-            "country": "Select your Country",
-            "country_placeholder": "Choose your country",
-            "submit": "Register",
-            "success_message": "Registration successful! Follow the instructions sent to your email."
-        }
+        "register_now": "Register Now"
     },
     "twentyfour-km": {
-        "title": "Apply for 24km Race",
-        "rules": {
-            "title": "Rules and Regulations",
-            "description": "Please read the following rules carefully before applying.",
-            "point1": "Participants must be at least 18 years old.",
-            "point2": "The race will take place on July 26, 2025.",
-            "point3": "Participants must follow the marked trails."
+        "overview": {
+            "title": "Krchin Trail 24K / 1600 D+",
+            "description": "One peak. One mission. No excuses. Krchin Trail 24K is for true mountain lovers seeking serious challenges. Starting from Rostushe in the Mavrovo National Park, it climbs through alpine forests and rocky terrain toward the striking Krchin ridgeline."
         },
-        "registration": {
-            "title": "Registration Process",
-            "description": "Follow these steps to register for the 24km race:",
-            "step1": "Fill out the registration form.",
-            "step2": "Pay the registration fee.",
-            "step3": "Receive your race number and starter pack."
+        "race_info": {
+            "start": "Start: July 26, 2025, 07:00, Rostushe",
+            "distance": "Distance: 24 km",
+            "elevation": "Elevation: +1600m / -1600m",
+            "time_limit": "Time limit: 8 hours",
+            "aid_stations": "Aid stations: 3 (Kutel, Crkviche, Bitushka Karaule)",
+            "max_participants": "Max participants: 150 runners"
         },
-        "equipment": {
-            "title": "Mandatory Equipment",
-            "item1": "Trail running shoes.",
-            "item2": "Water bottle or hydration pack.",
-            "item3": "Emergency blanket."
+        "pricing": {
+            "title": "Pricing",
+            "regular": "Regular registration: 1400 MKD (until July 21, 2025)"
+        },
+        "starter_pack": {
+            "title": "Starter Pack",
+            "items": [
+                "Bib with timing chip",
+                "Dry-fit t-shirt",
+                "Finisher medal",
+                "Access to aid stations",
+                "Awards for top male and female runners"
+            ]
+        },
+        "audience": {
+            "title": "Why choose Krchin Trail?",
+            "reasons": [
+                "Climb a 2341 meter peak",
+                "Run along some of the highest alpine ridgelines in the region",
+                "Pass by a hidden glacial lake — Lokuv",
+                "Challenging technical terrain — true mountain running",
+                "Experience authentic nature in Mavrovo National Park"
+            ]
         },
         "route": {
-            "title": "Route and GPX File",
-            "description": "Download the GPX file and view the route map below.",
-            "download": "Download GPX File",
-            "image_alt": "Route map for the 24km race"
+            "title": "Route & GPX",
+            "description": "Download the official route file and preview the landscape.",
+            "download": "Download GPX",
+            "image_alt": "Krchin Trail route"
         },
-        "form": {
-            "title": "Registration Form",
-            "name": "Full Name",
-            "name_placeholder": "Enter your full name",
-            "email": "Email",
-            "email_placeholder": "Enter your email address",
-            "age": "Age",
-            "age_placeholder": "Enter your age",
-            "country": "Select your Country",
-            "country_placeholder": "Choose your country",
-            "submit": "Register",
-            "success_message": "Registration successful! Follow the instructions sent to your email."
-        }
+        "register_now": "Register Now"
     },
     "guide": {
-        "title": "Guide for Rostushe Trails",
-        "introduction": {
-            "title": "Introduction",
-            "description": "Explore the trails and prepare for an unforgettable experience."
+        "overview": {
+            "title": "Trail Guide",
+            "description": "Explore the key features of both Krchin Trail 24K and Bagrem Trail 10K. Whether you seek a technical alpine challenge or a scenic beginner route, we have you covered."
+        },
+        "krchin": {
+            "title": "Krchin Trail 24K",
+            "description": "A challenging race for true mountain lovers. Starting in Rostushe, climbing through alpine forests to the rocky ridges and peak Golem Krchin (2341m), this route offers technical terrain, fast descents, and a view of Lokuv glacier lake."
+        },
+        "bagrem": {
+            "title": "Bagrem Trail 10K",
+            "description": "Ideal for beginners and recreational runners. It follows the Radika River, passes through Janche and Adjievci, and returns to Rostushe, offering stunning views and cultural immersion."
         },
         "gpx": {
-            "title": "GPX Files",
-            "twentyfour_km": "Download GPX for 24km Race",
-            "ten_km": "Download GPX for 10km Race"
+            "title": "Download GPX Files",
+            "twentyfour_km": "Download 24km Route (Krchin)",
+            "ten_km": "Download 10km Route (Bagrem)"
         },
         "pictures": {
-            "title": "Trail Pictures",
-            "placeholder": "Picture Placeholder"
+            "title": "Trail Gallery"
         }
     },
     "registered-runners": {

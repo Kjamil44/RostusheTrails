@@ -24,8 +24,31 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://rostushetrails.com"), // Base URL for resolving relative paths
   title: "Rostushe Trails",
-  description: "Discover the beauty of nature and the excitement of our trails.",
+  description: "Experience mountain trail running in the heart of Mavrovo National Park.",
+  openGraph: {
+    title: "Rostushe Trails",
+    description: "Two stunning races. One unforgettable experience.",
+    url: "https://rostushetrails.com",
+    siteName: "Rostushe Trails",
+    images: [
+      {
+        url: "/trail-run-logo.png", // Relative path resolved using metadataBase
+        width: 1200,
+        height: 630,
+        alt: "Rostushe Trails – Krchin and Bagrem Races"
+      }
+    ],
+    locale: "en_US",
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rostushe Trails",
+    description: "Explore Krchin 24K and Bagrem 10K mountain races.",
+    images: ["/trail-run-logo.png"] // Relative path resolved using metadataBase
+  }
 };
 
 export default async function RootLayout({

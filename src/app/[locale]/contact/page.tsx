@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 
 export default function Page() {
   const t = useTranslations("contact-us");
+  const currentLocale = useLocale();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -14,8 +15,6 @@ export default function Page() {
   });
 
   const [loading, setLoading] = useState(false);
-
-  const currentLocale = useLocale();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,8 +25,8 @@ export default function Page() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          'x-locale': currentLocale,
-          'x-api-key': process.env.NEXT_PUBLIC_API_KEY ?? ""
+          "x-locale": currentLocale,
+          "x-api-key": process.env.NEXT_PUBLIC_API_KEY ?? ""
         },
         body: JSON.stringify(formData),
       });
@@ -48,29 +47,25 @@ export default function Page() {
 
   return (
     <div className="min-h-screen p-6 flex flex-col items-center">
-      <h1 className="text-4xl font-bold text-green-700 mb-8">{t("title")}</h1>
+      <h1 className="text-5xl font-extrabold text-green-800 mb-10 text-center">
+        {t("title")}
+      </h1>
 
-      {/* Contact Information */}
-      <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-md mb-8">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">{t("get_in_touch")}</h2>
+      <section className="bg-white shadow-lg rounded-xl p-8 w-full max-w-3xl mb-10">
+        <h2 className="text-2xl font-semibold text-green-700 mb-4">{t("get_in_touch")}</h2>
         <p className="text-gray-700 mb-2">
-          {t("phone")}:{" "}
-          <a href="tel:+38970123456" className="text-blue-500 hover:underline">
-            +389 70 123 456
-          </a>
+          📞 <strong>{t("phone")}:</strong>{" "}
+          <a href="tel:+38970123456" className="text-blue-600 hover:underline">+389 78 394 477</a>
         </p>
         <p className="text-gray-700">
-          {t("email")}:{" "}
-          <a href="mailto:contact@rostushetrails.com" className="text-blue-500 hover:underline">
-            contact@rostushetrails.com
-          </a>
+          📧 <strong>{t("email")}:</strong>{" "}
+          <a href="mailto:contact@rostushetrails.com" className="text-blue-600 hover:underline">contact@rostushetrails.com</a>
         </p>
-      </div>
+      </section>
 
-      {/* Contact Form */}
-      <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-md">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">{t("send_message")}</h2>
-        <form className="space-y-4" onSubmit={handleSubmit}>
+      <section className="bg-white shadow-lg rounded-xl p-8 w-full max-w-3xl mb-20">
+        <h2 className="text-2xl font-semibold text-green-700 mb-4">{t("send_message")}</h2>
+        <form className="space-y-6" onSubmit={handleSubmit}>
           <div>
             <label htmlFor="name" className="block text-gray-700 font-medium mb-1">
               {t("form.name")}
@@ -78,10 +73,9 @@ export default function Page() {
             <input
               type="text"
               id="name"
-              name="name"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
               placeholder={t("form.name_placeholder")}
               required
             />
@@ -93,10 +87,9 @@ export default function Page() {
             <input
               type="email"
               id="email"
-              name="email"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
               placeholder={t("form.email_placeholder")}
               required
             />
@@ -107,24 +100,23 @@ export default function Page() {
             </label>
             <textarea
               id="message"
-              name="message"
-              rows={4}
+              rows={5}
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
               placeholder={t("form.message_placeholder")}
               required
-            ></textarea>
+            />
           </div>
           <button
             type="submit"
-            className="w-full bg-green-700 text-white font-medium py-2 rounded-md hover:bg-green-800 transition"
+            className="w-full bg-green-700 hover:bg-green-800 text-white text-lg font-bold py-3 px-6 rounded-xl transition duration-300 shadow-md"
             disabled={loading}
           >
             {loading ? t("form.sending") : t("form.submit")}
           </button>
         </form>
-      </div>
+      </section>
     </div>
   );
 }
