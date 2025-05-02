@@ -7,7 +7,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import countries from "i18n-iso-countries";
 import bagremTrailPic from '../../../../assets/images/bagrem-trail-post.png';
-import { FaFileDownload, FaMountain, FaClock, FaUsers, FaMapMarkedAlt } from 'react-icons/fa';
+import { FaFileDownload, FaMountain, FaClock, FaUsers, FaMapMarkedAlt, FaFirstAid } from 'react-icons/fa';
 
 export default function Page() {
   const t = useTranslations("ten-km");
@@ -73,13 +73,13 @@ export default function Page() {
       <section className="bg-white shadow-lg rounded-xl p-8 w-full max-w-4xl mb-10">
         <p className="text-gray-700 text-lg mb-6">{t("overview.description")}</p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-800">
-          <div className="flex items-center gap-2"><FaClock className="text-green-600" /> {t("race_info.start")}</div>
-          <div className="flex items-center gap-2"><FaMapMarkedAlt className="text-green-600" /> {t("race_info.distance")}</div>
-          <div className="flex items-center gap-2"><FaMountain className="text-green-600" /> {t("race_info.elevation")}</div>
-          <div className="flex items-center gap-2"><FaClock className="text-green-600" /> {t("race_info.time_limit")}</div>
-          <div className="flex items-center gap-2"><FaUsers className="text-green-600" /> {t("race_info.max_participants")}</div>
-          <div className="flex items-center gap-2"><FaFileDownload className="text-green-600" /> {t("race_info.aid_station")}</div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-800">
+          <div className="flex items-center gap-2"><FaClock className="text-green-600" size={25} /> {t("race_info.start")}</div>
+          <div className="flex items-center gap-2"><FaMapMarkedAlt className="text-green-600" size={25} /> {t("race_info.distance")}</div>
+          <div className="flex items-center gap-2"><FaMountain className="text-green-600" size={25} /> {t("race_info.elevation")}</div>
+          <div className="flex items-center gap-2"><FaClock className="text-green-600" size={25} /> {t("race_info.time_limit")}</div>
+          <div className="flex items-center gap-2"><FaUsers className="text-green-600" size={25} /> {t("race_info.max_participants")}</div>
+          <div className="flex items-center gap-2"><FaFirstAid className="text-green-600" size={25} /> {t("race_info.aid_station")}</div>
         </div>
       </section>
 

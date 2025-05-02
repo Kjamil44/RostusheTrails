@@ -7,7 +7,7 @@ import { JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal, useSt
 import toast from "react-hot-toast";
 import countries from "i18n-iso-countries";
 import krchinTrailPic from '../../../../assets/images/krcin-trail-post.jpg';
-import { FaFileDownload, FaMountain, FaClock, FaUsers, FaMapMarkedAlt } from 'react-icons/fa';
+import { FaFileDownload, FaMountain, FaClock, FaUsers, FaMapMarkedAlt, FaFirstAid } from 'react-icons/fa';
 
 export default function Page() {
   const t = useTranslations("twentyfour-km");
@@ -75,12 +75,12 @@ export default function Page() {
         <p className="text-gray-700 text-lg mb-6">{t("overview.description")}</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-800">
-          <div className="flex items-center gap-2"><FaClock className="text-green-600" /> {t("race_info.start")}</div>
-          <div className="flex items-center gap-2"><FaMapMarkedAlt className="text-green-600" /> {t("race_info.distance")}</div>
-          <div className="flex items-center gap-2"><FaMountain className="text-green-600" /> {t("race_info.elevation")}</div>
-          <div className="flex items-center gap-2"><FaClock className="text-green-600" /> {t("race_info.time_limit")}</div>
-          <div className="flex items-center gap-2"><FaUsers className="text-green-600" /> {t("race_info.max_participants")}</div>
-          <div className="flex items-center gap-2"><FaFileDownload className="text-green-600" /> {t("race_info.aid_stations")}</div>
+          <div className="flex items-center gap-2"><FaClock className="text-green-600" size={25} /> {t("race_info.start")}</div>
+          <div className="flex items-center gap-2"><FaMapMarkedAlt className="text-green-600" size={25} /> {t("race_info.distance")}</div>
+          <div className="flex items-center gap-2"><FaMountain className="text-green-600" size={25} /> {t("race_info.elevation")}</div>
+          <div className="flex items-center gap-2"><FaClock className="text-green-600" size={25} /> {t("race_info.time_limit")}</div>
+          <div className="flex items-center gap-2"><FaUsers className="text-green-600" size={25} /> {t("race_info.max_participants")}</div>
+          <div className="flex items-center gap-2"><FaFirstAid className="text-green-600" size={25} /> {t("race_info.aid_stations")}</div>
         </div>
       </section>
 
