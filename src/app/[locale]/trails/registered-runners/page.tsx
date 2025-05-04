@@ -81,49 +81,60 @@ export default function Page() {
   ];
 
   return (
-    <div className="min-h-screen p-6 flex flex-col items-center">
-      <h1 className="text-4xl font-bold text-green-700 mb-8">{t("title")}</h1>
-
-      <div className="w-full max-w-6xl bg-white shadow-md rounded-lg p-6">
-        <DataGrid
-          rows={runners}
-          columns={columns}
-          pageSizeOptions={[5, 10, 20]}
-          initialState={{
-            pagination: { paginationModel: { pageSize: 10, page: 0 } },
-          }}
-          disableColumnMenu
-          autoHeight
-          disableRowSelectionOnClick
-          slots={{ toolbar: GridToolbar }}
-          sx={{
-            fontSize: "1rem",
-            "& .MuiDataGrid-root": {
-              border: "none",
-            },
-            "& .MuiDataGrid-cell": {
-              outline: "none",
-              padding: "16px",
-            },
-            "& .MuiDataGrid-toolbarContainer": {
-              justifyContent: "flex-end",
-              gap: "1rem",
-              paddingBottom: "1rem",
-            },
-            "& .MuiButton-root": {
-              backgroundColor: "#065f46", // Dark green
-              color: "white",
-              textTransform: "none",
-              "&:hover": {
-                backgroundColor: "#047857", // Slightly lighter green on hover
-              },
-            },
-            "& .MuiDataGrid-columnHeader": {
-              backgroundColor: "#e6f4ea", // Light green background for headers
-            },
-          }}
-        />
+    <div className="min-h-screen flex items-center justify-center font-sans p-6">
+      <div className="bg-white shadow-lg rounded-xl p-8 text-center max-w-xl">
+        <h1 className="text-3xl font-bold text-red-600 mb-4">
+          This page is temporarily unavailable.
+        </h1>
+        <p className="text-gray-700 font-medium">
+          The registered runners list is currently disabled. Please check back later.
+        </p>
       </div>
     </div>
+    // ❌ Temporarily disabled — return 403 for all requests
+    // <div className="min-h-screen p-6 flex flex-col items-center">
+    //   <h1 className="text-4xl font-bold text-green-700 mb-8">{t("title")}</h1>
+
+    //   <div className="w-full max-w-6xl bg-white shadow-md rounded-lg p-6">
+    //     <DataGrid
+    //       rows={runners}
+    //       columns={columns}
+    //       pageSizeOptions={[5, 10, 20]}
+    //       initialState={{
+    //         pagination: { paginationModel: { pageSize: 10, page: 0 } },
+    //       }}
+    //       disableColumnMenu
+    //       autoHeight
+    //       disableRowSelectionOnClick
+    //       slots={{ toolbar: GridToolbar }}
+    //       sx={{
+    //         fontSize: "1rem",
+    //         "& .MuiDataGrid-root": {
+    //           border: "none",
+    //         },
+    //         "& .MuiDataGrid-cell": {
+    //           outline: "none",
+    //           padding: "16px",
+    //         },
+    //         "& .MuiDataGrid-toolbarContainer": {
+    //           justifyContent: "flex-end",
+    //           gap: "1rem",
+    //           paddingBottom: "1rem",
+    //         },
+    //         "& .MuiButton-root": {
+    //           backgroundColor: "#065f46", // Dark green
+    //           color: "white",
+    //           textTransform: "none",
+    //           "&:hover": {
+    //             backgroundColor: "#047857", // Slightly lighter green on hover
+    //           },
+    //         },
+    //         "& .MuiDataGrid-columnHeader": {
+    //           backgroundColor: "#e6f4ea", // Light green background for headers
+    //         },
+    //       }}
+    //     />
+    //   </div>
+    // </div>
   );
 }

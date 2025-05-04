@@ -6,7 +6,10 @@ import { prisma } from "../../../../lib/prisma";
 
 const API_KEY = process.env.API_KEY;
 
+// ❌ Temporarily disabled — return 403 for all requests
+
 export async function GET(req: NextRequest) {
+  return NextResponse.json({ error: "This endpoint is currently disabled." }, { status: 403 });
   if (!isValidApiKey(req)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
@@ -23,6 +26,7 @@ export async function GET(req: NextRequest) {
 }
 
 export async function POST(req: NextRequest) {
+  return NextResponse.json({ error: "This endpoint is currently disabled." }, { status: 403 });
   if (!isValidApiKey(req)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
