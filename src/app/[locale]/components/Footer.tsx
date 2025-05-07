@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { Locale, usePathname, useRouter } from "../../../../i18n/routing";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
+import Image from "next/image";
+import creatorLogo from "../../../assets/images/Logo-WZL.png";
 
 export default function Footer({
     locale,
@@ -95,6 +97,17 @@ export default function Footer({
 
             <div className="text-center mt-8 text-gray-400">
                 © {new Date().getFullYear()} Rostushe Trails. {t("rights_reserved")}
+            </div>
+            <div className="flex justify-center mt-4 mb-4">
+                <a href="https://www.linkedin.com/company/wzlio" target="_blank" rel="noopener noreferrer">
+                    <Image
+                        src={creatorLogo}
+                        alt="WZL"
+                        width={200}
+                        height={80}
+                        className="filter grayscale hover:grayscale-0 transition duration-300 ease-in-out"
+                    />
+                </a>
             </div>
         </footer>
     );
