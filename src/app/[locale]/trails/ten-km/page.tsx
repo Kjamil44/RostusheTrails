@@ -149,7 +149,7 @@ export default function Page() {
             <iframe
               src="https://tracedetrail.fr/en/iframe/6811"
               allowFullScreen
-              className="absolute inset-0 w-full h-full border-0"
+              className="absolute inset-0 w-full h-[890px] border-0"
               scrolling="no"
               title="Bagrem Trail Map"
             />

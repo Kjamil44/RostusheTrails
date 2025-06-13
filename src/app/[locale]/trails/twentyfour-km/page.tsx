@@ -151,7 +151,7 @@ export default function Page() {
             <iframe
               src="https://tracedetrail.fr/en/iframe/6812"
               allowFullScreen
-              className="absolute inset-0 w-full h-full border-0"
+              className="absolute inset-0 w-full h-[888px] border-0"
               scrolling="no"
               title="Krchin Trail Map"
             />
