@@ -107,7 +107,7 @@ export default function Page() {
           <h2 className="text-2xl font-semibold text-green-700 mb-4">{t("gpx.title")}</h2>
           <div className="flex flex-col gap-4">
             <a
-              href="/gpx/24km.gpx"
+              href="/gpx/krchin-trail-24km.gpx"
               download
               className="inline-flex items-center bg-green-700 text-white font-medium py-3 px-6 rounded-lg shadow hover:bg-green-800 transition-all duration-300"
             >
@@ -115,7 +115,7 @@ export default function Page() {
               {t("gpx.twentyfour_km")}
             </a>
             <a
-              href="/gpx/10km.gpx"
+              href="/gpx/bagrem-trail-10km.gpx"
               download
               className="inline-flex items-center bg-green-700 text-white font-medium py-3 px-6 rounded-lg shadow hover:bg-green-800 transition-all duration-300"
             >

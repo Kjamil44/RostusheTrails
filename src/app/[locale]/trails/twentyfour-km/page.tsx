@@ -139,20 +139,21 @@ export default function Page() {
           <p className="text-gray-800 font-medium mb-4">{t("route.description")}</p>
 
           <a
-            href="/gpx/24km.gpx"
+            href="/gpx/krchin-trail-24km.gpx"
             download
             className="inline-flex items-center bg-green-700 text-white font-medium py-3 px-6 rounded-lg shadow hover:bg-green-800 transition-all duration-300"
           >
             <FaFileDownload className="h-5 w-5 mr-2" /> {t("route.download")}
           </a>
 
-          <div className="mt-6">
-            <Image
-              src={krchinTrailPic}
-              alt={t("route.image_alt")}
-              width={600}
-              height={1000}
-              className="rounded-lg shadow-md"
+          {/* Embed Trace de Trail iframe below GPX link */}
+          <div className="mt-6 w-full rounded-lg overflow-hidden h-[800px] relative">
+            <iframe
+              src="https://tracedetrail.fr/en/iframe/6812"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full border-0"
+              scrolling="no"
+              title="Krchin Trail Map"
             />
           </div>
         </section>
