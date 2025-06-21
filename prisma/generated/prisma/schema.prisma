@@ -17,10 +17,10 @@ datasource db {
 
 model RegisteredRunner {
   id        Int      @id @default(autoincrement())
-  email     String   @unique
+  bibNumber Int
   fullName  String
-  age       Int
   trail     String
   country   String
+  club      String
   createdAt DateTime @default(now())
 }

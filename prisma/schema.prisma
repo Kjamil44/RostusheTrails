@@ -5,22 +5,22 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider        = "prisma-client-js"
-  output          = "./generated/prisma"
+  provider = "prisma-client-js"
+  output   = "./generated/prisma"
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("POSTGRES_PRISMA_URL")
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL")
   directUrl = env("POSTGRES_URL_NON_POOLING")
 }
 
 model RegisteredRunner {
   id        Int      @id @default(autoincrement())
-  email     String   @unique
+  bibNumber Int
   fullName  String
-  age       Int
   trail     String
   country   String
+  club      String
   createdAt DateTime @default(now())
 }

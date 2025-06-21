@@ -9,7 +9,7 @@ const API_KEY = process.env.API_KEY;
 // ❌ Temporarily disabled — return 403 for all requests
 
 export async function GET(req: NextRequest) {
-  return NextResponse.json({ error: "This endpoint is currently disabled." }, { status: 403 });
+  // return NextResponse.json({ error: "This endpoint is currently disabled." }, { status: 403 });
   if (!isValidApiKey(req)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
@@ -43,23 +43,14 @@ export async function POST(req: NextRequest) {
   try {
     const runners = await prisma.registeredRunner.findMany();
 
-    let isEmailUnique = checkUniqueEmail(runners, email);
-    if (!isEmailUnique) {
-      return NextResponse.json({ error: t("email_not_unique") }, { status: 400 });
-    }
-
-    let isAgeValid = checkRunnersAgeRestrictionByTrail(age, trail);
-    if (!isAgeValid) {
-      return NextResponse.json({ error: t("age_restriction") }, { status: 400 });
-    }
 
     const newRunner = await prisma.registeredRunner.create({
       data: {
-        email,
+        bibNumber: parseInt(age, 10),
         fullName,
-        age: parseInt(age, 10),
         trail,
         country,
+        club: "Test Club",
       },
     });
 
@@ -74,17 +65,4 @@ export async function POST(req: NextRequest) {
 function isValidApiKey(req: NextRequest): boolean {
   const apiKey = req.headers.get("x-api-key");
   return apiKey === API_KEY;
-}
-
-function checkUniqueEmail(runners: RegisteredRunner[], email: string) {
-  for (const runner of runners) {
-    if (runner.email === email) {
-      return false;
-    }
-  }
-  return true;
-}
-
-function checkRunnersAgeRestrictionByTrail(age: number, trail: string) {
-  return (trail === "10km" && age >= 15) || (trail === "24km" && age >= 18);
 }
