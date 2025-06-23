@@ -80,7 +80,7 @@ export default function Page() {
       />
 
       <div className="min-h-screen p-6 flex flex-col items-center font-sans">
-        <h1 className="text-5xl font-extrabold text-green-800 mb-10 text-center">
+        <h1 className="text-5xl font-extrabold text-green-700 mb-10 text-center">
           {t("title")}
         </h1>
 

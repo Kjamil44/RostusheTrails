@@ -883,41 +883,41 @@ export namespace Prisma {
 
   export type RegisteredRunnerAvgAggregateOutputType = {
     id: number | null
-    age: number | null
+    bibNumber: number | null
   }
 
   export type RegisteredRunnerSumAggregateOutputType = {
     id: number | null
-    age: number | null
+    bibNumber: number | null
   }
 
   export type RegisteredRunnerMinAggregateOutputType = {
     id: number | null
-    email: string | null
+    bibNumber: number | null
     fullName: string | null
-    age: number | null
     trail: string | null
     country: string | null
+    club: string | null
     createdAt: Date | null
   }
 
   export type RegisteredRunnerMaxAggregateOutputType = {
     id: number | null
-    email: string | null
+    bibNumber: number | null
     fullName: string | null
-    age: number | null
     trail: string | null
     country: string | null
+    club: string | null
     createdAt: Date | null
   }
 
   export type RegisteredRunnerCountAggregateOutputType = {
     id: number
-    email: number
+    bibNumber: number
     fullName: number
-    age: number
     trail: number
     country: number
+    club: number
     createdAt: number
     _all: number
   }
@@ -925,41 +925,41 @@ export namespace Prisma {
 
   export type RegisteredRunnerAvgAggregateInputType = {
     id?: true
-    age?: true
+    bibNumber?: true
   }
 
   export type RegisteredRunnerSumAggregateInputType = {
     id?: true
-    age?: true
+    bibNumber?: true
   }
 
   export type RegisteredRunnerMinAggregateInputType = {
     id?: true
-    email?: true
+    bibNumber?: true
     fullName?: true
-    age?: true
     trail?: true
     country?: true
+    club?: true
     createdAt?: true
   }
 
   export type RegisteredRunnerMaxAggregateInputType = {
     id?: true
-    email?: true
+    bibNumber?: true
     fullName?: true
-    age?: true
     trail?: true
     country?: true
+    club?: true
     createdAt?: true
   }
 
   export type RegisteredRunnerCountAggregateInputType = {
     id?: true
-    email?: true
+    bibNumber?: true
     fullName?: true
-    age?: true
     trail?: true
     country?: true
+    club?: true
     createdAt?: true
     _all?: true
   }
@@ -1052,11 +1052,11 @@ export namespace Prisma {
 
   export type RegisteredRunnerGroupByOutputType = {
     id: number
-    email: string
+    bibNumber: number
     fullName: string
-    age: number
     trail: string
     country: string
+    club: string
     createdAt: Date
     _count: RegisteredRunnerCountAggregateOutputType | null
     _avg: RegisteredRunnerAvgAggregateOutputType | null
@@ -1081,56 +1081,56 @@ export namespace Prisma {
 
   export type RegisteredRunnerSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    email?: boolean
+    bibNumber?: boolean
     fullName?: boolean
-    age?: boolean
     trail?: boolean
     country?: boolean
+    club?: boolean
     createdAt?: boolean
   }, ExtArgs["result"]["registeredRunner"]>
 
   export type RegisteredRunnerSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    email?: boolean
+    bibNumber?: boolean
     fullName?: boolean
-    age?: boolean
     trail?: boolean
     country?: boolean
+    club?: boolean
     createdAt?: boolean
   }, ExtArgs["result"]["registeredRunner"]>
 
   export type RegisteredRunnerSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    email?: boolean
+    bibNumber?: boolean
     fullName?: boolean
-    age?: boolean
     trail?: boolean
     country?: boolean
+    club?: boolean
     createdAt?: boolean
   }, ExtArgs["result"]["registeredRunner"]>
 
   export type RegisteredRunnerSelectScalar = {
     id?: boolean
-    email?: boolean
+    bibNumber?: boolean
     fullName?: boolean
-    age?: boolean
     trail?: boolean
     country?: boolean
+    club?: boolean
     createdAt?: boolean
   }
 
-  export type RegisteredRunnerOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "fullName" | "age" | "trail" | "country" | "createdAt", ExtArgs["result"]["registeredRunner"]>
+  export type RegisteredRunnerOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "bibNumber" | "fullName" | "trail" | "country" | "club" | "createdAt", ExtArgs["result"]["registeredRunner"]>
 
   export type $RegisteredRunnerPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "RegisteredRunner"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      email: string
+      bibNumber: number
       fullName: string
-      age: number
       trail: string
       country: string
+      club: string
       createdAt: Date
     }, ExtArgs["result"]["registeredRunner"]>
     composites: {}
@@ -1556,11 +1556,11 @@ export namespace Prisma {
    */ 
   interface RegisteredRunnerFieldRefs {
     readonly id: FieldRef<"RegisteredRunner", 'Int'>
-    readonly email: FieldRef<"RegisteredRunner", 'String'>
+    readonly bibNumber: FieldRef<"RegisteredRunner", 'Int'>
     readonly fullName: FieldRef<"RegisteredRunner", 'String'>
-    readonly age: FieldRef<"RegisteredRunner", 'Int'>
     readonly trail: FieldRef<"RegisteredRunner", 'String'>
     readonly country: FieldRef<"RegisteredRunner", 'String'>
+    readonly club: FieldRef<"RegisteredRunner", 'String'>
     readonly createdAt: FieldRef<"RegisteredRunner", 'DateTime'>
   }
     
@@ -1944,11 +1944,11 @@ export namespace Prisma {
 
   export const RegisteredRunnerScalarFieldEnum: {
     id: 'id',
-    email: 'email',
+    bibNumber: 'bibNumber',
     fullName: 'fullName',
-    age: 'age',
     trail: 'trail',
     country: 'country',
+    club: 'club',
     createdAt: 'createdAt'
   };
 
@@ -2040,44 +2040,44 @@ export namespace Prisma {
     OR?: RegisteredRunnerWhereInput[]
     NOT?: RegisteredRunnerWhereInput | RegisteredRunnerWhereInput[]
     id?: IntFilter<"RegisteredRunner"> | number
-    email?: StringFilter<"RegisteredRunner"> | string
+    bibNumber?: IntFilter<"RegisteredRunner"> | number
     fullName?: StringFilter<"RegisteredRunner"> | string
-    age?: IntFilter<"RegisteredRunner"> | number
     trail?: StringFilter<"RegisteredRunner"> | string
     country?: StringFilter<"RegisteredRunner"> | string
+    club?: StringFilter<"RegisteredRunner"> | string
     createdAt?: DateTimeFilter<"RegisteredRunner"> | Date | string
   }
 
   export type RegisteredRunnerOrderByWithRelationInput = {
     id?: SortOrder
-    email?: SortOrder
+    bibNumber?: SortOrder
     fullName?: SortOrder
-    age?: SortOrder
     trail?: SortOrder
     country?: SortOrder
+    club?: SortOrder
     createdAt?: SortOrder
   }
 
   export type RegisteredRunnerWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    email?: string
     AND?: RegisteredRunnerWhereInput | RegisteredRunnerWhereInput[]
     OR?: RegisteredRunnerWhereInput[]
     NOT?: RegisteredRunnerWhereInput | RegisteredRunnerWhereInput[]
+    bibNumber?: IntFilter<"RegisteredRunner"> | number
     fullName?: StringFilter<"RegisteredRunner"> | string
-    age?: IntFilter<"RegisteredRunner"> | number
     trail?: StringFilter<"RegisteredRunner"> | string
     country?: StringFilter<"RegisteredRunner"> | string
+    club?: StringFilter<"RegisteredRunner"> | string
     createdAt?: DateTimeFilter<"RegisteredRunner"> | Date | string
-  }, "id" | "email">
+  }, "id">
 
   export type RegisteredRunnerOrderByWithAggregationInput = {
     id?: SortOrder
-    email?: SortOrder
+    bibNumber?: SortOrder
     fullName?: SortOrder
-    age?: SortOrder
     trail?: SortOrder
     country?: SortOrder
+    club?: SortOrder
     createdAt?: SortOrder
     _count?: RegisteredRunnerCountOrderByAggregateInput
     _avg?: RegisteredRunnerAvgOrderByAggregateInput
@@ -2091,78 +2091,78 @@ export namespace Prisma {
     OR?: RegisteredRunnerScalarWhereWithAggregatesInput[]
     NOT?: RegisteredRunnerScalarWhereWithAggregatesInput | RegisteredRunnerScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"RegisteredRunner"> | number
-    email?: StringWithAggregatesFilter<"RegisteredRunner"> | string
+    bibNumber?: IntWithAggregatesFilter<"RegisteredRunner"> | number
     fullName?: StringWithAggregatesFilter<"RegisteredRunner"> | string
-    age?: IntWithAggregatesFilter<"RegisteredRunner"> | number
     trail?: StringWithAggregatesFilter<"RegisteredRunner"> | string
     country?: StringWithAggregatesFilter<"RegisteredRunner"> | string
+    club?: StringWithAggregatesFilter<"RegisteredRunner"> | string
     createdAt?: DateTimeWithAggregatesFilter<"RegisteredRunner"> | Date | string
   }
 
   export type RegisteredRunnerCreateInput = {
-    email: string
+    bibNumber: number
     fullName: string
-    age: number
     trail: string
     country: string
+    club: string
     createdAt?: Date | string
   }
 
   export type RegisteredRunnerUncheckedCreateInput = {
     id?: number
-    email: string
+    bibNumber: number
     fullName: string
-    age: number
     trail: string
     country: string
+    club: string
     createdAt?: Date | string
   }
 
   export type RegisteredRunnerUpdateInput = {
-    email?: StringFieldUpdateOperationsInput | string
+    bibNumber?: IntFieldUpdateOperationsInput | number
     fullName?: StringFieldUpdateOperationsInput | string
-    age?: IntFieldUpdateOperationsInput | number
     trail?: StringFieldUpdateOperationsInput | string
     country?: StringFieldUpdateOperationsInput | string
+    club?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type RegisteredRunnerUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    email?: StringFieldUpdateOperationsInput | string
+    bibNumber?: IntFieldUpdateOperationsInput | number
     fullName?: StringFieldUpdateOperationsInput | string
-    age?: IntFieldUpdateOperationsInput | number
     trail?: StringFieldUpdateOperationsInput | string
     country?: StringFieldUpdateOperationsInput | string
+    club?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type RegisteredRunnerCreateManyInput = {
     id?: number
-    email: string
+    bibNumber: number
     fullName: string
-    age: number
     trail: string
     country: string
+    club: string
     createdAt?: Date | string
   }
 
   export type RegisteredRunnerUpdateManyMutationInput = {
-    email?: StringFieldUpdateOperationsInput | string
+    bibNumber?: IntFieldUpdateOperationsInput | number
     fullName?: StringFieldUpdateOperationsInput | string
-    age?: IntFieldUpdateOperationsInput | number
     trail?: StringFieldUpdateOperationsInput | string
     country?: StringFieldUpdateOperationsInput | string
+    club?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type RegisteredRunnerUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    email?: StringFieldUpdateOperationsInput | string
+    bibNumber?: IntFieldUpdateOperationsInput | number
     fullName?: StringFieldUpdateOperationsInput | string
-    age?: IntFieldUpdateOperationsInput | number
     trail?: StringFieldUpdateOperationsInput | string
     country?: StringFieldUpdateOperationsInput | string
+    club?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -2205,42 +2205,42 @@ export namespace Prisma {
 
   export type RegisteredRunnerCountOrderByAggregateInput = {
     id?: SortOrder
-    email?: SortOrder
+    bibNumber?: SortOrder
     fullName?: SortOrder
-    age?: SortOrder
     trail?: SortOrder
     country?: SortOrder
+    club?: SortOrder
     createdAt?: SortOrder
   }
 
   export type RegisteredRunnerAvgOrderByAggregateInput = {
     id?: SortOrder
-    age?: SortOrder
+    bibNumber?: SortOrder
   }
 
   export type RegisteredRunnerMaxOrderByAggregateInput = {
     id?: SortOrder
-    email?: SortOrder
+    bibNumber?: SortOrder
     fullName?: SortOrder
-    age?: SortOrder
     trail?: SortOrder
     country?: SortOrder
+    club?: SortOrder
     createdAt?: SortOrder
   }
 
   export type RegisteredRunnerMinOrderByAggregateInput = {
     id?: SortOrder
-    email?: SortOrder
+    bibNumber?: SortOrder
     fullName?: SortOrder
-    age?: SortOrder
     trail?: SortOrder
     country?: SortOrder
+    club?: SortOrder
     createdAt?: SortOrder
   }
 
   export type RegisteredRunnerSumOrderByAggregateInput = {
     id?: SortOrder
-    age?: SortOrder
+    bibNumber?: SortOrder
   }
 
   export type IntWithAggregatesFilter<$PrismaModel = never> = {
@@ -2291,16 +2291,16 @@ export namespace Prisma {
     _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
-  export type StringFieldUpdateOperationsInput = {
-    set?: string
-  }
-
   export type IntFieldUpdateOperationsInput = {
     set?: number
     increment?: number
     decrement?: number
     multiply?: number
     divide?: number
+  }
+
+  export type StringFieldUpdateOperationsInput = {
+    set?: string
   }
 
   export type DateTimeFieldUpdateOperationsInput = {

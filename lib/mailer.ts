@@ -36,9 +36,7 @@ export const sendRegistrationEmail = async ({
           <ul style="line-height: 1.6;">
             <li><strong>Full Name:</strong> ${runner.fullName}</li>
             <li><strong>Trail:</strong> ${runner.trail}</li>
-            <li><strong>Age:</strong> ${runner.age}</li>
             <li><strong>Country:</strong> ${runner.country}</li>
-            <li><strong>Email:</strong> ${runner.email}</li>
           </ul>
 
           <hr style="margin: 20px 0;">

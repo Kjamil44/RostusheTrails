@@ -51,30 +51,31 @@ export default function Page() {
               url: "https://rostushetrails.com/trail-run-logo.png",
               width: 1200,
               height: 630,
-              alt: "Rostushe Trails Accommodation"
-            }
+              alt: "Rostushe Trails Accommodation",
+            },
           ],
           siteName: "Rostushe Trails",
           type: "website",
-          locale: locale === "mk" ? "mk_MK" : "en_US"
+          locale: locale === "mk" ? "mk_MK" : "en_US",
         }}
         twitter={{
-          cardType: "summary_large_image"
+          cardType: "summary_large_image",
         }}
       />
 
-      <div className="min-h-screen p-6 font-sans">
-        <h1 className="text-4xl font-extrabold text-center text-green-700 mb-8">
+      <div className="min-h-screen p-6 font-sans flex flex-col items-center">
+        <h1 className="text-5xl font-extrabold text-green-700 text-center mb-8">
           {t("title")}
         </h1>
-        <p className="text-center text-gray-800 font-medium mb-12">
+        <p className="text-center text-gray-800 font-medium max-w-3xl mb-12">
           {t("description")}
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl">
           {accommodations.map((accommodation, index) => (
             <div
               key={index}
-              className="bg-white shadow-md rounded-lg overflow-hidden"
+              className="bg-white shadow-md rounded-xl overflow-hidden"
             >
               <img
                 src={accommodation.image}

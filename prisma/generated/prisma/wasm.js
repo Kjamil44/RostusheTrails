@@ -119,11 +119,11 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 
 exports.Prisma.RegisteredRunnerScalarFieldEnum = {
   id: 'id',
-  email: 'email',
+  bibNumber: 'bibNumber',
   fullName: 'fullName',
-  age: 'age',
   trail: 'trail',
   country: 'country',
+  club: 'club',
   createdAt: 'createdAt'
 };
 

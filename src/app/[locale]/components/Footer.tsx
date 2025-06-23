@@ -45,11 +45,11 @@ export default function Footer({
                                 {t("24km")}
                             </Link>
                         </li>
-                        {/* <li>
+                        <li>
                             <Link href={`/${locale}/trails/registered-runners`} className="hover:text-green-500">
                                 {t("registered-runners")}
                             </Link>
-                        </li> */}
+                        </li>
                         <li>
                             <Link href={`/${locale}/trails/guide`} className="hover:text-green-500">
                                 {t("guide")}
