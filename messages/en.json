@@ -214,10 +214,16 @@
         "title": "Registered Runners",
         "table": {
             "bibNumber": "BIB",
-            "name": "Name",
+            "fullName": "Name",
             "club": "Club",
-            "race": "Race",
+            "trail": "Race",
             "country": "Country"
+        },
+        "filter": {
+            "trail": "Filter by trail:",
+            "all": "All",
+            "24km": "24 km - Krchin Trail",
+            "10km": "10 km - Bagrem Trail"
         },
         "cta": {
             "title": "Want to be part of the list? Join us now!",

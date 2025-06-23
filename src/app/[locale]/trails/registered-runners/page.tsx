@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import toast from "react-hot-toast";
-import { DataGrid, GridColDef, GridToolbar } from "@mui/x-data-grid";
+import { GridColDef } from "@mui/x-data-grid";
 import countries from "i18n-iso-countries";
 import WorldFlag from "react-world-flags";
 import Link from "next/link";
@@ -16,10 +16,16 @@ interface Runner {
   country: string;
 }
 
+type SortKey = keyof Runner;
+type SortDirection = "asc" | "desc";
+
 export default function Page() {
   const t = useTranslations("registered-runners");
   const currentLocale = useLocale();
   const [runners, setRunners] = useState<Runner[]>([]);
+  const [trailFilter, setTrailFilter] = useState<string>("all");
+  const [sortKey, setSortKey] = useState<SortKey>("bibNumber");
+  const [sortDirection, setSortDirection] = useState<SortDirection>("asc");
 
   useEffect(() => {
     async function fetchAll() {
@@ -57,8 +63,7 @@ export default function Page() {
         }));
 
         const merged = [...formattedLocal, ...formattedRemote]
-          .filter((r) => r.bibNumber) // remove empty bibs
-          .sort((a, b) => a.bibNumber - b.bibNumber);
+          .filter((r) => r.bibNumber);
 
         setRunners(merged);
       } catch (err) {
@@ -69,37 +74,26 @@ export default function Page() {
     fetchAll();
   }, [currentLocale, t]);
 
-  const columns: GridColDef[] = [
-    {
-      field: "bibNumber",
-      headerName: t("table.bibNumber"),
-      width: 120,
-      sortable: true,
-    },
-    { field: "fullName", headerName: t("table.name"), width: 250 },
-    { field: "club", headerName: t("table.club"), width: 200 },
-    { field: "trail", headerName: t("table.race"), width: 150 },
-    {
-      field: "country",
-      headerName: t("table.country"),
-      width: 120,
-      flex: 1,
-      renderCell: (params) => {
-        const countryName = params.value as string;
-        const alpha2 = countries.alpha3ToAlpha2(countryName);
-        if (!alpha2) return countryName;
-        return (
-          <div className="flex items-center gap-2">
-            <WorldFlag
-              code={alpha2}
-              style={{ width: 24, height: 16, borderRadius: 2 }}
-            />
-            <span>{countryName}</span>
-          </div>
-        );
-      },
-    },
-  ];
+  const handleSort = (key: SortKey) => {
+    if (sortKey === key) {
+      setSortDirection(sortDirection === "asc" ? "desc" : "asc");
+    } else {
+      setSortKey(key);
+      setSortDirection("asc");
+    }
+  };
+
+  const filtered = trailFilter === "all"
+    ? runners
+    : runners.filter(r => r.trail === trailFilter);
+
+  const sorted = [...filtered].sort((a, b) => {
+    const aValue = a[sortKey];
+    const bValue = b[sortKey];
+    if (aValue < bValue) return sortDirection === "asc" ? -1 : 1;
+    if (aValue > bValue) return sortDirection === "asc" ? 1 : -1;
+    return 0;
+  });
 
   return (
     <div className="min-h-screen p-6 flex flex-col items-center font-sans">
@@ -107,40 +101,65 @@ export default function Page() {
         {t("title")}
       </h1>
 
-      <div className="w-full max-w-7xl bg-white shadow-md rounded-xl p-6 mb-12">
-        <DataGrid
-          rows={runners}
-          columns={columns}
-          getRowId={(row) => row.bibNumber}
-          initialState={{
-            sorting: {
-              sortModel: [{ field: "bibNumber", sort: "asc" }],
-            },
-            pagination: { paginationModel: { pageSize: 10, page: 0 } },
-          }}
-          pageSizeOptions={[5, 10, 20]}
-          disableColumnMenu
-          autoHeight
-          disableRowSelectionOnClick
-          slots={{ toolbar: GridToolbar }}
-          sx={{
-            fontSize: "1rem",
-            "& .MuiDataGrid-root": { border: "none" },
-            "& .MuiDataGrid-cell": { outline: "none", padding: "16px" },
-            "& .MuiDataGrid-toolbarContainer": {
-              justifyContent: "flex-end",
-              gap: "1rem",
-              paddingBottom: "1rem",
-            },
-            "& .MuiButton-root": {
-              backgroundColor: "#065f46",
-              color: "white",
-              textTransform: "none",
-              "&:hover": { backgroundColor: "#047857" },
-            },
-            "& .MuiDataGrid-columnHeader": { backgroundColor: "#e6f4ea" },
-          }}
-        />
+      {/* Filters */}
+      <div className="flex flex-col sm:flex-row justify-between w-full max-w-7xl mb-6 gap-4">
+        <div className="flex gap-4 items-center">
+          <label htmlFor="trailFilter" className="font-medium text-gray-700">
+            {t("filter.trail", { defaultValue: "Filter by trail:" })}
+          </label>
+          <select
+            id="trailFilter"
+            value={trailFilter}
+            onChange={(e) => setTrailFilter(e.target.value)}
+            className="border border-gray-300 rounded-md px-3 py-1 text-sm"
+          >
+            <option value="all">{t("filter.all", { defaultValue: "All" })}</option>
+            <option value="10km">{t("filter.10km")}</option>
+            <option value="24km">{t("filter.24km")}</option>
+          </select>
+        </div>
+      </div>
+
+      {/* Table */}
+      <div className="w-full max-w-7xl bg-white shadow-md rounded-xl p-6 mb-12 overflow-x-auto">
+        <table className="min-w-full divide-y divide-gray-200 font-sans">
+          <thead className="bg-green-100">
+            <tr>
+              {(["bibNumber", "fullName", "club", "trail", "country"] as SortKey[]).map((key) => (
+                <th
+                  key={key}
+                  onClick={() => handleSort(key)}
+                  className="px-4 py-3 text-left text-sm font-bold text-gray-700 uppercase cursor-pointer select-none"
+                >
+                  {t(`table.${key}`)} {sortKey === key ? (sortDirection === "asc" ? "▲" : "▼") : ""}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-gray-100 text-sm">
+            {sorted.map((runner) => {
+              const alpha2 = countries.alpha3ToAlpha2(runner.country);
+              return (
+                <tr key={runner.bibNumber}>
+                  <td className="px-4 py-3 font-semibold text-gray-800">{runner.bibNumber}</td>
+                  <td className="px-4 py-3 text-gray-700">{runner.fullName}</td>
+                  <td className="px-4 py-3 text-gray-700">{runner.club || "-"}</td>
+                  <td className="px-4 py-3 text-gray-700">{runner.trail}</td>
+                  <td className="px-4 py-3 text-gray-700 flex items-center gap-2">
+                    {alpha2 && (
+                      <img
+                        src={`https://flagcdn.com/w40/${alpha2.toLowerCase()}.png`}
+                        alt={runner.country}
+                        className="w-5 h-3 rounded-sm"
+                      />
+                    )}
+                    {runner.country}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
       </div>
 
       {/* CTA Section */}
