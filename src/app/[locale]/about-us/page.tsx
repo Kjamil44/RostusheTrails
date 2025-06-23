@@ -125,7 +125,6 @@ export default function Page() {
       ],
     },
   ];
-
   return (
     <>
       <NextSeo
@@ -154,14 +153,12 @@ export default function Page() {
           type: "website",
           locale: locale === "mk" ? "mk_MK" : "en_US"
         }}
-        twitter={{
-          cardType: "summary_large_image"
-        }}
+        twitter={{ cardType: "summary_large_image" }}
       />
 
       <div className="px-4 sm:px-6 lg:px-8 font-sans">
         <div className="max-w-7xl mx-auto">
-          {/* Section: Rostushe */}
+          {/* Rostushe Section */}
           <section className="flex flex-col md:flex-col lg:flex-row items-start gap-8 mb-20 mt-20">
             <div className="w-full lg:w-1/2">
               <Image
@@ -186,7 +183,7 @@ export default function Page() {
             </div>
           </section>
 
-          {/* Section: Association */}
+          {/* Association Section */}
           <section className="flex flex-col lg:flex-row-reverse items-start gap-8 mb-20">
             <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
               <Image
@@ -205,7 +202,7 @@ export default function Page() {
             </div>
           </section>
 
-          {/* Section: Team */}
+          {/* Team Section */}
           <section className="mb-24">
             <h2 className="text-4xl font-bold text-green-700 mb-10 text-center">
               {t("team_title")}

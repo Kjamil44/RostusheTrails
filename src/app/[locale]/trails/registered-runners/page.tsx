@@ -3,13 +3,10 @@
 import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import toast from "react-hot-toast";
-import {
-  DataGrid,
-  GridColDef,
-  GridToolbar,
-} from "@mui/x-data-grid";
+import { DataGrid, GridColDef, GridToolbar } from "@mui/x-data-grid";
 import countries from "i18n-iso-countries";
 import WorldFlag from "react-world-flags";
+import Link from "next/link";
 
 interface Runner {
   bibNumber: number;
@@ -27,7 +24,6 @@ export default function Page() {
   useEffect(() => {
     async function fetchAll() {
       try {
-        // Fetch from local DB
         const resLocal = await fetch("/api/runners", {
           method: "GET",
           headers: {
@@ -36,27 +32,14 @@ export default function Page() {
             "x-api-key": process.env.NEXT_PUBLIC_API_KEY ?? "",
           },
         });
-        let localData: any[] = [];
-        if (resLocal.ok) {
-          localData = await resLocal.json();
-        } else {
-          const error = await resLocal.json();
-          toast.error(error.error);
-        }
 
-        // Fetch from RunnerSpot API
         const resRemote = await fetch(
           "https://runnerspot.com/api/runner/getrunnersforevent?eventId=43"
         );
-        let remoteData: any[] = [];
-        if (resRemote.ok) {
-          remoteData = await resRemote.json();
-        } else {
-          const error = await resRemote.json();
-          toast.error(t("fetch_error"));
-        }
 
-        // Format local data
+        const localData = resLocal.ok ? await resLocal.json() : [];
+        const remoteData = resRemote.ok ? await resRemote.json() : [];
+
         const formattedLocal: Runner[] = localData.map((r: any) => ({
           bibNumber: r.bibNumber,
           fullName: r.fullName,
@@ -65,23 +48,18 @@ export default function Page() {
           country: r.country,
         }));
 
-        // Format remote data
-        const formattedRemote: Runner[] = remoteData.map((r: any) => {
-          const bib = parseInt(r.bib, 10) || 0;
-          const pkg = (r.package || "").toLowerCase();
-          return {
-            bibNumber: bib,
-            fullName: r.name.trim(),
-            club: r.club || "",
-            trail: pkg.includes("24") ? "24km" : "10km",
-            country: r.country,
-          };
-        });
+        const formattedRemote: Runner[] = remoteData.map((r: any) => ({
+          bibNumber: parseInt(r.bib, 10) || 0,
+          fullName: r.name.trim(),
+          club: r.club || "",
+          trail: r.package?.toLowerCase().includes("24") ? "24km" : "10km",
+          country: r.country,
+        }));
 
-        // Merge and sort by bibNumber
-        const merged = [...formattedLocal, ...formattedRemote].sort(
-          (a, b) => a.bibNumber - b.bibNumber
-        );
+        const merged = [...formattedLocal, ...formattedRemote]
+          .filter((r) => r.bibNumber) // remove empty bibs
+          .sort((a, b) => a.bibNumber - b.bibNumber);
+
         setRunners(merged);
       } catch (err) {
         console.error(err);
@@ -98,13 +76,13 @@ export default function Page() {
       width: 120,
       sortable: true,
     },
-    { field: "fullName", headerName: t("table.name"), width: 200 },
+    { field: "fullName", headerName: t("table.name"), width: 250 },
     { field: "club", headerName: t("table.club"), width: 200 },
     { field: "trail", headerName: t("table.race"), width: 150 },
     {
       field: "country",
       headerName: t("table.country"),
-      width: 200,
+      width: 120,
       flex: 1,
       renderCell: (params) => {
         const countryName = params.value as string;
@@ -125,8 +103,11 @@ export default function Page() {
 
   return (
     <div className="min-h-screen p-6 flex flex-col items-center font-sans">
-      <h1 className="text-4xl font-bold text-green-700 mb-8">{t("title")}</h1>
-      <div className="w-full max-w-6xl bg-white shadow-md rounded-lg p-6">
+      <h1 className="text-5xl font-extrabold text-green-700  mb-10 text-center">
+        {t("title")}
+      </h1>
+
+      <div className="w-full max-w-7xl bg-white shadow-md rounded-xl p-6 mb-12">
         <DataGrid
           rows={runners}
           columns={columns}
@@ -161,6 +142,29 @@ export default function Page() {
           }}
         />
       </div>
+
+      {/* CTA Section */}
+      <section className="w-full max-w-4xl bg-white shadow-lg rounded-xl p-8 text-center mt-10">
+        <h2 className="text-2xl font-bold text-green-700 mb-4">
+          {t("cta.title", {
+            defaultValue: "Want to be part of the list? Join us now!",
+          })}
+        </h2>
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <Link
+            href={`/${currentLocale}/trails/twentyfour-km`}
+            className="inline-block bg-green-700 hover:bg-green-800 text-white font-bold text-lg py-3 px-6 rounded-lg shadow-md transition-all"
+          >
+            {t("cta.krchin", { defaultValue: "Explore Krchin 24K" })}
+          </Link>
+          <Link
+            href={`/${currentLocale}/trails/ten-km`}
+            className="inline-block bg-green-700 hover:bg-green-800 text-white font-bold text-lg py-3 px-6 rounded-lg shadow-md transition-all"
+          >
+            {t("cta.bagrem", { defaultValue: "Explore Bagrem 10K" })}
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }

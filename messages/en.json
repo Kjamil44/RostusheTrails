@@ -213,11 +213,16 @@
     "registered-runners": {
         "title": "Registered Runners",
         "table": {
-            "number": "#",
+            "bibNumber": "BIB",
             "name": "Name",
-            "age": "Age",
+            "club": "Club",
             "race": "Race",
             "country": "Country"
+        },
+        "cta": {
+            "title": "Want to be part of the list? Join us now!",
+            "krchin": "Join Krchin 24K",
+            "bagrem": "Join Bagrem 10K"
         },
         "no_runners": "No runners registered yet."
     },
@@ -231,7 +236,9 @@
         "catch_error": "Something went wrong. Please try again later."
     },
     "sponsors": {
-        "title": "Our Sponsors",
+        "title": "Sponsors",
+        "coming_soon": "Our 2025 sponsors will be announced soon. Stay tuned!",
+        "contact_us": "Contact us for sponsorship",
         "sponsor_alt": "Sponsor"
     },
     "accommodation": {
