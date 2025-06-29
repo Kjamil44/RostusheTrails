@@ -16,6 +16,7 @@ export default function Page() {
 
   const [loading, setLoading] = useState(false);
   const [registered, setRegistered] = useState(false);
+  const [iframeLoaded, setIframeLoaded] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -146,12 +147,18 @@ export default function Page() {
 
           {/* Embed Trace de Trail iframe below GPX link */}
           <div className="mt-6 w-full rounded-lg overflow-hidden h-[800px] relative">
+            {!iframeLoaded && (
+              <div className="absolute inset-0 z-10 flex items-center justify-center bg-white">
+                <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-green-600" />
+              </div>
+            )}
             <iframe
               src="https://tracedetrail.fr/en/iframe/6811"
               allowFullScreen
               className="absolute inset-0 w-full h-[890px] border-0"
               scrolling="no"
               title="Bagrem Trail Map"
+              onLoad={() => setIframeLoaded(true)}
             />
           </div>
         </section>

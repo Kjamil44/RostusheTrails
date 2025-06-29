@@ -171,10 +171,10 @@ export default function Page() {
             </div>
             <div className="w-full lg:w-1/2">
               <h2 className="text-4xl font-bold text-green-700 mb-6">{t("rostushe")}</h2>
-              <p className="text-gray-800 leading-relaxed font-semibold mb-6">
+              <p className="text-gray-800 leading-relaxed font-sans mb-6">
                 {t("rostushe_description")}
               </p>
-              <ul className="list-disc list-inside text-gray-800 font-medium space-y-2">
+              <ul className="list-disc list-inside text-gray-800 font-sans space-y-2">
                 <li>{t("landmark_1")}</li>
                 <li>{t("landmark_2")}</li>
                 <li>{t("landmark_3")}</li>
@@ -196,7 +196,7 @@ export default function Page() {
             </div>
             <div className="w-full lg:w-1/2">
               <h2 className="text-4xl font-bold text-green-700 mb-6">{t("association")}</h2>
-              <p className="text-gray-800 leading-relaxed font-semibold">
+              <p className="text-gray-800 leading-relaxed font-sans">
                 {t("association_description")}
               </p>
             </div>

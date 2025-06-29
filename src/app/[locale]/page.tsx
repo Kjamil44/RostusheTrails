@@ -3,15 +3,15 @@ import Image from "next/image";
 import trailImage from "../../assets/images/planina.jpg";
 import rulesImage from "../../assets/images/uludag_haris2.jpg";
 import villageImage from "../../assets/images/rostushe-naslovna.jpeg";
+import Link from "next/link";
 
 export default async function Home() {
   const t = await getTranslations("home");
   const currentLocale = await getLocale();
 
   return (
-
     <main className="min-h-screen flex flex-col items-center font-sans">
-      {/* Welcome Section */}
+      {/* Hero Section */}
       <section className="relative flex flex-col items-center text-center gap-8 py-24 px-6 md:px-12 animate-fadeIn">
         <h1 className="text-5xl md:text-7xl font-extrabold text-green-700 leading-tight tracking-tight">
           {t("welcome")}
@@ -21,7 +21,7 @@ export default async function Home() {
         </p>
       </section>
 
-      {/* Trails Section */}
+      {/* Trails Buttons Section */}
       <section className="relative w-full flex justify-center mb-24">
         <div className="relative w-full max-w-7xl overflow-hidden rounded-3xl shadow-lg group">
           <Image
@@ -48,6 +48,22 @@ export default async function Home() {
               </a>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Quick Stats Section */}
+      <section className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-24 max-w-6xl w-full px-6 text-center">
+        <div className="bg-white rounded-2xl shadow p-6">
+          <p className="text-4xl font-extrabold text-green-700 mb-2">24KM</p>
+          <p className="text-gray-800 font-medium">{t("stats.krchin")}</p>
+        </div>
+        <div className="bg-white rounded-2xl shadow p-6">
+          <p className="text-4xl font-extrabold text-green-700 mb-2">10KM</p>
+          <p className="text-gray-800 font-medium">{t("stats.bagrem")}</p>
+        </div>
+        <div className="bg-white rounded-2xl shadow p-6">
+          <p className="text-4xl font-extrabold text-green-700 mb-2">150+</p>
+          <p className="text-gray-800 font-medium">{t("stats.runners")}</p>
         </div>
       </section>
 
@@ -83,6 +99,18 @@ export default async function Home() {
             <li>{t("rules.point3")}</li>
           </ul>
         </div>
+      </section>
+
+      {/* Community CTA */}
+      <section className="w-full bg-green-700 py-16 px-6 text-center text-white">
+        <h2 className="text-3xl font-bold mb-4">{t("cta.title", { defaultValue: "Be part of the trail community" })}</h2>
+        <p className="max-w-xl mx-auto font-medium mb-6">{t("cta.description", { defaultValue: "Join runners from all over the region and take on the mountains of Mavrovo." })}</p>
+        <Link
+          href={`/${currentLocale}/contact`}
+          className="inline-block bg-white text-green-700 font-bold py-3 px-6 rounded-xl shadow hover:bg-gray-100 transition-all"
+        >
+          {t("cta.join", { defaultValue: "Contact Us" })}
+        </Link>
       </section>
     </main>
   );

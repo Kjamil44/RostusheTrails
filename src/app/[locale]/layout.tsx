@@ -16,6 +16,7 @@ import ScrollToTopButton from "./components/ScrollToTopButton";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "700", "800"], // includes bold/extrabold
 });
 
 const geistMono = Geist_Mono({
@@ -31,7 +32,6 @@ export const metadata: Metadata = {
   },
   description: "Experience mountain trail running in the heart of Mavrovo National Park.",
   keywords: ["Trail running", "Krchin", "Bagrem", "Mavrovo", "mountain race", "Rostushe", "Ростуше", "Маврово", "Macedonia", "North Macedonia", "Rostushe Trails"],
-  themeColor: "#166534", // dark green
   robots: {
     index: true,
     follow: true,
@@ -64,6 +64,11 @@ export const metadata: Metadata = {
   }
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#166534"
+};
 
 export default async function RootLayout({
   children,

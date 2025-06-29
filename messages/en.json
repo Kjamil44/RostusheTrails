@@ -36,7 +36,17 @@
         "rules_image_alt": "Rules and Regulations",
         "village_title": "Welcome to Rostushe",
         "village_image_alt": "Village of Rostushe",
-        "village_description": "Rostushe is a picturesque village located in the heart of nature, surrounded by mountains and lush greenery. It offers a perfect escape for those seeking tranquility and adventure. The village is known for its rich cultural heritage and warm hospitality, making it an ideal destination for tourists and nature enthusiasts."
+        "village_description": "Rostushe is a picturesque village located in the heart of nature, surrounded by mountains and lush greenery. It offers a perfect escape for those seeking tranquility and adventure. The village is known for its rich cultural heritage and warm hospitality, making it an ideal destination for tourists and nature enthusiasts.",
+        "stats": {
+            "krchin": "Technical alpine trail to Golem Krchin",
+            "bagrem": "Scenic and fast trail through Radika Valley",
+            "runners": "Runners from across the Balkans"
+        },
+        "cta": {
+            "title": "Be part of the trail community",
+            "description": "Join runners from all over the region and take on the mountains of Mavrovo.",
+            "join": "Contact Us"
+        }
     },
     "about-us": {
         "rostushe": "Rostushe",

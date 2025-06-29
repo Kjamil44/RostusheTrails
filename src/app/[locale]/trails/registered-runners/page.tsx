@@ -26,6 +26,7 @@ export default function Page() {
   const [trailFilter, setTrailFilter] = useState<string>("all");
   const [sortKey, setSortKey] = useState<SortKey>("bibNumber");
   const [sortDirection, setSortDirection] = useState<SortDirection>("asc");
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     async function fetchAll() {
@@ -66,6 +67,7 @@ export default function Page() {
           .filter((r) => r.bibNumber);
 
         setRunners(merged);
+        setIsLoading(false);
       } catch (err) {
         console.error(err);
         toast.error(t("fetch_error"));
@@ -120,47 +122,53 @@ export default function Page() {
         </div>
       </div>
 
-      {/* Table */}
-      <div className="w-full max-w-7xl bg-white shadow-md rounded-xl p-6 mb-12 overflow-x-auto">
-        <table className="min-w-full divide-y divide-gray-200 font-sans">
-          <thead className="bg-green-100">
-            <tr>
-              {(["bibNumber", "fullName", "club", "trail", "country"] as SortKey[]).map((key) => (
-                <th
-                  key={key}
-                  onClick={() => handleSort(key)}
-                  className="px-4 py-3 text-left text-sm font-bold text-gray-700 uppercase cursor-pointer select-none"
-                >
-                  {t(`table.${key}`)} {sortKey === key ? (sortDirection === "asc" ? "▲" : "▼") : ""}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-gray-100 text-sm">
-            {sorted.map((runner) => {
-              const alpha2 = countries.alpha3ToAlpha2(runner.country);
-              return (
-                <tr key={runner.bibNumber}>
-                  <td className="px-4 py-3 font-semibold text-gray-800">{runner.bibNumber}</td>
-                  <td className="px-4 py-3 text-gray-700">{runner.fullName}</td>
-                  <td className="px-4 py-3 text-gray-700">{runner.club || "-"}</td>
-                  <td className="px-4 py-3 text-gray-700">{runner.trail}</td>
-                  <td className="px-4 py-3 text-gray-700 flex items-center gap-2">
-                    {alpha2 && (
-                      <img
-                        src={`https://flagcdn.com/w40/${alpha2.toLowerCase()}.png`}
-                        alt={runner.country}
-                        className="w-5 h-3 rounded-sm"
-                      />
-                    )}
-                    {runner.country}
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
+      {/* Table or Loading Spinner */}
+      {isLoading ? (
+        <div className="flex justify-center items-center min-h-[300px]">
+          <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-green-600"></div>
+        </div>
+      ) : (
+        <div className="w-full max-w-7xl bg-white shadow-md rounded-xl p-6 mb-12 overflow-x-auto">
+          <table className="min-w-full divide-y divide-gray-200 font-sans">
+            <thead className="bg-green-100">
+              <tr>
+                {(["bibNumber", "fullName", "club", "trail", "country"] as SortKey[]).map((key) => (
+                  <th
+                    key={key}
+                    onClick={() => handleSort(key)}
+                    className="px-4 py-3 text-left text-sm font-bold text-gray-700 uppercase cursor-pointer select-none"
+                  >
+                    {t(`table.${key}`)} {sortKey === key ? (sortDirection === "asc" ? "▲" : "▼") : ""}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-100 text-sm">
+              {sorted.map((runner) => {
+                const alpha2 = countries.alpha3ToAlpha2(runner.country);
+                return (
+                  <tr key={runner.bibNumber}>
+                    <td className="px-4 py-3 font-semibold text-gray-800">{runner.bibNumber}</td>
+                    <td className="px-4 py-3 text-gray-700">{runner.fullName}</td>
+                    <td className="px-4 py-3 text-gray-700">{runner.club || "-"}</td>
+                    <td className="px-4 py-3 text-gray-700">{runner.trail}</td>
+                    <td className="px-4 py-3 text-gray-700 flex items-center gap-2">
+                      {alpha2 && (
+                        <img
+                          src={`https://flagcdn.com/w40/${alpha2.toLowerCase()}.png`}
+                          alt={runner.country}
+                          className="w-5 h-3 rounded-sm"
+                        />
+                      )}
+                      {runner.country}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      )}
 
       {/* CTA Section */}
       <section className="w-full max-w-4xl bg-white shadow-lg rounded-xl p-8 text-center mt-10">
