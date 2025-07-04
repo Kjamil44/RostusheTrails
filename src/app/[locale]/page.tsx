@@ -12,7 +12,7 @@ export default async function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center font-sans">
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center text-center gap-8 py-24 px-6 md:px-12 animate-fadeIn">
+      <section className="relative flex flex-col items-center text-center gap-8 py-24 md:px-12 animate-fadeIn">
         <h1 className="text-5xl md:text-7xl font-extrabold text-green-700 leading-tight tracking-tight">
           {t("welcome")}
         </h1>
@@ -53,19 +53,46 @@ export default async function Home() {
 
       {/* Quick Stats Section */}
       <section className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-24 max-w-6xl w-full px-6 text-center">
-        <div className="bg-white rounded-2xl shadow p-6">
+        {/* 24KM Card */}
+        <div className="bg-white rounded-2xl shadow p-6 transform transition duration-700 hover:scale-105 group">
+          <div className="flex justify-center mb-4">
+            <div className="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full group-hover:bg-green-200 transition">
+              <svg className="w-8 h-8 text-green-700" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2L4 20h16L12 2z" />
+              </svg>
+            </div>
+          </div>
           <p className="text-4xl font-extrabold text-green-700 mb-2">24KM</p>
           <p className="text-gray-800 font-medium">{t("stats.krchin")}</p>
         </div>
-        <div className="bg-white rounded-2xl shadow p-6">
+
+        {/* 10KM Card */}
+        <div className="bg-white rounded-2xl shadow p-6 transform transition duration-700 hover:scale-105 group">
+          <div className="flex justify-center mb-4">
+            <div className="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full group-hover:bg-green-200 transition">
+              <svg className="w-8 h-8 text-green-700" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 4 6 4 6s4.13 4 8 4 8-4 8-4-4.13-4-8-4zM4 18c0-2 4-6 8-6s8 4 8 6v2H4v-2z" />
+              </svg>
+            </div>
+          </div>
           <p className="text-4xl font-extrabold text-green-700 mb-2">10KM</p>
           <p className="text-gray-800 font-medium">{t("stats.bagrem")}</p>
         </div>
-        <div className="bg-white rounded-2xl shadow p-6">
+
+        {/* Runners Card */}
+        <div className="bg-white rounded-2xl shadow p-6 transform transition duration-700 hover:scale-105 group">
+          <div className="flex justify-center mb-4">
+            <div className="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full group-hover:bg-green-200 transition">
+              <svg className="w-8 h-8 text-green-700" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V20h14v-3.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05C15.64 13.91 18 15.22 18 16.5V20h4v-3.5c0-2.33-4.67-3.5-6-3.5z" />
+              </svg>
+            </div>
+          </div>
           <p className="text-4xl font-extrabold text-green-700 mb-2">150+</p>
           <p className="text-gray-800 font-medium">{t("stats.runners")}</p>
         </div>
       </section>
+
 
       {/* Mountain Trail Section */}
       <section className="flex flex-col lg:flex-row items-center gap-12 py-24 px-6 md:px-12 w-full max-w-7xl">
