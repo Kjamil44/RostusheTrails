@@ -4,7 +4,7 @@
         "about-us": "About Us",
         "trails": "Trails",
         "10km": "10 km - Bagrem Trail",
-        "24km": "24 km - Krchin Trail",
+        "27Km": "27 km - Krchin Trail",
         "guide": "Guide",
         "registered-runners": "Registered Runners",
         "contact": "Contact",
@@ -18,8 +18,8 @@
             "title": "10 km - Bagrem Trail",
             "description": "Explore the short trail through scenic landscapes."
         },
-        "twentyfour_km_trail": {
-            "title": "24 km - Krchin Trail",
+        "twentyseven_km_trail": {
+            "title": "27 km - Krchin Trail",
             "description": "Challenge yourself with the extended adventure."
         },
         "mountain_trail": {
@@ -104,7 +104,7 @@
         "about-us": "About Us",
         "trails": "Trails",
         "10km": "10 km - Bagrem Trail",
-        "24km": "24 km - Krchin Trail",
+        "27Km": "27 km - Krchin Trail",
         "guide": "Guide",
         "registered-runners": "Registered Runners",
         "contact": "Contact",
@@ -153,17 +153,17 @@
         },
         "register_now": "Register Now"
     },
-    "twentyfour-km": {
+    "twentyseven-km": {
         "overview": {
-            "title": "Krchin Trail 24K / 1600 D+",
-            "description": "One peak. One mission. No excuses. Krchin Trail 24K is for true mountain lovers seeking serious challenges. Starting from Rostushe in the Mavrovo National Park, it climbs through alpine forests and rocky terrain toward the striking Krchin ridgeline."
+            "title": "Krchin Trail 27K / 1700 D+",
+            "description": "One peak. One mission. No excuses. Krchin Trail 27K is for true mountain lovers seeking serious challenges. Starting from Rostushe in the Mavrovo National Park, it climbs through alpine forests and rocky terrain toward the striking Krchin ridgeline."
         },
         "race_info": {
             "start": "Start: July 26, 2025, 09:00, Rostushe",
-            "distance": "Distance: 24 km",
-            "elevation": "Elevation: +1600m / -1600m",
-            "time_limit": "Time limit: 8 hours",
-            "aid_stations": "Aid stations: 3 (Kutel, Crkviche, Bitushka Karaule)",
+            "distance": "Distance: 27 km",
+            "elevation": "Elevation: +1700m / -1700m",
+            "time_limit": "Time limit: 9 hours",
+            "aid_stations": "Aid stations: 3 (Kutel, Crkviche, Lokuv)",
             "max_participants": "Max participants: 150 runners"
         },
         "pricing": {
@@ -201,10 +201,10 @@
     "guide": {
         "overview": {
             "title": "Trail Guide",
-            "description": "Explore the key features of both Krchin Trail 24K and Bagrem Trail 10K. Whether you seek a technical alpine challenge or a scenic beginner route, we have you covered."
+            "description": "Explore the key features of both Krchin Trail 27K and Bagrem Trail 10K. Whether you seek a technical alpine challenge or a scenic beginner route, we have you covered."
         },
         "krchin": {
-            "title": "Krchin Trail 24K",
+            "title": "Krchin Trail 27K",
             "description": "A challenging race for true mountain lovers. Starting in Rostushe, climbing through alpine forests to the rocky ridges and peak Golem Krchin (2341m), this route offers technical terrain, fast descents, and a view of Lokuv glacier lake."
         },
         "bagrem": {
@@ -213,7 +213,7 @@
         },
         "gpx": {
             "title": "Download GPX Files",
-            "twentyfour_km": "Download 24km Route (Krchin)",
+            "twentyseven_km": "Download 27Km Route (Krchin)",
             "ten_km": "Download 10km Route (Bagrem)"
         },
         "pictures": {
@@ -232,12 +232,12 @@
         "filter": {
             "trail": "Filter by trail:",
             "all": "All",
-            "24km": "24 km - Krchin Trail",
+            "27Km": "27 km - Krchin Trail",
             "10km": "10 km - Bagrem Trail"
         },
         "cta": {
             "title": "Want to be part of the list? Join us now!",
-            "krchin": "Join Krchin 24K",
+            "krchin": "Join Krchin 27K",
             "bagrem": "Join Bagrem 10K"
         },
         "no_runners": "No runners registered yet."

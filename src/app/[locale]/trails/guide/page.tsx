@@ -12,13 +12,11 @@ import { NextSeo } from "next-seo";
 import krchinTrailPic from '../../../../assets/images/golem krcin tabla.jpg';
 import trailPic2 from "../../../../assets/images/trail-run-logo.png";
 import trailPic3 from "../../../../assets/images/krchin-logo2.png";
-import trailPic4 from "../../../../assets/images/bagrem-trail-post.png";
-import trailPic5 from "../../../../assets/images/krcin-trail-post.jpg";
-import trailPic6 from "../../../../assets/images/planina1.jpg";
-import trailPic7 from "../../../../assets/images/planina2.jpg";
-import trailPic8 from "../../../../assets/images/lokuv1.jpg";
-import trailPic9 from "../../../../assets/images/lokuv2.jpg";
-import trailPic10 from "../../../../assets/images/lokuv3.jpg";
+import trailPic4 from "../../../../assets/images/planina1.jpg";
+import trailPic5 from "../../../../assets/images/planina2.jpg";
+import trailPic6 from "../../../../assets/images/lokuv1.jpg";
+import trailPic7 from "../../../../assets/images/lokuv2.jpg";
+import trailPic8 from "../../../../assets/images/lokuv3.jpg";
 
 export default function Page() {
   const t = useTranslations("guide");
@@ -30,13 +28,11 @@ export default function Page() {
     { src: krchinTrailPic, alt: "Golem Krchin Trail" },
     { src: trailPic2, alt: "Trail logo" },
     { src: trailPic3, alt: "Krchin logo" },
-    { src: trailPic4, alt: "Bagrem trail poster" },
-    { src: trailPic5, alt: "Krchin trail poster" },
-    { src: trailPic6, alt: "Mountain view 1" },
-    { src: trailPic7, alt: "Mountain view 2" },
-    { src: trailPic8, alt: "Lokuv lake view 1" },
-    { src: trailPic9, alt: "Lokuv lake view 2" },
-    { src: trailPic10, alt: "Lokuv lake view 3" }
+    { src: trailPic4, alt: "Mountain view 1" },
+    { src: trailPic5, alt: "Mountain view 2" },
+    { src: trailPic6, alt: "Lokuv lake view 1" },
+    { src: trailPic7, alt: "Lokuv lake view 2" },
+    { src: trailPic8, alt: "Lokuv lake view 3" }
   ];
 
   return (
@@ -45,8 +41,8 @@ export default function Page() {
         title={currentLocale === "mk" ? "Водич за патеките" : "Trail Guide"}
         description={
           currentLocale === "mk"
-            ? "Сѐ што треба да знаете за Krchin Trail 24K и Bagrem Trail 10K – опис, GPX, фотографии."
-            : "Everything you need to know about Krchin Trail 24K and Bagrem Trail 10K – descriptions, GPX files, photos."
+            ? "Сѐ што треба да знаете за Krchin Trail 27K и Bagrem Trail 10K – опис, GPX, фотографии."
+            : "Everything you need to know about Krchin Trail 27K and Bagrem Trail 10K – descriptions, GPX files, photos."
         }
         openGraph={{
           url: `https://rostushetrails.com/${currentLocale}/trails/guide`,
@@ -84,7 +80,7 @@ export default function Page() {
 
         {/* Krchin Trail Section */}
         <section className="bg-white shadow-lg rounded-xl p-8 w-full max-w-4xl mb-10">
-          <Link href={`/${currentLocale}/trails/twentyfour-km`}>
+          <Link href={`/${currentLocale}/trails/twentyseven-km`}>
             <h2 className="text-2xl font-bold text-green-700 mb-4 hover:underline">
               {t("krchin.title")}
             </h2>
@@ -107,12 +103,12 @@ export default function Page() {
           <h2 className="text-2xl font-semibold text-green-700 mb-4">{t("gpx.title")}</h2>
           <div className="flex flex-col gap-4">
             <a
-              href="/gpx/krchin-trail-24km.gpx"
+              href="/gpx/krchin-trail-27Km.gpx"
               download
               className="inline-flex items-center bg-green-700 text-white font-medium py-3 px-6 rounded-lg shadow hover:bg-green-800 transition-all duration-300"
             >
               <FaFileDownload className="h-5 w-5 mr-2" />
-              {t("gpx.twentyfour_km")}
+              {t("gpx.twentyseven_km")}
             </a>
             <a
               href="/gpx/bagrem-trail-10km.gpx"

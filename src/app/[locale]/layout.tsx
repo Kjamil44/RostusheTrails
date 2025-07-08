@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Rostushe Trails",
-    description: "Explore Krchin 24K and Bagrem 10K mountain races.",
+    description: "Explore Krchin 27K and Bagrem 10K mountain races.",
     images: ["https://rostushetrails.com/trail-run-logo.png"]
   }
 };

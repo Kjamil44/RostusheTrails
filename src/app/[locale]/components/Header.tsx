@@ -79,7 +79,7 @@ export default function Header({
 
   const trailPages = [
     { label: t('10km'), href: 'trails/ten-km' },
-    { label: t('24km'), href: 'trails/twentyfour-km' },
+    { label: t('27Km'), href: 'trails/twentyseven-km' },
     { label: t('guide'), href: 'trails/guide' },
     { label: t('registered-runners'), href: 'trails/registered-runners' },
   ];
