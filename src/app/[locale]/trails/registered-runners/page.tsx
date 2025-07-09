@@ -51,7 +51,7 @@ export default function Page() {
           bibNumber: r.bibNumber,
           fullName: r.fullName,
           club: r.club || "",
-          trail: r.trail === "24km" ? "27km" : "10km",
+          trail: r.trail.toLowerCase().includes("24") || r.trail.toLowerCase().includes("27") ? "27km" : "10km",
           country: r.country,
         }));
 
