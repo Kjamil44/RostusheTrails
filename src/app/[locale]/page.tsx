@@ -40,11 +40,11 @@ export default async function Home() {
                 <p className="text-base font-medium">{t("ten_km_trail.description")}</p>
               </a>
               <a
-                href={`/${currentLocale}/trails/twentyfour-km`}
+                href={`/${currentLocale}/trails/twentyseven-km`}
                 className="bg-gradient-to-r from-green-500 to-green-700 text-white rounded-2xl py-8 px-6 text-center shadow-md hover:scale-105 transition-all duration-300"
               >
-                <h2 className="text-2xl font-bold mb-2">{t("twentyfour_km_trail.title")}</h2>
-                <p className="text-base font-medium">{t("twentyfour_km_trail.description")}</p>
+                <h2 className="text-2xl font-bold mb-2">{t("twentyseven_km_trail.title")}</h2>
+                <p className="text-base font-medium">{t("twentyseven_km_trail.description")}</p>
               </a>
             </div>
           </div>
@@ -53,7 +53,7 @@ export default async function Home() {
 
       {/* Quick Stats Section */}
       <section className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-24 max-w-6xl w-full px-6 text-center">
-        {/* 24KM Card */}
+        {/* 27Km Card */}
         <div className="bg-white rounded-2xl shadow p-6 transform transition duration-700 hover:scale-105 group">
           <div className="flex justify-center mb-4">
             <div className="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full group-hover:bg-green-200 transition">
@@ -62,7 +62,7 @@ export default async function Home() {
               </svg>
             </div>
           </div>
-          <p className="text-4xl font-extrabold text-green-700 mb-2">24KM</p>
+          <p className="text-4xl font-extrabold text-green-700 mb-2">27KM</p>
           <p className="text-gray-800 font-medium">{t("stats.krchin")}</p>
         </div>
 

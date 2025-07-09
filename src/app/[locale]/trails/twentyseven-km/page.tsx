@@ -11,7 +11,7 @@ import krchinTrailPic from '../../../../assets/images/krcin-trail-post.jpg';
 import { FaFileDownload, FaMountain, FaClock, FaUsers, FaMapMarkedAlt, FaFirstAid } from 'react-icons/fa';
 
 export default function Page() {
-  const t = useTranslations("twentyfour-km");
+  const t = useTranslations("twentyseven-km");
   const t_api = useTranslations("api");
   const locale = useLocale();
 
@@ -35,7 +35,7 @@ export default function Page() {
       fullName: formData.name,
       email: formData.email,
       age: parseInt(formData.age),
-      trail: "24km",
+      trail: "27Km",
       country: alpha3CountryCode,
     };
 
@@ -67,15 +67,15 @@ export default function Page() {
   return (
     <>
       <NextSeo
-        title={locale === "mk" ? "Крчин Треил 24К" : "Krchin Trail 24K"}
+        title={locale === "mk" ? "Крчин Треил 27К" : "Krchin Trail 27K"}
         description={
           locale === "mk"
             ? "Предизвикувачка трка до врвот Голем Крчин со технички терен и автентична природа."
             : "A demanding race to Golem Krchin peak with technical terrain and authentic wilderness."
         }
         openGraph={{
-          url: `https://rostushetrails.com/${locale}/trails/twentyfour-km`,
-          title: locale === "mk" ? "Крчин Треил 24К" : "Krchin Trail 24K",
+          url: `https://rostushetrails.com/${locale}/trails/twentyseven-km`,
+          title: locale === "mk" ? "Крчин Треил 27К" : "Krchin Trail 27K",
           description:
             locale === "mk"
               ? "Искачи се преку алпски шуми, камења и ледничкото езеро Локув до врвот на Крчин."
@@ -139,7 +139,7 @@ export default function Page() {
           <p className="text-gray-800 font-medium mb-4">{t("route.description")}</p>
 
           <a
-            href="/gpx/krchin-trail-24km.gpx"
+            href="/gpx/krchin-trail-27Km.gpx"
             download
             className="inline-flex items-center bg-green-700 text-white font-medium py-3 px-6 rounded-lg shadow hover:bg-green-800 transition-all duration-300"
           >
@@ -166,7 +166,7 @@ export default function Page() {
 
         <section className="bg-white shadow-xl rounded-xl p-8 w-full max-w-4xl mb-10 text-center">
           <Link
-            href="https://runnerspot.com/eventRegistration?event=RostusheTrails&marathon=Trail&package=Krchin%20Trail%2024km"
+            href="https://runnerspot.com/eventRegistration?event=RostusheTrails&marathon=Trail&package=Krchin%20Trail%2027Km"
             className="inline-block bg-green-700 hover:bg-green-800 text-white text-lg font-bold py-4 px-8 rounded-xl transition duration-300 shadow-md"
             target="_blank"
           >

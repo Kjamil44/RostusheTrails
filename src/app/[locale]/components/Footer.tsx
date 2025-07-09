@@ -41,8 +41,8 @@ export default function Footer({
                             </Link>
                         </li>
                         <li>
-                            <Link href={`/${locale}/trails/twentyfour-km`} className="hover:text-green-500">
-                                {t("24km")}
+                            <Link href={`/${locale}/trails/twentyseven-km`} className="hover:text-green-500">
+                                {t("27Km")}
                             </Link>
                         </li>
                         <li>

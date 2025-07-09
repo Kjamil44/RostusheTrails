@@ -51,7 +51,7 @@ export default function Page() {
           bibNumber: r.bibNumber,
           fullName: r.fullName,
           club: r.club || "",
-          trail: r.trail === "24km" ? "24km" : "10km",
+          trail: r.trail === "24km" ? "27km" : "10km",
           country: r.country,
         }));
 
@@ -59,7 +59,7 @@ export default function Page() {
           bibNumber: parseInt(r.bib, 10) || 0,
           fullName: r.name.trim(),
           club: r.club || "",
-          trail: r.package?.toLowerCase().includes("24") ? "24km" : "10km",
+          trail: r.package?.toLowerCase().includes("24") || r.package?.toLowerCase().includes("27") ? "27km" : "10km",
           country: r.country,
         }));
 
@@ -117,7 +117,7 @@ export default function Page() {
           >
             <option value="all">{t("filter.all", { defaultValue: "All" })}</option>
             <option value="10km">{t("filter.10km")}</option>
-            <option value="24km">{t("filter.24km")}</option>
+            <option value="27Km">{t("filter.27Km")}</option>
           </select>
         </div>
       </div>
@@ -145,7 +145,16 @@ export default function Page() {
             </thead>
             <tbody className="divide-y divide-gray-100 text-sm">
               {sorted.map((runner) => {
-                const alpha2 = countries.alpha3ToAlpha2(runner.country);
+                const manualOverrides: { [key: string]: string } = {
+                  GER: "DE",
+                  KOS: "XK",
+                  MKD: "MK",
+                  SUI: "CH",
+                  ENG: "GB",
+                };
+
+                const alpha2 = manualOverrides[runner.country] || countries.alpha3ToAlpha2(runner.country);
+
                 return (
                   <tr key={runner.bibNumber}>
                     <td className="px-4 py-3 font-semibold text-gray-800">{runner.bibNumber}</td>
@@ -179,10 +188,10 @@ export default function Page() {
         </h2>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Link
-            href={`/${currentLocale}/trails/twentyfour-km`}
+            href={`/${currentLocale}/trails/twentyseven-km`}
             className="inline-block bg-green-700 hover:bg-green-800 text-white font-bold text-lg py-3 px-6 rounded-lg shadow-md transition-all"
           >
-            {t("cta.krchin", { defaultValue: "Explore Krchin 24K" })}
+            {t("cta.krchin", { defaultValue: "Explore Krchin 27K" })}
           </Link>
           <Link
             href={`/${currentLocale}/trails/ten-km`}
