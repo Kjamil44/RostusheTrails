@@ -117,7 +117,7 @@ export default function Page() {
           >
             <option value="all">{t("filter.all", { defaultValue: "All" })}</option>
             <option value="10km">{t("filter.10km")}</option>
-            <option value="27Km">{t("filter.27Km")}</option>
+            <option value="27km">{t("filter.27Km")}</option>
           </select>
         </div>
       </div>
