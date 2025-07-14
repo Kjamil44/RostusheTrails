@@ -3,7 +3,7 @@
         "home": "Home",
         "about-us": "About Us",
         "trails": "Trails",
-        "10km": "10 km - Bagrem Trail",
+        "11km": "11 km - Bagrem Trail",
         "27Km": "27 km - Krchin Trail",
         "guide": "Guide",
         "registered-runners": "Registered Runners",
@@ -15,7 +15,7 @@
         "welcome": "Welcome to Rostushe Trails",
         "description": "Discover the beauty of nature and the excitement of our trails.",
         "ten_km_trail": {
-            "title": "10 km - Bagrem Trail",
+            "title": "11 km - Bagrem Trail",
             "description": "Explore the short trail through scenic landscapes."
         },
         "twentyseven_km_trail": {
@@ -30,7 +30,8 @@
             "title": "Rules and Regulations",
             "point1": "All participants must register before the event.",
             "point2": "Follow the designated trail markers at all times.",
-            "point3": "Respect the environment and fellow participants."
+            "point3": "Respect the environment and fellow participants.",
+            "read_more_link": "Read the full rules & regulations"
         },
         "mountain_trail_image_alt": "Mountain Trail",
         "rules_image_alt": "Rules and Regulations",
@@ -103,7 +104,7 @@
         "home": "Home",
         "about-us": "About Us",
         "trails": "Trails",
-        "10km": "10 km - Bagrem Trail",
+        "11km": "11 km - Bagrem Trail",
         "27Km": "27 km - Krchin Trail",
         "guide": "Guide",
         "registered-runners": "Registered Runners",
@@ -114,14 +115,14 @@
         "rights_reserved": "All rights reserved.",
         "navigation": "Navigation"
     },
-    "ten-km": {
+    "eleven-km": {
         "overview": {
-            "title": "Bagrem Trail 10K / 520 D+",
-            "description": "Beginners and runners who enjoy dynamic and vivid sections will love our shortest trail — Bagrem Trail 10K. Starting from Rostushe village, it follows the Radika River, passes through authentic rural landscapes to Janche (checkpoint), then loops back via Adzievci to the finish in Rostushe."
+            "title": "Bagrem Trail 11К / 520 D+",
+            "description": "Beginners and runners who enjoy dynamic and vivid sections will love our shortest trail — Bagrem Trail 11К. Starting from Rostushe village, it follows the Radika River, passes through authentic rural landscapes to Janche (checkpoint), then loops back via Adzievci to the finish in Rostushe."
         },
         "race_info": {
             "start": "Start: July 26, 2025, 10:00, Rostushe",
-            "distance": "Distance: 10 km",
+            "distance": "Distance: 11 km",
             "elevation": "Elevation gain/loss: 520 m",
             "time_limit": "Time limit: 4 hours",
             "aid_station": "Aid station: 1 (Janche – 5 km)",
@@ -201,23 +202,34 @@
     "guide": {
         "overview": {
             "title": "Trail Guide",
-            "description": "Explore the key features of both Krchin Trail 27K and Bagrem Trail 10K. Whether you seek a technical alpine challenge or a scenic beginner route, we have you covered."
+            "description": "Explore the key features of both Krchin Trail 27K and Bagrem Trail 11К. Whether you seek a technical alpine challenge or a scenic beginner route, we have you covered."
         },
         "krchin": {
             "title": "Krchin Trail 27K",
             "description": "A challenging race for true mountain lovers. Starting in Rostushe, climbing through alpine forests to the rocky ridges and peak Golem Krchin (2341m), this route offers technical terrain, fast descents, and a view of Lokuv glacier lake."
         },
         "bagrem": {
-            "title": "Bagrem Trail 10K",
+            "title": "Bagrem Trail 11К",
             "description": "Ideal for beginners and recreational runners. It follows the Radika River, passes through Janche and Adjievci, and returns to Rostushe, offering stunning views and cultural immersion."
         },
         "gpx": {
             "title": "Download GPX Files",
             "twentyseven_km": "Download 27Km Route (Krchin)",
-            "ten_km": "Download 10km Route (Bagrem)"
+            "ten_km": "Download 11km Route (Bagrem)"
         },
         "pictures": {
             "title": "Trail Gallery"
+        },
+        "rules": {
+            "title": "Rules and Regulations",
+            "bullet1": "The races take place in Mavrovo National Park on July 26, 2025 (10K and 27K).",
+            "bullet2": "Participation allowed from age 13 (10K with parental consent), 18+ for 27K.",
+            "bullet3": "Mandatory gear required (mobile phone, whistle, foil blanket, jacket, cup, etc).",
+            "bullet4": "Participants must strictly follow marked trails—deviation may lead to disqualification.",
+            "bullet5": "Nature protection is key – eco-rules enforced with penalties for littering.",
+            "bullet6": "Finisher medals, category awards, and full personal responsibility apply.",
+            "open": "Open full regulations (PDF)",
+            "note": "This document is only available in Macedonian. For more details, feel free to contact us."
         }
     },
     "registered-runners": {
@@ -233,12 +245,12 @@
             "trail": "Filter by trail:",
             "all": "All",
             "27Km": "27 km - Krchin Trail",
-            "10km": "10 km - Bagrem Trail"
+            "11km": "11 km - Bagrem Trail"
         },
         "cta": {
             "title": "Want to be part of the list? Join us now!",
             "krchin": "Join Krchin 27K",
-            "bagrem": "Join Bagrem 10K"
+            "bagrem": "Join Bagrem 11К"
         },
         "no_runners": "No runners registered yet."
     },
@@ -260,6 +272,7 @@
     "accommodation": {
         "title": "Accommodation Options",
         "description": "Explore our selection of accommodations to make your stay comfortable and memorable.",
+        "contact_us": "Contact us for аccommodation options",
         "accommodations": {
             "0": {
                 "name": "Mountain View Hotel",

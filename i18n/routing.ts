@@ -15,6 +15,14 @@ export const routing = defineRouting({
         "/": {
             en: "/",
             mk: "/",
+        },
+        "/trails/ten-km": {
+            en: "/",
+            mk: "/",
+        },
+        "/trails/twentyfour-km": {
+            en: "/",
+            mk: "/",
         }
     },
 });

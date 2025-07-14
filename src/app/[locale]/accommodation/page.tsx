@@ -2,6 +2,7 @@
 
 import { useTranslations, useLocale } from "next-intl";
 import { NextSeo } from "next-seo";
+import Link from "next/link";
 
 export default function Page() {
   const t = useTranslations("accommodation");
@@ -70,8 +71,14 @@ export default function Page() {
         <p className="text-center text-gray-800 font-medium max-w-3xl mb-12">
           {t("description")}
         </p>
+        <Link
+          href={`/${locale}/contact`}
+          className="inline-block bg-green-700 hover:bg-green-800 text-white text-lg font-bold py-3 px-6 rounded-xl transition duration-300 shadow-md"
+        >
+          {t("contact_us", { defaultValue: "Contact us for sponsorship" })}
+        </Link>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl">
+        {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl">
           {accommodations.map((accommodation, index) => (
             <div
               key={index}
@@ -96,7 +103,7 @@ export default function Page() {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </>
   );

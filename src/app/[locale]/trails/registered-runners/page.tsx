@@ -51,7 +51,7 @@ export default function Page() {
           bibNumber: r.bibNumber,
           fullName: r.fullName,
           club: r.club || "",
-          trail: r.trail.toLowerCase().includes("24") || r.trail.toLowerCase().includes("27") ? "27km" : "10km",
+          trail: r.trail.toLowerCase().includes("24") || r.trail.toLowerCase().includes("27") ? "27km" : "11km",
           country: r.country,
         }));
 
@@ -59,7 +59,7 @@ export default function Page() {
           bibNumber: parseInt(r.bib, 10) || 0,
           fullName: r.name.trim(),
           club: r.club || "",
-          trail: r.package?.toLowerCase().includes("24") || r.package?.toLowerCase().includes("27") ? "27km" : "10km",
+          trail: r.package?.toLowerCase().includes("24") || r.package?.toLowerCase().includes("27") ? "27km" : "11km",
           country: r.country,
         }));
 
@@ -116,7 +116,7 @@ export default function Page() {
             className="border border-gray-300 rounded-md px-3 py-1 text-sm"
           >
             <option value="all">{t("filter.all", { defaultValue: "All" })}</option>
-            <option value="10km">{t("filter.10km")}</option>
+            <option value="11km">{t("filter.11km")}</option>
             <option value="27km">{t("filter.27Km")}</option>
           </select>
         </div>
@@ -194,10 +194,10 @@ export default function Page() {
             {t("cta.krchin", { defaultValue: "Explore Krchin 27K" })}
           </Link>
           <Link
-            href={`/${currentLocale}/trails/ten-km`}
+            href={`/${currentLocale}/trails/eleven-km`}
             className="inline-block bg-green-700 hover:bg-green-800 text-white font-bold text-lg py-3 px-6 rounded-lg shadow-md transition-all"
           >
-            {t("cta.bagrem", { defaultValue: "Explore Bagrem 10K" })}
+            {t("cta.bagrem", { defaultValue: "Explore Bagrem 11К" })}
           </Link>
         </div>
       </section>

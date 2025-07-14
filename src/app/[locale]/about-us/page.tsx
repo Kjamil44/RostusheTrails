@@ -54,17 +54,17 @@ export default function Page() {
     {
       name: t("team.bilal"),
       achievements: [
-        "Rocky Trail Nish – 10 km – 11.2022",
+        "Rocky Trail Nish – 11 km – 11.2022",
         "Pelister Unique Marathon – 22 km – 06.2023",
         "High Scardus – 23 km – 09.2023",
-        "Ohrid Kids Race – 10 km – 05.2024",
+        "Ohrid Kids Race – 11 km – 05.2024",
       ],
     },
     {
       name: t("team.ahmed"),
       achievements: [
         "Pelister Ultra Trail – 19 km – 09.2022",
-        "Rocky Trail Nish – 10 km – 11.2022",
+        "Rocky Trail Nish – 11 km – 11.2022",
         "High Scardus – 22 km – 09.2023",
       ],
     },
@@ -72,7 +72,7 @@ export default function Page() {
       name: t("team.kebir"),
       achievements: [
         "Pelister Ultra Trail – 19 km – 09.2022",
-        "Rocky Trail Nish – 10 km – 11.2022",
+        "Rocky Trail Nish – 11 km – 11.2022",
         "High Scardus – 22 km – 09.2023",
         "Pelister Unique Ultra Trail – 23 km – DNF",
       ],
@@ -83,19 +83,19 @@ export default function Page() {
     },
     {
       name: t("team.edah"),
-      achievements: ["Ohrid Kids Race – 10 km – 05.2024"],
+      achievements: ["Ohrid Kids Race – 11 km – 05.2024"],
     },
     {
       name: t("team.sunaj"),
-      achievements: ["Ohrid Kids Race – 10 km – 05.2024"],
+      achievements: ["Ohrid Kids Race – 11 km – 05.2024"],
     },
     {
       name: t("team.imran"),
-      achievements: ["Ohrid Kids Race – 10 km – 05.2024"],
+      achievements: ["Ohrid Kids Race – 11 km – 05.2024"],
     },
     {
       name: t("team.mustafa"),
-      achievements: ["Rocky Trail Nish – 10 km – 11.2022"],
+      achievements: ["Rocky Trail Nish – 11 km – 11.2022"],
     },
     {
       name: t("team.semih"),

@@ -33,7 +33,7 @@ export default async function Home() {
           <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-center gap-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl px-4">
               <a
-                href={`/${currentLocale}/trails/ten-km`}
+                href={`/${currentLocale}/trails/eleven-km`}
                 className="bg-gradient-to-r from-green-500 to-green-700 text-white rounded-2xl py-8 px-6 text-center shadow-md hover:scale-105 transition-all duration-300"
               >
                 <h2 className="text-2xl font-bold mb-2">{t("ten_km_trail.title")}</h2>
@@ -66,7 +66,7 @@ export default async function Home() {
           <p className="text-gray-800 font-medium">{t("stats.krchin")}</p>
         </div>
 
-        {/* 10KM Card */}
+        {/* 11KM Card */}
         <div className="bg-white rounded-2xl shadow p-6 transform transition duration-700 hover:scale-105 group">
           <div className="flex justify-center mb-4">
             <div className="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full group-hover:bg-green-200 transition">
@@ -75,7 +75,7 @@ export default async function Home() {
               </svg>
             </div>
           </div>
-          <p className="text-4xl font-extrabold text-green-700 mb-2">10KM</p>
+          <p className="text-4xl font-extrabold text-green-700 mb-2">11KM</p>
           <p className="text-gray-800 font-medium">{t("stats.bagrem")}</p>
         </div>
 
@@ -125,6 +125,12 @@ export default async function Home() {
             <li>{t("rules.point2")}</li>
             <li>{t("rules.point3")}</li>
           </ul>
+          <Link
+            href={`/${currentLocale}/trails/guide#rules-section`}
+            className="inline-block mt-4 bg-green-700 text-white text-base px-6 py-3 rounded-lg shadow hover:bg-green-800 transition-all duration-300"
+          >
+            {t("rules.read_more_link")}
+          </Link>
         </div>
       </section>
 

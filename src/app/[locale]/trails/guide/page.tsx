@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useLocale, useTranslations } from "next-intl";
-import { FaFileDownload } from "react-icons/fa";
+import { FaFileDownload, FaFilePdf } from "react-icons/fa";
 import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
@@ -41,8 +41,8 @@ export default function Page() {
         title={currentLocale === "mk" ? "Водич за патеките" : "Trail Guide"}
         description={
           currentLocale === "mk"
-            ? "Сѐ што треба да знаете за Krchin Trail 27K и Bagrem Trail 10K – опис, GPX, фотографии."
-            : "Everything you need to know about Krchin Trail 27K and Bagrem Trail 10K – descriptions, GPX files, photos."
+            ? "Сѐ што треба да знаете за Krchin Trail 27K и Bagrem Trail 11К – опис, GPX, фотографии."
+            : "Everything you need to know about Krchin Trail 27K and Bagrem Trail 11К – descriptions, GPX files, photos."
         }
         openGraph={{
           url: `https://rostushetrails.com/${currentLocale}/trails/guide`,
@@ -90,7 +90,7 @@ export default function Page() {
 
         {/* Bagrem Trail Section */}
         <section className="bg-white shadow-lg rounded-xl p-8 w-full max-w-4xl mb-10">
-          <Link href={`/${currentLocale}/trails/ten-km`}>
+          <Link href={`/${currentLocale}/trails/eleven-km`}>
             <h2 className="text-2xl font-bold text-green-700 mb-4 hover:underline">
               {t("bagrem.title")}
             </h2>
@@ -111,12 +111,39 @@ export default function Page() {
               {t("gpx.twentyseven_km")}
             </a>
             <a
-              href="/gpx/bagrem-trail-10km.gpx"
+              href="/gpx/bagrem-trail-11km.gpx"
               download
               className="inline-flex items-center bg-green-700 text-white font-medium py-3 px-6 rounded-lg shadow hover:bg-green-800 transition-all duration-300"
             >
               <FaFileDownload className="h-5 w-5 mr-2" />
               {t("gpx.ten_km")}
+            </a>
+          </div>
+        </section>
+
+        {/* Rules & Regulations Section */}
+        <section   id="rules-section" className="bg-white shadow-lg rounded-xl p-8 w-full max-w-4xl mb-10">
+          <h2 className="text-2xl font-semibold text-green-700 mb-4">{t("rules.title")}</h2>
+          <ul className="list-disc list-inside text-gray-700 space-y-2">
+            <li>{t("rules.bullet1")}</li>
+            <li>{t("rules.bullet2")}</li>
+            <li>{t("rules.bullet3")}</li>
+            <li>{t("rules.bullet4")}</li>
+            <li>{t("rules.bullet5")}</li>
+            <li>{t("rules.bullet6")}</li>
+          </ul>
+
+          <p className="mt-6 text-gray-600 italic">{t("rules.note")}</p>
+
+          <div className="mt-4">
+            <a
+              href="/pdfs/pravila-i-propisi-rostushe-trails-2025.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center bg-green-700 text-white font-medium py-3 px-6 rounded-lg shadow hover:bg-green-800 transition-all duration-300"
+            >
+              <FaFilePdf className="h-5 w-5 mr-2" />
+              {t("rules.open")}
             </a>
           </div>
         </section>
