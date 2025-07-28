@@ -8,8 +8,10 @@ export default function Page() {
   const t = useTranslations("sponsors");
   const locale = useLocale();
 
-  // Sponsors list is currently empty but layout is ready
-  const sponsors: string[] = [];
+  const sponsors: string[] = [
+    "/sponsors/mavrovorostushe.png",
+    "/sponsors/maya.png"
+  ];
 
   return (
     <>
@@ -49,36 +51,33 @@ export default function Page() {
           {t("title")}
         </h1>
 
-        {sponsors.length === 0 ? (
-          <div className="text-center max-w-2xl mb-20">
-            <p className="text-gray-800 text-lg font-medium mb-6">
-              {t("coming_soon", {
-                defaultValue: "Our 2024 sponsors will be announced soon. Stay tuned!"
-              })}
-            </p>
-            <Link
-              href={`/${locale}/contact`}
-              className="inline-block bg-green-700 hover:bg-green-800 text-white text-lg font-bold py-3 px-6 rounded-xl transition duration-300 shadow-md"
-            >
-              {t("contact_us", { defaultValue: "Contact us for sponsorship" })}
-            </Link>
-          </div>
-        ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-6xl w-full">
+        {/* Sponsors Grid */}
+        {sponsors.length > 0 && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl w-full mb-16">
             {sponsors.map((logo, index) => (
               <div
                 key={index}
-                className="bg-white shadow-md rounded-lg p-4 flex items-center justify-center"
+                className="bg-white shadow-lg rounded-xl p-6 flex items-center justify-center"
               >
                 <img
                   src={logo}
                   alt={`${t("sponsor_alt")} ${index + 1}`}
-                  className="max-w-full h-auto"
+                  className="h-24 object-contain"
                 />
               </div>
             ))}
           </div>
         )}
+
+        {/* CTA remains visible regardless */}
+        <div className="text-center max-w-2xl">
+          <Link
+            href={`/${locale}/contact`}
+            className="inline-block bg-green-700 hover:bg-green-800 text-white text-lg font-bold py-3 px-6 rounded-xl transition duration-300 shadow-md"
+          >
+            {t("contact_us", { defaultValue: "Contact us for sponsorship" })}
+          </Link>
+        </div>
       </div>
     </>
   );
