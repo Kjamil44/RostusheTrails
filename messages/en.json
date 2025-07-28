@@ -8,7 +8,7 @@
         "guide": "Guide",
         "registered-runners": "Registered Runners",
         "contact": "Contact",
-        "accommodation": "Accommodation",
+        "results": "Results 2025",
         "sponsors": "Sponsors"
     },
     "home": {
@@ -47,6 +47,11 @@
             "title": "Be part of the trail community",
             "description": "Join runners from all over the region and take on the mountains of Mavrovo National Park.",
             "join": "Contact Us"
+        },
+        "results": {
+            "title": "See the 2025 Race Results!",
+            "description": "Check official times and rankings from this year's races.",
+            "button": "View Results 2025"
         }
     },
     "about-us": {
@@ -109,7 +114,7 @@
         "guide": "Guide",
         "registered-runners": "Registered Runners",
         "contact": "Contact",
-        "accommodation": "Accommodation",
+        "results": "Results 2025",
         "sponsors": "Sponsors",
         "follow_us": "Follow Us",
         "rights_reserved": "All rights reserved.",
@@ -152,7 +157,9 @@
             "download": "Download GPX",
             "image_alt": "Bagrem Trail Route Image"
         },
-        "register_now": "Register Now"
+        "register_now": "Register Now",
+        "register_closed": "Registration Closed",
+        "view_results": "View Results"
     },
     "twentyseven-km": {
         "overview": {
@@ -197,7 +204,9 @@
             "download": "Download GPX",
             "image_alt": "Krchin Trail route"
         },
-        "register_now": "Register Now"
+        "register_now": "Register Now",
+        "register_closed": "Registration Closed",
+        "view_results": "View Results"
     },
     "guide": {
         "overview": {
@@ -269,27 +278,32 @@
         "contact_us": "Contact us for sponsorship",
         "sponsor_alt": "Sponsor"
     },
-    "accommodation": {
-        "title": "Accommodation Options",
-        "description": "Explore our selection of accommodations to make your stay comfortable and memorable.",
-        "contact_us": "Contact us for аccommodation options",
-        "accommodations": {
-            "0": {
-                "name": "Mountain View Hotel",
-                "description": "A cozy hotel with stunning mountain views."
-            },
-            "1": {
-                "name": "Forest Retreat",
-                "description": "A peaceful retreat surrounded by lush forests."
-            },
-            "2": {
-                "name": "Lakeside Cabin",
-                "description": "A charming cabin by the serene lake."
-            },
-            "3": {
-                "name": "Village Inn",
-                "description": "A traditional inn located in the heart of the village."
+    "results": {
+        "title": "Results 2025",
+        "description": "Explore the official results from Bagrem Trail 11K and Krchin Trail 27K.",
+        "tab": {
+            "bagrem": "Bagrem Trail 11K",
+            "krchin": "Krchin Trail 27K"
+        },
+        "table": {
+            "place": "Place",
+            "bib": "BIB",
+            "name": "Name",
+            "nationality": "Nationality",
+            "cp1": "CP Time",
+            "cp_kutel": "CP Kutel",
+            "cp_krchin": "CP Krchin",
+            "cp_lokuv": "CP Lokuv",
+            "finish": "Finish Time",
+            "gender": {
+                "male": "Male",
+                "female": "Female"
             }
+        },
+        "filter": {
+            "name": "Filter by name",
+            "bib": "Filter by BIB",
+            "all": "All participants"
         }
     }
 }

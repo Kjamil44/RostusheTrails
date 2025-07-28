@@ -164,14 +164,20 @@ export default function Page() {
         </section>
 
         <section className="bg-white shadow-xl rounded-xl p-8 w-full max-w-4xl mb-10 text-center">
-          <Link
-            href="https://runnerspot.com/eventRegistration?event=RostusheTrails&marathon=Trail&package=Bagrem%20Trail%2011KM"
-            className="inline-block bg-green-700 hover:bg-green-800 text-white text-lg font-bold py-4 px-8 rounded-xl transition duration-300 shadow-md"
-            target='_blank'
-          >
-            {t("register_now")}
-          </Link>
-          <p className="text-sm text-gray-500 mt-2">Powered by RunnerSpot.com</p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <button
+              disabled
+              className="inline-block bg-gray-400 text-white text-lg font-bold py-4 px-8 rounded-xl shadow-md cursor-not-allowed opacity-70"
+            >
+              {t("register_closed", { defaultValue: "Registration Closed" })}
+            </button>
+            <Link
+              href={`/${locale}/results`}
+              className="inline-block bg-green-700 hover:bg-green-800 text-white text-lg font-bold py-4 px-8 rounded-xl transition duration-300 shadow-md"
+            >
+              {t("view_results", { defaultValue: "View Results" })}
+            </Link>
+          </div>
         </section>
       </div>
     </>

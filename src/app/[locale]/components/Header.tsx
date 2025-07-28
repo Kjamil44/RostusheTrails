@@ -9,12 +9,8 @@ import {
   MenuItem,
   Button,
   Container,
-  Select,
-  SelectChangeEvent,
-  FormControl,
   useMediaQuery,
   useTheme,
-  Typography,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -24,8 +20,8 @@ import Link from 'next/link';
 import { Locale, usePathname, useRouter } from '../../../../i18n/routing';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
-import Flag from 'react-world-flags';
 import LanguagePicker from './LanguagePicker';
+import clsx from 'clsx';
 
 export default function Header({
   locale,
@@ -72,9 +68,9 @@ export default function Header({
   const pages = [
     { label: t('home'), href: '' },
     { label: t('about-us'), href: 'about-us' },
-    { label: t('accommodation'), href: 'accommodation' },
     { label: t('sponsors'), href: 'sponsors' },
     { label: t('contact'), href: 'contact' },
+    // "results" is handled separately now
   ];
 
   const trailPages = [
@@ -106,7 +102,7 @@ export default function Header({
                       fontSize: '1.2rem',
                       textTransform: 'none',
                       '&:hover': {
-                        backgroundColor: '#a5d6a7', // Light green
+                        backgroundColor: '#a5d6a7',
                         color: '#000',
                       },
                     }}
@@ -116,6 +112,7 @@ export default function Header({
                 </Link>
               ))}
 
+              {/* Trails Dropdown */}
               <Button
                 endIcon={<ExpandMoreIcon />}
                 onClick={handleOpenTrailsMenu}
@@ -147,7 +144,7 @@ export default function Header({
                       fontSize: '1.1rem',
                       textTransform: 'none',
                       '&:hover': {
-                        backgroundColor: '#a5d6a7', // Light green
+                        backgroundColor: '#a5d6a7',
                         color: '#000',
                       },
                     }}
@@ -156,13 +153,36 @@ export default function Header({
                   </MenuItem>
                 ))}
               </Menu>
+
+              {/* Results tab with green background */}
+              <Link href={`/${locale}/results`} passHref>
+                <Button
+                  sx={{
+                    px: 3,
+                    py: 1,
+                    borderRadius: '1rem',
+                    fontWeight: 'bold',
+                    fontSize: '1.125rem',
+                    boxShadow: 2,
+                    textTransform: 'none',
+                    backgroundColor: '#2e7d32', // green-700 / green-100
+                    color: '#fff', // white
+                    '&:hover': {
+                      backgroundColor: '#c8e6c9', // darker green / green-200
+                      color: '#1b5e20'
+                    },
+                  }}
+                >
+                  {t('results')}
+                </Button>
+              </Link>
             </Box>
           )}
 
           {/* Language Picker */}
           <LanguagePicker locale={locale} onChange={handleLanguageChange} />
 
-          {/* Mobile Menu Icon */}
+          {/* Mobile Menu */}
           {isMobile && (
             <Box sx={{ ml: 2 }}>
               <IconButton
@@ -191,8 +211,8 @@ export default function Header({
                   </MenuItem>
                 ))}
 
-                <MenuItem onClick={handleOpenTrailsMenu}>
-                  {t('trails')} <ExpandMoreIcon fontSize="small" />
+                <MenuItem disabled sx={{ fontWeight: 'bold', fontSize: '1rem' }}>
+                  {t('trails')}
                 </MenuItem>
                 {trailPages.map((trail) => (
                   <MenuItem
@@ -200,10 +220,26 @@ export default function Header({
                     onClick={handleCloseNavMenu}
                     component={Link}
                     href={`/${locale}/${trail.href}`}
+                    sx={{ pl: 3 }} // Indent trails slightly
                   >
                     {trail.label}
                   </MenuItem>
                 ))}
+
+                {/* Mobile version of Results */}
+                <MenuItem
+                  onClick={handleCloseNavMenu}
+                  component={Link}
+                  href={`/${locale}/results`}
+                  className={clsx(
+                    'font-bold text-lg transition',
+                    pathname?.endsWith('/results')
+                      ? 'bg-green-700 text-white'
+                      : 'bg-green-100 text-green-800 hover:bg-green-200'
+                  )}
+                >
+                  {t('results')}
+                </MenuItem>
               </Menu>
             </Box>
           )}

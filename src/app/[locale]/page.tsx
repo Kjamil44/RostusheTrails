@@ -51,6 +51,34 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Results 2025 Button Section */}
+      <section className="w-full flex justify-center mb-20 px-6">
+        <div className="relative bg-gradient-to-br from-green-600 via-green-500 to-green-700 text-white shadow-2xl rounded-2xl px-8 py-10 text-center max-w-2xl w-full overflow-hidden">
+
+          {/* Animated flag icon */}
+          <div className="absolute top-[-10px] left-[-10px] text-6xl opacity-20 transform rotate-12 pointer-events-none animate-pulseSlow">
+            🏁
+          </div>
+
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-4 drop-shadow">
+            {t("results.title", { defaultValue: "See the 2025 Race Results!" })}
+          </h2>
+
+          <p className="text-base md:text-lg font-medium mb-6 text-white/90 max-w-md mx-auto">
+            {t("results.description", {
+              defaultValue: "Check official times and rankings from this year's races.",
+            })}
+          </p>
+
+          <Link
+            href={`/${currentLocale}/results`}
+            className="inline-block bg-white text-green-700 font-bold py-3 px-6 rounded-xl shadow-md transition transform hover:scale-105 hover:animate-bounceOnce"
+          >
+            {t("results.button", { defaultValue: "View Results 2025" })}
+          </Link>
+        </div>
+      </section>
+
       {/* Quick Stats Section */}
       <section className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-24 max-w-6xl w-full px-6 text-center">
         {/* 27Km Card */}

@@ -56,6 +56,11 @@ export default function Footer({
                             </Link>
                         </li>
                         <li>
+                            <Link href={`/${locale}/results`} className="hover:text-green-500">
+                                {t("results")}
+                            </Link>
+                        </li>
+                        <li>
                             <Link href={`/${locale}/contact`} className="hover:text-green-500">
                                 {t("contact")}
                             </Link>

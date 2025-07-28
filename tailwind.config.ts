@@ -17,6 +17,10 @@ const config: Config = {
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
         mono: ["var(--font-geist-mono)", ...fontFamily.mono],
       },
+      animation: {
+        pulseSlow: "pulse 3s ease-in-out infinite",
+        bounceOnce: "bounce 0.6s ease-in-out 1",
+      },
     },
   },
   plugins: [],
