@@ -288,8 +288,8 @@
         "title": "Results 2025",
         "description": "Explore the official results from Bagrem Trail 11K and Krchin Trail 27K.",
         "tab": {
-            "bagrem": "Bagrem Trail 11K",
-            "krchin": "Krchin Trail 27K"
+            "bagrem": "Bagrem Trail 11KM",
+            "krchin": "Krchin Trail 27KM"
         },
         "table": {
             "place": "Place",

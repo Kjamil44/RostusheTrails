@@ -80,8 +80,8 @@ export default function ResultsPage() {
   }, []);
 
   const raceTabs = [
-    { name: "Krchin Trail 27KM", female: krchinFemale, male: krchinMale, trail: "krchin" },
-    { name: "Bagrem Trail 11KM", female: bagremFemale, male: bagremMale, trail: "bagrem" },
+    { name: t("tab.krchin"), female: krchinFemale, male: krchinMale, trail: "krchin" },
+    { name: t("tab.bagrem"), female: bagremFemale, male: bagremMale, trail: "bagrem" },
   ];
 
   const handleSort = (key: keyof Result) => {
