@@ -6,7 +6,7 @@ import Image from "next/image";
 import { NextSeo } from "next-seo";
 import { FaGoogleDrive } from 'react-icons/fa';
 
-const MAX_THUMBNAILS = 10;
+const MAX_THUMBNAILS = 25;
 
 // Fisher-Yates shuffle
 function shuffleArray<T>(array: T[]): T[] {
