@@ -92,6 +92,16 @@ export default function ResultsPage() {
     }
   };
 
+  function timeToSeconds(t: string): number {
+    const parts = t.split(":").map(Number);
+    if (parts.length === 3) {
+      return parts[0] * 3600 + parts[1] * 60 + parts[2]; // HH:MM:SS
+    } else if (parts.length === 2) {
+      return parts[0] * 60 + parts[1]; // MM:SS
+    }
+    return Infinity; // for invalid/missing times
+  }
+
   const renderTable = (data: Result[], trail: "krchin" | "bagrem") => {
     const filteredData = data.filter(
       (r) =>
@@ -102,15 +112,19 @@ export default function ResultsPage() {
     let normalizedData: Result[] = [];
 
     if (genderFilter === "all") {
-      normalizedData = [...filteredData]
-        .filter((r) => r.finish && /^\d/.test(r.finish))
-        .sort((a, b) => a.finish.localeCompare(b.finish))
-        .map((runner, index) => ({ ...runner, place: `${index + 1}.` }))
-        .concat(
-          filteredData.filter((r) => !r.finish || !/^\d/.test(r.finish))
-        );
+      const finished = filteredData.filter((r) => r.finish && /^\d/.test(r.finish));
+      const notFinished = filteredData.filter((r) => !r.finish || !/^\d/.test(r.finish));
+
+      const sortedFinished = finished
+        .sort((a, b) => timeToSeconds(a.finish) - timeToSeconds(b.finish))
+        .map((runner, i) => ({
+          ...runner,
+          place: `${i + 1}.`,
+        }));
+
+      normalizedData = [...sortedFinished, ...notFinished];
     } else {
-      normalizedData = [...filteredData];
+      normalizedData = filteredData;
     }
 
     const sortedData = [...normalizedData].sort((a, b) => {

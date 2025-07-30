@@ -9,7 +9,8 @@
         "registered-runners": "Registered Runners",
         "contact": "Contact",
         "results": "Results 2025",
-        "sponsors": "Sponsors"
+        "sponsors": "Sponsors",
+        "gallery": "Gallery"
     },
     "home": {
         "welcome": "Welcome to Rostushe Trails",
@@ -52,6 +53,10 @@
             "title": "See the 2025 Race Results!",
             "description": "Check official times and rankings from this year's races.",
             "button": "View Results 2025"
+        },
+        "gallery": {
+            "title": "Moments from the Trails",
+            "button": "View Full Gallery"
         }
     },
     "about-us": {
@@ -118,7 +123,8 @@
         "sponsors": "Sponsors",
         "follow_us": "Follow Us",
         "rights_reserved": "All rights reserved.",
-        "navigation": "Navigation"
+        "navigation": "Navigation",
+        "gallery": "Gallery"
     },
     "eleven-km": {
         "overview": {
@@ -305,5 +311,17 @@
             "bib": "Filter by BIB",
             "all": "All participants"
         }
+    },
+    "gallery": {
+        "title": "Gallery",
+        "seo": {
+            "title": "Gallery | Rostushe Trails",
+            "description": "Explore our gallery of race photos and scenic landscapes.",
+            "imageAlt": "Rostushe Trails Gallery"
+        },
+        "loading": "Loading images...",
+        "error": "Failed to load images.",
+        "altText": "Gallery image",
+        "view_more": "View more photos"
     }
 }

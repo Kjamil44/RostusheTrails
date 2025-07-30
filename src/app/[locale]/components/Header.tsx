@@ -70,6 +70,7 @@ export default function Header({
     { label: t('about-us'), href: 'about-us' },
     { label: t('sponsors'), href: 'sponsors' },
     { label: t('contact'), href: 'contact' },
+    { label: t('gallery'), href: 'gallery' },
     // "results" is handled separately now
   ];
 

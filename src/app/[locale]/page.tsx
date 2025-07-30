@@ -79,6 +79,52 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Gallery Section */}
+      <section className="relative w-full py-24 px-6 md:px-12 max-w-7xl mx-auto">
+        <h2 className="text-4xl font-extrabold text-green-700 text-center mb-12">
+          {t("gallery.title", { defaultValue: "Moments from the Trails" })}
+        </h2>
+
+        <div className="relative h-[400px] md:h-[500px] w-full mb-10">
+          {/* Image 1 */}
+          <Image
+            src="/gallery/trail1.jpg"
+            alt="Gallery 1"
+            width={400}
+            height={300}
+            className="absolute top-0 left-0 w-[250px] md:w-[350px] rounded-2xl shadow-lg opacity-70 rotate-[-6deg] z-10"
+          />
+
+          {/* Image 2 */}
+          <Image
+            src="/gallery/trail2.jpg"
+            alt="Gallery 2"
+            width={400}
+            height={300}
+            className="absolute top-1/3 left-1/3 w-[250px] md:w-[350px] rounded-2xl shadow-xl opacity-80 rotate-3 z-20"
+          />
+
+          {/* Image 3 */}
+          <Image
+            src="/gallery/trail3.jpg"
+            alt="Gallery 3"
+            width={400}
+            height={300}
+            className="absolute bottom-0 right-0 w-[250px] md:w-[350px] rounded-2xl shadow-lg opacity-60 rotate-6 z-10"
+          />
+        </div>
+
+        <div className="text-center">
+          <Link
+            href={`/${currentLocale}/gallery`}
+            className="inline-block bg-green-700 hover:bg-green-800 text-white font-bold py-3 px-6 rounded-xl shadow transition duration-300"
+          >
+            {t("gallery.button", { defaultValue: "View Full Gallery" })}
+          </Link>
+        </div>
+      </section>
+
+
       {/* Quick Stats Section */}
       <section className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-24 max-w-6xl w-full px-6 text-center">
         {/* 27Km Card */}

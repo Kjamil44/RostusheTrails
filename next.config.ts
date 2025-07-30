@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
         pathname: '/wp-content/uploads/**',
       },
     ],
+    domains: ['drive.google.com'],
   },
 };
 

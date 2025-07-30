@@ -10,6 +10,7 @@ export default function Page() {
 
   const sponsors: string[] = [
     "/sponsors/mavrovorostushe.png",
+    "/sponsors/npmavrovo.png",
     "/sponsors/maya.png"
   ];
 
