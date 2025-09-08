@@ -8,6 +8,7 @@ import Link from "next/link";
 export default async function Home() {
   const t = await getTranslations("home");
   const currentLocale = await getLocale();
+  const nextYear = new Date().getFullYear() + 1;
 
   return (
     <main className="min-h-screen flex flex-col items-center font-sans">
@@ -51,10 +52,111 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Next Edition (Registration Coming Soon) */}
+      <section className="relative w-full max-w-7xl mx-auto mb-24 px-6 md:px-12">
+        <div className="rounded-3xl overflow-hidden bg-white shadow-xl">
+          <div className="relative p-8 md:p-12">
+            {/* Ribbon / Badge */}
+            <div className="absolute md:top-6 md:right-6 md:block hidden">
+              <span className="inline-flex items-center gap-2 bg-green-100 text-green-800 font-semibold px-4 py-2 rounded-full">
+                <span className="animate-pulse">⏳</span>
+                {t("next_edition.badge", { defaultValue: "Registration opens soon" })}
+              </span>
+            </div>
+
+            {/* Mobile badge (in flow) */}
+            <div className="md:hidden flex justify-center mb-4">
+              <span className="inline-flex items-center gap-2 bg-green-100 text-green-800 font-semibold px-4 py-2 rounded-full">
+                <span className="animate-pulse">⏳</span>
+                {t("next_edition.badge", { defaultValue: "Registration opens soon" })}
+              </span>
+            </div>
+
+            {/* Headline Image */}
+            <div className="mb-4 flex justify-center">
+              <Image
+                src="/headline.png" // make sure this file is in /public
+                alt="Rostushe Trails Headline"
+                width={500}
+                height={200}
+                className="h-auto w-auto max-w-full"
+                priority
+              />
+            </div>
+
+            {/* Event Date */}
+            <p className="text-3xl md:text-3xl font-extrabold text-green-700 text-center mb-6">
+              {t("next_edition.date", { defaultValue: "15 August 2026" })}
+            </p>
+
+            {/* Description */}
+            <p className="text-gray-800 text-lg md:text-xl font-medium max-w-3xl mx-auto text-center">
+              {t("next_edition.description", {
+                defaultValue:
+                  "Get ready for another unforgettable trail experience next year. Course details, registration fees, and schedule will be announced shortly.",
+              })}
+            </p>
+
+            {/* CTA Row */}
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+              <button
+                type="button"
+                aria-disabled="true"
+                className="cursor-not-allowed bg-gray-200 text-gray-500 font-bold px-6 py-3 rounded-xl shadow"
+                title={t("next_edition.cta_disabled_title", { defaultValue: "Registration opening soon" })}
+              >
+                {t("next_edition.cta_disabled", { defaultValue: "Registration Soon" })}
+              </button>
+
+              <Link
+                href={`/${currentLocale}/contact`}
+                className="inline-block bg-green-700 hover:bg-green-800 text-white font-bold px-6 py-3 rounded-xl shadow transition"
+              >
+                {t("next_edition.notify", { defaultValue: "Get Notified" })}
+              </Link>
+            </div>
+          </div>
+
+          {/* Posters Grid */}
+          <div className="p-6 md:p-8 bg-gradient-to-br from-green-50 to-white">
+            <h3 className="text-2xl font-bold text-green-700 text-center mb-6">
+              {t("next_edition.posters_title", { defaultValue: "Promotion Posters" })}
+            </h3>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              <div className="relative aspect-[3/4]">
+                <Image
+                  src="/posters/poster1.jpg"
+                  alt="Poster 1"
+                  fill
+                  className="object-cover rounded-xl shadow-md"
+                />
+              </div>
+              <div className="relative aspect-[3/4]">
+                <Image
+                  src="/posters/poster2.jpg"
+                  alt="Poster 2"
+                  fill
+                  className="object-cover rounded-xl shadow-md"
+                />
+              </div>
+              <div className="relative aspect-[3/4]">
+                <Image
+                  src="/posters/poster3.jpg"
+                  alt="Poster 3"
+                  fill
+                  className="object-cover rounded-xl shadow-md"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       {/* Results 2025 Button Section */}
       <section className="w-full flex justify-center mb-20 px-6">
         <div className="relative bg-gradient-to-br from-green-600 via-green-500 to-green-700 text-white shadow-2xl rounded-2xl px-8 py-10 text-center max-w-2xl w-full overflow-hidden">
-
           {/* Animated flag icon */}
           <div className="absolute top-[-10px] left-[-10px] text-6xl opacity-20 transform rotate-12 pointer-events-none animate-pulseSlow">
             🏁
@@ -94,7 +196,6 @@ export default async function Home() {
             height={300}
             className="absolute top-0 left-0 w-[250px] md:w-[350px] rounded-2xl shadow-lg opacity-70 rotate-[-6deg] z-10"
           />
-
           {/* Image 2 */}
           <Image
             src="/gallery/trail2.jpg"
@@ -103,7 +204,6 @@ export default async function Home() {
             height={300}
             className="absolute top-1/3 left-1/3 w-[250px] md:w-[350px] rounded-2xl shadow-xl opacity-80 rotate-3 z-20"
           />
-
           {/* Image 3 */}
           <Image
             src="/gallery/trail3.jpg"
@@ -123,7 +223,6 @@ export default async function Home() {
           </Link>
         </div>
       </section>
-
 
       {/* Quick Stats Section */}
       <section className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-24 max-w-6xl w-full px-6 text-center">
@@ -167,7 +266,6 @@ export default async function Home() {
         </div>
       </section>
 
-
       {/* Mountain Trail Section */}
       <section className="flex flex-col lg:flex-row items-center gap-12 py-24 px-6 md:px-12 w-full max-w-7xl">
         <div className="w-full lg:w-1/2">
@@ -210,8 +308,12 @@ export default async function Home() {
 
       {/* Community CTA */}
       <section className="w-full bg-green-700 py-16 px-6 text-center text-white">
-        <h2 className="text-3xl font-bold mb-4">{t("cta.title", { defaultValue: "Be part of the trail community" })}</h2>
-        <p className="max-w-xl mx-auto font-medium mb-6">{t("cta.description", { defaultValue: "Join runners from all over the region and take on the mountains of Mavrovo." })}</p>
+        <h2 className="text-3xl font-bold mb-4">
+          {t("cta.title", { defaultValue: "Be part of the trail community" })}
+        </h2>
+        <p className="max-w-xl mx-auto font-medium mb-6">
+          {t("cta.description", { defaultValue: "Join runners from all over the region and take on the mountains of Mavrovo." })}
+        </p>
         <Link
           href={`/${currentLocale}/contact`}
           className="inline-block bg-white text-green-700 font-bold py-3 px-6 rounded-xl shadow hover:bg-gray-100 transition-all"

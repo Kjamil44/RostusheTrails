@@ -57,6 +57,18 @@
         "gallery": {
             "title": "Moments from the Trails",
             "button": "View Full Gallery"
+        },
+        "next_edition": {
+            "date": "15 August 2026",
+            "posters_title": "Next Edition Posters",
+            "badge": "Registration opens soon",
+            "description": "Get ready for another unforgettable trail experience next year. Course details, registration fees, and schedule will be announced shortly.",
+            "cta_disabled": "Registration Soon",
+            "cta_disabled_title": "Registration opening soon",
+            "notify": "Get Notified",
+            "image1_alt": "Runners on a forest singletrack",
+            "image2_alt": "Mountain ridge with runners",
+            "image3_alt": "Village finish line vibes"
         }
     },
     "about-us": {
