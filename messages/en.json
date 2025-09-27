@@ -69,6 +69,9 @@
             "image1_alt": "Runners on a forest singletrack",
             "image2_alt": "Mountain ridge with runners",
             "image3_alt": "Village finish line vibes"
+        },
+        "testimonials": {
+            "title": "What Our Runners Say"
         }
     },
     "about-us": {

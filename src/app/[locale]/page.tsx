@@ -4,11 +4,54 @@ import trailImage from "../../assets/images/planina.jpg";
 import rulesImage from "../../assets/images/uludag_haris2.jpg";
 import villageImage from "../../assets/images/rostushe-naslovna.jpeg";
 import Link from "next/link";
+import TestimonialsCarousel from "./components/TestimonialCarousel";
+
+const testimonials = [
+  {
+    name: "Marko Jovanovic", country: "RS", text: `Možda je to i bio najtopliji dan u godini,
+možda je bila najtoplija Planinska trka koju sam istrčao do sada, ali je to zaista bilo pravo i iskreno osvežavajuće društvo, jedinstvena čarobna osvežavajuća Reka - RADIKA  
+Made in Makedonija
+
+Golema prijateljstva treba održavati, dobre sjajne komšije, priroda i trka prekrasna, poslužena zahvaljujući odličnim domaćinima Rostushe Trails iznad Oblaka.  
+
+* Nacionalni Park Mavrovo ~ Za poštovanje Golem Krčin 2.341 metara najviša tačka Planinske Trke, u dužini 27km / sa moćnih 1.700 uspona, nešto nesvakidašnje za mene.
+
+Lepo osmišljena kružna staza, bogastvo prirodnih lepota, vrlo atraktivan predeo sa živopisnim vrhovima, carstvo krupnih životinja poput Medveda koga na sreću nismo upoznali, Divokoza, Risa itd, lepršavo koračanje između dve države, bogastvo pijaćih izvora koja su nas spasila od najtoplijeg dana možda u godini sa oko 40 stepeni. Sledeće izdanje – manji razmak između okrepnih stanica popraviti. Dosta vremena uloženo u košenje paprati i uređenje staze domaćina trke, vidi se zalaganje volontera, lep doček u cilju i stolom sa hranom i pićem.
+
+Vrlo pristupačne kotizacije za ono što se dobija na ovako visokim atraktivnim Planinama, super medalje, a okruženje ne manjka turističkom ponudom šta videti i posetiti (Manastiri, Reka, Jezera, Vodopad).
+
+Trčalo se oprezno i odmereno u živahnom društvu vodećih 15-ak trkača, u prvih 12km nakupilo se već 1.500m ozbiljnog uspona, ostalo je u nastavku snage po ekstremno visokoj temperaturi pojačati ritam i završiti za 4h 6minuta što je bilo dovoljno za plasman 8. mesto.
+
+Odličan osećaj, raj za dušu i pluća, pravi mir.
+
+Zahvalnost mojoj veseloj ekipi iz Vranje, Milošu, Aci i Milanu, što smo se dobro uskladili, slagali, nasmejavali i podršku slali na delu uživo.
+
+Hvala timu Rostushe na dobrodošlici i učešću, na jakoj volji i želji da prezentujete vaš divan predeo, dovedete sportiste sa Balkana i šire u narednim godinama. Iz vaše velike volje i snage ste ovo fino sproveli bez ičije pomoći jakih sponzora, što će se nadam prepoznati u narednim godinama.
+
+Vidimo se opet.` },
+  {
+    name: "Milos Taskovic aka TALES", country: "RS", text: `Leto 2025, jul 25, petak, vesela četvorka u sastavu: vozač Uragan, braća Milan Macan i Aca Finac, i glavni ludjak, Tales, kreće iz Vranja u jutarnjim časovima i brzo stiže do Mavrovskog jezera, koje je došlo kao kec na 11 na dobrih 40ak stepeni. Voda nas je osvežila za nastavak putovanja ka obližnjem selu Rostuše. Šta smo radili tamo? Pa istog dana jeli, pili i družili se, a sutra trčali Rostushe trail 2025, first edition kod naših prijatelja iz Еверестинг Ростуше . Predvodjeni Harisom, našim spiritualnim bratom, uvek su dolazili kod nas na trke, kako na Rocky trail, tako i na Beljanicu, Vranjski i Svilajnački polumaraton itd itd. Ja sam već bio njihov gost davne 2022, ovo mi je drugi put.
+Bilo je dve trke. Jedna na 25 km (sa 1700m elevacije), druga na 10 km (sa 360m elevacije). Marko je izabrao dužu, bio je u mazohizam fazonu.  Nas trojica smo manje mrzeli sebe pa smo taktički pametno otišli na 10km, haha.  Mare je prešao za malo jače od 4, mi za malo jače od sat. I sve to na 40 stepeni, u grotlu najtoplijeg dana u 2025. 
+Bilo je par grešaka u organizaciji na stazi, dešava se. Na 2-om km se prelazi reka, to mi se nije svidelo, to kvašenje patika, pravljenje ćevapa na stopalima, pa sam lepo izgubio 5min skidajući patike, brišući i nastavljajući, dok je masa njih prošla direktno (i samim tim dobili prednost). 
+Od strane Haris Bekiri i njegove ekipe smo dočekani fantastično, kao i 2022. Hvala od srca. Uradio je zverski dobar posao i svaka mu čast. Haris je, slobodno se može reći, preko 70% cele trke. Razbio se od posla i to se videlo na njemu u vidu umora i dekoncentracije, brige. Ovom prilikom bih pohvalio i Oktaj Bekjiri i Senchoz Bekerson, brata i oca, fantastične ljude i moje stare prijatelje takodje, kao i par klinaca iz njihovog kluba koji su mu JEDINI pomogli. 
+Koliko sam mogao da primetim na terenu, a i iz priče, republika Makedonska krajina je pomogla sa 0 denara, čak ni sa lepim željama, što je na Balkanu običaj (srećno, ali dobićeš 0 para), a što je još meni poraznije bilo, selo je dočekalo manifestaciju kao da će uskoro smak sveta. Ljudi skoro da nema na ulicama, niti su se potrudili da pomognu, ni finansijski, ni volonterski, ma nikako, prosto neverovatno! Čovek koji je prvi u Makedoniji uradio Everesting sam na svojim nogama bez pomoćnih sredstava, koji je legenda kraja (a nema ni 35 banki), da bukvalno SAM organizuje trku, i to je još planira od 2023, ma nemam reči! To je za selo dogadjaj ne decenije, nego dogadjaj 2-3 decenije, i umesto da svako žrtvuje tipa pola sata svog života (i više nego dovoljno), dozvolili su da se par ljudi polomi. Svaka čast, village of Rostuše and Republic of Makedonskoto, well done! Još sam pričao sa par meštana, pitam što niste pomogli Harisu, ladno odgovaraju: Kako da mu pomognemo?  Da ne zaboravim, mislim da mu je samo Nacionalni park pomogao finansijski, ili to beše opština Mavrovo-Rostuše? Ko god da je ima respect!  
+Elem, ja kako živim u inostranstvu i u Srbiji sam na dve nedelje godišnje, a u kontaktu sam sa Harisom stalno, bilo mi je izuzetno drago što je tempirao trku baš na dane kada sam bio prisutan duhom i telom.  Nisam uopšte razmišljao da li da dodjem ili ne. Kao ni moji momci. Svi volimo Harisa i ceo njegov tim, odlični smo prijatelji već dobrih 4-5 godina i planiramo da tako ostane zanavjek. 
+Hvala im puno na lepom dočeku, živi bili i držite se! Odradili ste odličan posao! To što na Balkanu ljudi nemaju mentalni kapacitet da razumeju stvari nije vaš, već njihov problem. No dobro, ima nade za njih, blizu je 2050.  
+Evo i par sličica, da upriliči priču.
+PS U povratku smo ''overili'' poslastičaru, ćevapdzinicu, kao i reku Radiku sa svojih 13 stepeni koja nas je odlično pripremila za novu turu na 40 gradosa do Srbije mati!  Živeli!
+PS 2 Zamalo da zaboravim! Izuzetno zadovoljstvo mi je bilo da sretnem stare prijatelje iz MKD, odlične trkače i još bolje ljude! Toni Manev i njegova ekipa iz Štipa, Igor D. Jovanovski Karas, Žikica i ostali iz TREXa itd itd!
+` },
+  { name: "DAME ILIJEV", country: "MK", text: `27km Krcin trail е идеален спој на физички предизвик и вистинско уживање на динамична и добро осмислена патека низ природа што воодушевува. Секој километар беше доживување, со пријатна атмосфера и енергија што те води напред. Секоја чест за организацијата, ова е настан што вреди да продолже и да расте.` },
+  { name: "Kristijan Blazev", country: "MK", text: `Odlicna organizacija i super markirana pateka. Trkata bese navistina predizvikuvacka i so prekrasni pejsazi. Sekoja cest za organizatorite.` },
+  { name: "Filip Kozikov", country: "MK", text: `Убаво доживување на 11 км трка одлична природа, добра атмосфера и супер организација во поголемиот дел. Сепак, би сакал да напоменам неколку работи што можат да се подобрат: Недостигаше доволно волонтери на клучните раскрсници каде што стазата се вкрстуваше таму е важно да има насочување, за да не се промаши патот. И кај контролната точка не беше баш јасно дали некој ја евидентира помината точка волонтерите седеа на страна во сенка и немаше некоја интеракција. Се друго беше навистина супер, честитки за настанот и се надевам следниот пат ќе биде уште подобро!  ` },
+  { name: "DONA IVANOVA", country: "MK", text: `11km Bagrem trail - совршен баланс меѓу предизвик и уживање на одличен терен и прекрасна природа која остава без здив. Супер атмосфера полна со позитивна енергија и поддржана од одлична публика. Секоја чест до организаторите - се надевам дека ова е само почеток на една убава традиција!` },
+  { name: "Julija Ilieva", country: "MK", text: `Многу забавно искуство! Rostushe Trail беше повеќе од само трка – беше целосно доживување. Ми се допадна природата околу Ростуше – планински пејзажи, чист воздух и недопрена убавина. Но, она што ја направи трката уште повпечатлива беа луѓето – локалното население кое беше неверојатно гостопримливо, пријателско и отворено за сите учесници. Секој момент поминат таму беше спој на спорт, авантура и автентичен туризам. Голема благодарност до целиот организациски тим и до населението на Ростуше за топлината и поддршката!` },
+  { name: "BOJANA KOSTADINOVA", country: "MK", text: `Bagrem Trail ми остави преубави впечатоци, со неверојатна природа, топла атмосфера и одлично дружење. Уживав во секој момент и со задоволство би се вратила повторно.` },
+];
 
 export default async function Home() {
   const t = await getTranslations("home");
   const currentLocale = await getLocale();
-  const nextYear = new Date().getFullYear() + 1;
 
   return (
     <main className="min-h-screen flex flex-col items-center font-sans">
@@ -224,6 +267,21 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Mountain Trail Section */}
+      <section className="flex flex-col lg:flex-row items-center gap-12 py-24 px-6 md:px-12 w-full max-w-7xl">
+        <div className="w-full lg:w-1/2">
+          <Image
+            src={trailImage}
+            alt={t("mountain_trail_image_alt")}
+            className="rounded-3xl shadow-lg w-full h-auto object-cover"
+          />
+        </div>
+        <div className="w-full lg:w-1/2">
+          <h2 className="text-4xl font-bold text-green-700 mb-6">{t("mountain_trail.title")}</h2>
+          <p className="text-gray-800 text-lg leading-relaxed font-medium">{t("mountain_trail.description")}</p>
+        </div>
+      </section>
+
       {/* Quick Stats Section */}
       <section className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-24 max-w-6xl w-full px-6 text-center">
         {/* 27Km Card */}
@@ -266,21 +324,6 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Mountain Trail Section */}
-      <section className="flex flex-col lg:flex-row items-center gap-12 py-24 px-6 md:px-12 w-full max-w-7xl">
-        <div className="w-full lg:w-1/2">
-          <Image
-            src={trailImage}
-            alt={t("mountain_trail_image_alt")}
-            className="rounded-3xl shadow-lg w-full h-auto object-cover"
-          />
-        </div>
-        <div className="w-full lg:w-1/2">
-          <h2 className="text-4xl font-bold text-green-700 mb-6">{t("mountain_trail.title")}</h2>
-          <p className="text-gray-800 text-lg leading-relaxed font-medium">{t("mountain_trail.description")}</p>
-        </div>
-      </section>
-
       {/* Rules Section */}
       <section className="flex flex-col-reverse lg:flex-row items-center gap-12 py-24 px-6 md:px-12 w-full max-w-7xl">
         <div className="w-full lg:w-1/2">
@@ -304,6 +347,14 @@ export default async function Home() {
             {t("rules.read_more_link")}
           </Link>
         </div>
+      </section>
+
+      {/* Testimonials Section (NEW) */}
+      <section className="w-full py-20 px-6 md:px-12 max-w-7xl mx-auto">
+        <h2 className="text-4xl font-extrabold text-green-700 text-center mb-10">
+          {t("testimonials.title", { defaultValue: "What runners say" })}
+        </h2>
+        <TestimonialsCarousel items={testimonials} />
       </section>
 
       {/* Community CTA */}
