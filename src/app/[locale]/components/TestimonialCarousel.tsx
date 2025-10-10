@@ -41,7 +41,7 @@ export default function TestimonialsCarousel({ items }: { items: Item[] }) {
       {/* Track */}
       <div
         ref={scroller}
-        className="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory px-1 pb-2"
+        className="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory px-1 pb-4"
       >
         {items.map((it, idx) => (
           <article
@@ -49,17 +49,17 @@ export default function TestimonialsCarousel({ items }: { items: Item[] }) {
             className="
               relative snap-start 
               rounded-2xl shadow-lg border border-green-100
-              p-6
-              min-w-[80%] sm:min-w-[420px] lg:min-w-[460px]
-              h-[220px] sm:h-[240px] lg:h-[260px]
+              p-8
+              min-w-[80%] sm:min-w-[440px] lg:min-w-[500px]
+              h-[300px] sm:h-[340px] lg:h-[380px]
               flex flex-col
               bg-gradient-to-br from-green-50 via-white to-white
-              transition hover:shadow-xl hover:-translate-y-0.5
+              transition hover:shadow-xl hover:-translate-y-1
             "
           >
             {/* Decorative quotes */}
-            <Quote className="absolute top-3 left-3 w-6 h-6 text-green-300" />
-            <Quote className="absolute bottom-3 right-3 w-6 h-6 text-green-300 rotate-180" />
+            <Quote className="absolute top-4 left-4 w-6 h-6 text-green-300" />
+            <Quote className="absolute bottom-4 right-4 w-6 h-6 text-green-300 rotate-180" />
 
             {/* Scrollable text box */}
             <div
@@ -79,7 +79,7 @@ export default function TestimonialsCarousel({ items }: { items: Item[] }) {
             </div>
 
             {/* Footer with flag + name */}
-            <div className="mt-4 text-sm md:text-base text-gray-700 font-semibold shrink-0 relative z-10 flex items-center gap-2">
+            <div className="mt-5 text-sm md:text-base text-gray-700 font-semibold shrink-0 relative z-10 flex items-center gap-2">
               {it.country && (
                 <span className="w-6 h-6 rounded-full ring-2 ring-green-200 overflow-hidden shadow-sm">
                   <Flag

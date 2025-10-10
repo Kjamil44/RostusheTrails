@@ -117,7 +117,56 @@ export default function Page() {
 
         <section className="bg-white shadow-lg rounded-xl p-8 w-full max-w-4xl mb-10">
           <h2 className="text-2xl font-bold text-green-700 mb-4">{t("pricing.title")}</h2>
-          <p className="text-gray-800 text-lg font-semibold">{t("pricing.regular")}</p>
+
+          {/* Desktop/table view */}
+          <div className="hidden md:block">
+            <div className="overflow-hidden rounded-xl border border-gray-200">
+              <div className="grid grid-cols-3 bg-gray-50 text-sm font-semibold text-gray-700">
+                <div className="p-3">{t("pricing.table.tier")}</div>
+                <div className="p-3 text-center">{t("pricing.table.price_mkd")}</div>
+                <div className="p-3 text-right">{t("pricing.table.note")}</div>
+              </div>
+            </div>
+            <div className="divide-y">
+              <div className="grid grid-cols-3 items-center">
+                <div className="p-4 font-semibold">{t("pricing.rows.first_call.label")}</div>
+                <div className="p-4 text-center font-bold text-green-700">{t("pricing.rows.first_call.price")}</div>
+                <div className="p-4 text-right text-gray-600">{t("pricing.rows.first_call.hint")}</div>
+              </div>
+
+              <div className="grid grid-cols-3 items-center bg-green-50/40">
+                <div className="p-4 font-semibold">{t("pricing.rows.regular_call.label")}</div>
+                <div className="p-4 text-center font-bold text-green-800">{t("pricing.rows.regular_call.price")}</div>
+                <div className="p-4 text-right text-gray-600">{t("pricing.rows.regular_call.hint")}</div>
+              </div>
+
+              <div className="grid grid-cols-3 items-center">
+                <div className="p-4 font-semibold">{t("pricing.rows.last_chance.label")}</div>
+                <div className="p-4 text-center font-bold text-green-700">{t("pricing.rows.last_chance.price")}</div>
+                <div className="p-4 text-right text-gray-600">{t("pricing.rows.last_chance.hint")}</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile-friendly stacked view */}
+          <div className="mt-4 grid gap-3 md:hidden">
+            {[
+              { k: "first_call" },
+              { k: "regular_call" },
+              { k: "last_chance" },
+            ].map((row) => (
+              <div key={row.k} className="rounded-lg border border-gray-200 p-4">
+                <div className="text-sm text-gray-500">{t("pricing.table.tier")}</div>
+                <div className="font-semibold">{t(`pricing.rows.${row.k}.label`)}</div>
+
+                <div className="mt-2 text-sm text-gray-500">{t("pricing.table.price_mkd")}</div>
+                <div className="font-bold text-green-700">{t(`pricing.rows.${row.k}.price`)}</div>
+
+                <div className="mt-2 text-sm text-gray-500">{t("pricing.table.note")}</div>
+                <div className="text-gray-600">{t(`pricing.rows.${row.k}.hint`)}</div>
+              </div>
+            ))}
+          </div>
         </section>
 
         <section className="bg-white shadow-lg rounded-xl p-8 w-full max-w-4xl mb-10">
@@ -165,20 +214,27 @@ export default function Page() {
         </section>
 
         <section className="bg-white shadow-xl rounded-xl p-8 w-full max-w-4xl mb-10 text-center">
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button
-              disabled
-              className="inline-block bg-gray-400 text-white text-lg font-bold py-4 px-8 rounded-xl shadow-md cursor-not-allowed opacity-70"
-            >
-              {t("register_closed", { defaultValue: "Registration Closed" })}
-            </button>
+          <h2 className="text-2xl font-bold text-green-700 mb-6">
+            {t("registration.title", { defaultValue: "Registration" })}
+          </h2>
+
+          <div className="flex justify-center mb-4">
             <Link
-              href={`/${locale}/results`}
-              className="inline-block bg-green-700 hover:bg-green-800 text-white text-lg font-bold py-4 px-8 rounded-xl transition duration-300 shadow-md"
+              href="https://runnerspot.com/eventRegistration?event=RostusheTrails&marathon=Trail&package=Krchin%20Trail%2027km"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-white text-lg font-bold py-4 px-10 rounded-2xl shadow-lg transition-all duration-300 
+                 bg-gradient-to-r from-green-600 via-green-700 to-emerald-700 
+                 hover:from-green-700 hover:via-emerald-800 hover:to-green-900 
+                 hover:shadow-[0_0_20px_rgba(34,197,94,0.5)] hover:scale-105"
             >
-              {t("view_results", { defaultValue: "View Results" })}
+              {t("registration.register_here", { defaultValue: "Register Here" })}
             </Link>
           </div>
+
+          <p className="text-sm text-gray-500 mt-2">
+            {t("registration.powered_by", { defaultValue: "Powered by RunnerSpot" })}
+          </p>
         </section>
       </div>
     </>

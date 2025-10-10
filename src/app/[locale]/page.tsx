@@ -5,6 +5,7 @@ import rulesImage from "../../assets/images/uludag_haris2.jpg";
 import villageImage from "../../assets/images/rostushe-naslovna.jpeg";
 import Link from "next/link";
 import TestimonialsCarousel from "./components/TestimonialCarousel";
+import RegistrationNotice from "./components/RegistrationNotice";
 
 const testimonials = [
   {
@@ -55,6 +56,8 @@ export default async function Home() {
 
   return (
     <main className="min-h-screen flex flex-col items-center font-sans">
+      <RegistrationNotice />
+
       {/* Hero Section */}
       <section className="relative flex flex-col items-center text-center gap-8 py-24 md:px-12 animate-fadeIn">
         <h1 className="text-5xl md:text-7xl font-extrabold text-green-700 leading-tight tracking-tight">
@@ -95,30 +98,31 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Next Edition (Registration Coming Soon) */}
+      {/* Next Edition (Registration OPEN) */}
       <section className="relative w-full max-w-7xl mx-auto mb-24 px-6 md:px-12">
         <div className="rounded-3xl overflow-hidden bg-white shadow-xl">
           <div className="relative p-8 md:p-12">
             {/* Ribbon / Badge */}
             <div className="absolute md:top-6 md:right-6 md:block hidden">
               <span className="inline-flex items-center gap-2 bg-green-100 text-green-800 font-semibold px-4 py-2 rounded-full">
-                <span className="animate-pulse">⏳</span>
-                {t("next_edition.badge", { defaultValue: "Registration opens soon" })}
+                {/* simple check icon */}
+                <svg width="16" height="16" viewBox="0 0 24 24" className="inline-block"><path fill="currentColor" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z" /></svg>
+                {t("next_edition.badge_open", { defaultValue: "Registration Open" })}
               </span>
             </div>
 
             {/* Mobile badge (in flow) */}
             <div className="md:hidden flex justify-center mb-4">
               <span className="inline-flex items-center gap-2 bg-green-100 text-green-800 font-semibold px-4 py-2 rounded-full">
-                <span className="animate-pulse">⏳</span>
-                {t("next_edition.badge", { defaultValue: "Registration opens soon" })}
+                <svg width="16" height="16" viewBox="0 0 24 24" className="inline-block"><path fill="currentColor" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z" /></svg>
+                {t("next_edition.badge_open", { defaultValue: "Registration Open" })}
               </span>
             </div>
 
             {/* Headline Image */}
             <div className="mb-4 flex justify-center">
               <Image
-                src="/headline.png" // make sure this file is in /public
+                src="/headline.png"
                 alt="Rostushe Trails Headline"
                 width={500}
                 height={200}
@@ -134,33 +138,37 @@ export default async function Home() {
 
             {/* Description */}
             <p className="text-gray-800 text-lg md:text-xl font-medium max-w-3xl mx-auto text-center">
-              {t("next_edition.description", {
+              {t("next_edition.description_open", {
                 defaultValue:
-                  "Get ready for another unforgettable trail experience next year. Course details, registration fees, and schedule will be announced shortly.",
+                  "Secure your spot for the next unforgettable Rostushe Trails edition. Limited entries available—register today!",
               })}
             </p>
 
-            {/* CTA Row */}
+            {/* CTA */}
             <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
-              <button
-                type="button"
-                aria-disabled="true"
-                className="cursor-not-allowed bg-gray-200 text-gray-500 font-bold px-6 py-3 rounded-xl shadow"
-                title={t("next_edition.cta_disabled_title", { defaultValue: "Registration opening soon" })}
+              <Link
+                href={`/${currentLocale}/trails/eleven-km`}
+                className="inline-block text-white text-lg font-bold py-4 px-8 rounded-2xl shadow-lg transition-all duration-300
+               bg-gradient-to-r from-green-600 via-green-700 to-emerald-700
+               hover:from-green-700 hover:via-emerald-800 hover:to-green-900
+               hover:shadow-[0_0_20px_rgba(34,197,94,0.45)] hover:scale-105"
               >
-                {t("next_edition.cta_disabled", { defaultValue: "Registration Soon" })}
-              </button>
+                {t("next_edition.cta_bagrem", { defaultValue: "Register – Bagrem 11K" })}
+              </Link>
 
               <Link
-                href={`/${currentLocale}/contact`}
-                className="inline-block bg-green-700 hover:bg-green-800 text-white font-bold px-6 py-3 rounded-xl shadow transition"
+                href={`/${currentLocale}/trails/twentyseven-km`}
+                className="inline-block text-white text-lg font-bold py-4 px-8 rounded-2xl shadow-lg transition-all duration-300
+               bg-gradient-to-r from-emerald-600 via-green-700 to-green-800
+               hover:from-emerald-700 hover:via-green-800 hover:to-green-900
+               hover:shadow-[0_0_20px_rgba(16,185,129,0.45)] hover:scale-105"
               >
-                {t("next_edition.notify", { defaultValue: "Get Notified" })}
+                {t("next_edition.cta_krchin", { defaultValue: "Register – Krchin 27K" })}
               </Link>
             </div>
           </div>
 
-          {/* Posters Grid */}
+          {/* Posters Grid (unchanged) */}
           <div className="p-6 md:p-8 bg-gradient-to-br from-green-50 to-white">
             <h3 className="text-2xl font-bold text-green-700 text-center mb-6">
               {t("next_edition.posters_title", { defaultValue: "Promotion Posters" })}
@@ -168,28 +176,13 @@ export default async function Home() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
               <div className="relative aspect-[3/4]">
-                <Image
-                  src="/posters/poster1.jpg"
-                  alt="Poster 1"
-                  fill
-                  className="object-cover rounded-xl shadow-md"
-                />
+                <Image src="/posters/poster1.jpg" alt="Poster 1" fill className="object-cover rounded-xl shadow-md" />
               </div>
               <div className="relative aspect-[3/4]">
-                <Image
-                  src="/posters/poster2.jpg"
-                  alt="Poster 2"
-                  fill
-                  className="object-cover rounded-xl shadow-md"
-                />
+                <Image src="/posters/poster2.jpg" alt="Poster 2" fill className="object-cover rounded-xl shadow-md" />
               </div>
               <div className="relative aspect-[3/4]">
-                <Image
-                  src="/posters/poster3.jpg"
-                  alt="Poster 3"
-                  fill
-                  className="object-cover rounded-xl shadow-md"
-                />
+                <Image src="/posters/poster3.jpg" alt="Poster 3" fill className="object-cover rounded-xl shadow-md" />
               </div>
             </div>
           </div>

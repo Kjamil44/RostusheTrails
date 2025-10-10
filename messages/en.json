@@ -59,6 +59,10 @@
             "button": "View Full Gallery"
         },
         "next_edition": {
+            "badge_open": "Registration Open",
+            "cta_bagrem": "Register – Bagrem 11K",
+            "cta_krchin": "Register – Krchin 27K",
+            "description_open": "Secure your spot for the 2026 edition. Limited entries—register today!",
             "date": "15 August 2026",
             "posters_title": "Next Edition Posters",
             "badge": "Registration opens soon",
@@ -69,6 +73,15 @@
             "image1_alt": "Runners on a forest singletrack",
             "image2_alt": "Mountain ridge with runners",
             "image3_alt": "Village finish line vibes"
+        },
+        "popup": {
+            "badge": "Registration Open",
+            "title": "Registrations for 2026 are open!",
+            "message": "Choose your trail and secure your spot for the 2026 edition.",
+            "cta_bagrem": "Bagrem 11K",
+            "cta_krchin": "Krchin 27K",
+            "powered_by": "Powered by RunnerSpot",
+            "close": "Close"
         },
         "testimonials": {
             "title": "What Our Runners Say"
@@ -147,7 +160,7 @@
             "description": "Beginners and runners who enjoy dynamic and vivid sections will love our shortest trail — Bagrem Trail 11К. Starting from Rostushe village, it follows the Radika River, passes through authentic rural landscapes to Janche (checkpoint), then loops back via Adzievci to the finish in Rostushe."
         },
         "race_info": {
-            "start": "Start: July 26, 2025, 10:00, Rostushe",
+            "start": "Start: August 15, 2026, 09:00, Rostushe",
             "distance": "Distance: 11 km",
             "elevation": "Elevation gain/loss: 520 m",
             "time_limit": "Time limit: 4 hours",
@@ -155,17 +168,42 @@
             "max_participants": "Max participants: 200"
         },
         "pricing": {
-            "title": "Pricing",
-            "regular": "Regular registration: 800 MKD until July 21, 2025"
+            "title": "Entry Fees",
+            "table": {
+                "tier": "Tier",
+                "price_mkd": "Price (MKD)",
+                "note": "Deadline"
+            },
+            "rows": {
+                "first_call": {
+                    "label": "First Call",
+                    "price": "800 ден",
+                    "hint": "until 01.03.2026"
+                },
+                "regular_call": {
+                    "label": "Regular Call",
+                    "price": "1,100 ден",
+                    "hint": "01.03 – 30.06.2026"
+                },
+                "last_chance": {
+                    "label": "Last Chance",
+                    "price": "1,300 ден",
+                    "hint": "01.07 – 10.08.2026, NO T-shirt"
+                }
+            }
         },
         "starter_pack": {
             "title": "Starter Pack",
             "items": [
-                "Bib with timing chip",
-                "Dry-fit t-shirt",
+                "Race bib with timing chip",
                 "Finisher medal",
-                "Aid station on the trail",
-                "Awards for top male and female finishers"
+                "Dry Fit T-shirt (S, M, L, XL) (except for Last Chance packages)",
+                "Refreshment stations",
+                "Free race photos",
+                "Online results + finisher diploma",
+                "Sponsor products and vouchers",
+                "Awards for top male and female finishers",
+                "After-race party"
             ]
         },
         "audience": {
@@ -178,9 +216,12 @@
             "download": "Download GPX",
             "image_alt": "Bagrem Trail Route Image"
         },
-        "register_now": "Register Now",
-        "register_closed": "Registration Closed",
-        "view_results": "View Results"
+        "registration": {
+            "title": "Registration",
+            "register_here": "Register Here",
+            "results_2025": "Results of 2025 Edition",
+            "powered_by": "Powered by RunnerSpot"
+        }
     },
     "twentyseven-km": {
         "overview": {
@@ -188,7 +229,7 @@
             "description": "One peak. One mission. No excuses. Krchin Trail 27K is for true mountain lovers seeking serious challenges. Starting from Rostushe in the Mavrovo National Park, it climbs through alpine forests and rocky terrain toward the striking Krchin ridgeline."
         },
         "race_info": {
-            "start": "Start: July 26, 2025, 09:00, Rostushe",
+            "start": "Start: August 15, 2026, 08:00, Rostushe",
             "distance": "Distance: 27 km",
             "elevation": "Elevation: +1700m / -1700m",
             "time_limit": "Time limit: 9 hours",
@@ -196,17 +237,42 @@
             "max_participants": "Max participants: 150 runners"
         },
         "pricing": {
-            "title": "Pricing",
-            "regular": "Regular registration: 1400 MKD (until July 21, 2025)"
+            "title": "Entry Fees",
+            "table": {
+                "tier": "Tier",
+                "price_mkd": "Price (MKD)",
+                "note": "Deadline"
+            },
+            "rows": {
+                "first_call": {
+                    "label": "First Call",
+                    "price": "1,300 ден",
+                    "hint": "until 01.03.2026"
+                },
+                "regular_call": {
+                    "label": "Regular Call",
+                    "price": "1,600 ден",
+                    "hint": "01.03 – 30.06.2026"
+                },
+                "last_chance": {
+                    "label": "Last Chance",
+                    "price": "1,800 ден",
+                    "hint": "01.07 – 10.08.2026, NO T-shirt"
+                }
+            }
         },
         "starter_pack": {
             "title": "Starter Pack",
             "items": [
-                "Bib with timing chip",
-                "Dry-fit t-shirt",
+                "Race bib with timing chip",
                 "Finisher medal",
-                "Access to aid stations",
-                "Awards for top male and female runners"
+                "Dry Fit T-shirt (S, M, L, XL) (except for Last Chance packages)",
+                "Refreshment stations",
+                "Free race photos",
+                "Online results + finisher diploma",
+                "Sponsor products and vouchers",
+                "Awards for top male and female finishers",
+                "After-race party"
             ]
         },
         "audience": {
@@ -225,9 +291,12 @@
             "download": "Download GPX",
             "image_alt": "Krchin Trail route"
         },
-        "register_now": "Register Now",
-        "register_closed": "Registration Closed",
-        "view_results": "View Results"
+        "registration": {
+            "title": "Registration",
+            "register_here": "Register Here",
+            "results_2025": "Results of 2025 Edition",
+            "powered_by": "Powered by RunnerSpot"
+        }
     },
     "guide": {
         "overview": {
@@ -252,8 +321,8 @@
         },
         "rules": {
             "title": "Rules and Regulations",
-            "bullet1": "The races take place in Mavrovo National Park on July 26, 2025 (10K and 27K).",
-            "bullet2": "Participation allowed from age 13 (10K with parental consent), 18+ for 27K.",
+            "bullet1": "The races take place in Mavrovo National Park on August 15, 2026 (11K and 27K).",
+            "bullet2": "Participation allowed from age 13 (11K with parental consent), 18+ for 27K.",
             "bullet3": "Mandatory gear required (mobile phone, whistle, foil blanket, jacket, cup, etc).",
             "bullet4": "Participants must strictly follow marked trails—deviation may lead to disqualification.",
             "bullet5": "Nature protection is key – eco-rules enforced with penalties for littering.",
