@@ -31,29 +31,30 @@ export default function Page() {
   useEffect(() => {
     async function fetchAll() {
       try {
-        const resLocal = await fetch("/api/runners", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            "x-locale": currentLocale,
-            "x-api-key": process.env.NEXT_PUBLIC_API_KEY ?? "",
-          },
-        });
+        //IMPORTANT INFO: LOCAL API IS DISABLED TEMPORARILY: Uncomment when needed
+        // const resLocal = await fetch("/api/runners", {
+        //   method: "GET",
+        //   headers: {
+        //     "Content-Type": "application/json",
+        //     "x-locale": currentLocale,
+        //     "x-api-key": process.env.NEXT_PUBLIC_API_KEY ?? "",
+        //   },
+        // });
 
         const resRemote = await fetch(
           "https://runnerspot.com/api/runner/getrunnersforevent?eventId=43"
         );
 
-        const localData = resLocal.ok ? await resLocal.json() : [];
+        // const localData = resLocal.ok ? await resLocal.json() : [];
         const remoteData = resRemote.ok ? await resRemote.json() : [];
 
-        const formattedLocal: Runner[] = localData.map((r: any) => ({
-          bibNumber: r.bibNumber,
-          fullName: r.fullName,
-          club: r.club || "",
-          trail: r.trail.toLowerCase().includes("24") || r.trail.toLowerCase().includes("27") ? "27km" : "11km",
-          country: r.country,
-        }));
+        // const formattedLocal: Runner[] = localData.map((r: any) => ({
+        //   bibNumber: r.bibNumber,
+        //   fullName: r.fullName,
+        //   club: r.club || "",
+        //   trail: r.trail.toLowerCase().includes("24") || r.trail.toLowerCase().includes("27") ? "27km" : "11km",
+        //   country: r.country,
+        // }));
 
         const formattedRemote: Runner[] = remoteData.map((r: any) => ({
           bibNumber: parseInt(r.bib, 10) || 0,
@@ -63,7 +64,8 @@ export default function Page() {
           country: r.country,
         }));
 
-        const merged = [...formattedLocal, ...formattedRemote]
+        // const merged = [...formattedLocal, ...formattedRemote]
+        const merged = [...formattedRemote]
           .filter((r) => r.bibNumber);
 
         setRunners(merged);

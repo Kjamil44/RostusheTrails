@@ -1,8 +1,14 @@
 // app/api/drive-images/route.ts
 import { NextRequest, NextResponse } from "next/server";
-import { fetchGoogleDriveImages } from "../../../../lib/drive"; // adjust path as needed
+import { fetchGoogleDriveImages } from "../../../../lib/drive";
+
+const API_KEY = process.env.API_KEY;
 
 export async function GET(req: NextRequest) {
+    if (!isValidApiKey(req)) {
+        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
     const folderId = process.env.GOOGLE_DRIVE_FOLDER_ID;
     if (!folderId) {
         return NextResponse.json(
@@ -21,4 +27,9 @@ export async function GET(req: NextRequest) {
             { status: 500 }
         );
     }
+}
+
+function isValidApiKey(req: NextRequest): boolean {
+    const apiKey = req.headers.get("x-api-key");
+    return apiKey === API_KEY;
 }

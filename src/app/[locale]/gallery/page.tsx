@@ -31,7 +31,13 @@ export default function GalleryPage() {
     useEffect(() => {
         async function fetchImages() {
             try {
-                const res = await fetch("/api/drive-images");
+                const res = await fetch("/api/drive-images", {
+                    method: "GET",
+                    headers: {
+                        "x-api-key": process.env.NEXT_PUBLIC_API_KEY ?? "",
+                    },
+                });
+
                 if (!res.ok) throw new Error(t("error"));
                 const data: string[] = await res.json();
                 // Shuffle images so random ones appear each load
