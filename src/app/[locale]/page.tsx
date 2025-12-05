@@ -6,6 +6,7 @@ import villageImage from "../../assets/images/rostushe-naslovna.jpeg";
 import Link from "next/link";
 import TestimonialsCarousel from "./components/TestimonialCarousel";
 import RegistrationNotice from "./components/RegistrationNotice";
+import VideosSection from "./components/VideosSection";
 
 const testimonials = [
   {
@@ -25,7 +26,7 @@ Trčalo se oprezno i odmereno u živahnom društvu vodećih 15-ak trkača, u prv
 
 Odličan osećaj, raj za dušu i pluća, pravi mir.
 
-Zahvalnost mojoj veseloj ekipi iz Vranje, Milošu, Aci i Milanu, što smo se dobro uskladili, slagali, nasmejavali i podršku slali na delu uživo.
+Zahvalnost mojoj veseloj ekipi iz Vranje, Milošu, Aci i Milanu, što smo se dobro uskladili, slagali, nasмеjavali i podršku slali na delu uživo.
 
 Hvala timu Rostushe na dobrodošlici i učešću, na jakoj volji i želji da prezentujete vaš divan predeo, dovedete sportiste sa Balkana i šire u narednim godinama. Iz vaše velike volje i snage ste ovo fino sproveli bez ičije pomoći jakih sponzora, što će se nadam prepoznati u narednim godinama.
 
@@ -35,8 +36,8 @@ Vidimo se opet.` },
 Bilo je dve trke. Jedna na 25 km (sa 1700m elevacije), druga na 10 km (sa 360m elevacije). Marko je izabrao dužu, bio je u mazohizam fazonu.  Nas trojica smo manje mrzeli sebe pa smo taktički pametno otišli na 10km, haha.  Mare je prešao za malo jače od 4, mi za malo jače od sat. I sve to na 40 stepeni, u grotlu najtoplijeg dana u 2025. 
 Bilo je par grešaka u organizaciji na stazi, dešava se. Na 2-om km se prelazi reka, to mi se nije svidelo, to kvašenje patika, pravljenje ćevapa na stopalima, pa sam lepo izgubio 5min skidajući patike, brišući i nastavljajući, dok je masa njih prošla direktno (i samim tim dobili prednost). 
 Od strane Haris Bekiri i njegove ekipe smo dočekani fantastično, kao i 2022. Hvala od srca. Uradio je zverski dobar posao i svaka mu čast. Haris je, slobodno se može reći, preko 70% cele trke. Razbio se od posla i to se videlo na njemu u vidu umora i dekoncentracije, brige. Ovom prilikom bih pohvalio i Oktaj Bekjiri i Senchoz Bekerson, brata i oca, fantastične ljude i moje stare prijatelje takodje, kao i par klinaca iz njihovog kluba koji su mu JEDINI pomogli. 
-Koliko sam mogao da primetim na terenu, a i iz priče, republika Makedonska krajina je pomogla sa 0 denara, čak ni sa lepim željama, što je na Balkanu običaj (srećno, ali dobićeš 0 para), a što je još meni poraznije bilo, selo je dočekalo manifestaciju kao da će uskoro smak sveta. Ljudi skoro da nema na ulicama, niti su se potrudili da pomognu, ni finansijski, ni volonterski, ma nikako, prosto neverovatno! Čovek koji je prvi u Makedoniji uradio Everesting sam na svojim nogama bez pomoćnih sredstava, koji je legenda kraja (a nema ni 35 banki), da bukvalno SAM organizuje trku, i to je još planira od 2023, ma nemam reči! To je za selo dogadjaj ne decenije, nego dogadjaj 2-3 decenije, i umesto da svako žrtvuje tipa pola sata svog života (i više nego dovoljno), dozvolili su da se par ljudi polomi. Svaka čast, village of Rostuše and Republic of Makedonskoto, well done! Još sam pričao sa par meštana, pitam što niste pomogli Harisu, ladno odgovaraju: Kako da mu pomognemo?  Da ne zaboravim, mislim da mu je samo Nacionalni park pomogao finansijski, ili to beše opština Mavrovo-Rostuše? Ko god da je ima respect!  
-Elem, ja kako živim u inostranstvu i u Srbiji sam na dve nedelje godišnje, a u kontaktu sam sa Harisom stalno, bilo mi je izuzetno drago što je tempirao trku baš na dane kada sam bio prisutan duhom i telom.  Nisam uopšte razmišljao da li da dodjem ili ne. Kao ni moji momci. Svi volimo Harisa i ceo njegov tim, odlični smo prijatelji već dobrih 4-5 godina i planiramo da tako ostane zanavjek. 
+Koliko sam mogao da primetim na terenu, a i iz priče, republika Makedonska krajina je pomogla sa 0 denara, čak ni sa lepim željama, što je na Balkanu običaj (srećno, ali dobićeš 0 para), a što je još meni poraznije bilo, selo je dočekало manifestaciju kao da će uskoro smak sveta. Ljudi skoro da nema na ulicama, niti su se potrudили da pomognu, ni finansijski, ni volonterski, ma nikako, prosto neverovatно! Čovek koji je prvi u Makedoniji uradio Everesting sam na svojim nogama bez pomoćnih sredstava, koji je legenda kraja (a nema ni 35 banki), da bukvalno SAM organizuje trku, i to je još planira od 2023, ma nemam reči! To je za selo dogadjaj ne decenije, nego dogadjaj 2-3 decenije, i umesto da svako žrtvuje tipa pola sata svog života (i više nego dovoljno), dozvolili su да се пар људи поломи. Svaka čast, village of Rostuše and Republic of Makedonskoto, well done! Još sam pričao sa par meštana, pitam što niste pomogli Harisu, ladno odgovaraju: Kako da mu pomognemo?  Da ne zaboravim, mislim da mu je samo Nacionalni park pomogao finansijski, ili to beše opština Mavrovo-Rostuše? Ko god da je ima respect!  
+Elem, ja kako živim u inostranstvu и u Srbiji sam na dve nedelje godišnje, a u kontaktu sam sa Harisom stalno, bilo mi je izuzetno drago što je tempirao trku baš na dane kada sam bio prisutan duhom и telom.  Nisam uopšte razmišljao da li да dodjem или ne. Kao ni moji momci. Svi volimo Harisa i ceo njegov tim, odlični smo prijatelji već dobrih 4-5 godina i planiramo da tako ostane zanavjek. 
 Hvala im puno na lepom dočeku, živi bili i držite se! Odradili ste odličan posao! To što na Balkanu ljudi nemaju mentalni kapacitet da razumeju stvari nije vaš, već njihov problem. No dobro, ima nade za njih, blizu je 2050.  
 Evo i par sličica, da upriliči priču.
 PS U povratku smo ''overili'' poslastičaru, ćevapdzinicu, kao i reku Radiku sa svojih 13 stepeni koja nas je odlično pripremila za novu turu na 40 gradosa do Srbije mati!  Živeli!
@@ -49,6 +50,31 @@ PS 2 Zamalo da zaboravim! Izuzetno zadovoljstvo mi je bilo da sretnem stare prij
   { name: "Julija Ilieva", country: "MK", text: `Многу забавно искуство! Rostushe Trail беше повеќе од само трка – беше целосно доживување. Ми се допадна природата околу Ростуше – планински пејзажи, чист воздух и недопрена убавина. Но, она што ја направи трката уште повпечатлива беа луѓето – локалното население кое беше неверојатно гостопримливо, пријателско и отворено за сите учесници. Секој момент поминат таму беше спој на спорт, авантура и автентичен туризам. Голема благодарност до целиот организациски тим и до населението на Ростуше за топлината и поддршката!` },
   { name: "BOJANA KOSTADINOVA", country: "MK", text: `Bagrem Trail ми остави преубави впечатоци, со неверојатна природа, топла атмосфера и одлично дружење. Уживав во секој момент и со задоволство би се вратила повторно.` },
 ];
+
+const videos = [
+  {
+    id: "X5xTafSiZws",
+    key: "video1_title",
+    featured: true,
+  },
+  {
+    id: "LkDL5143ric",
+    key: "video2_title",
+  },
+  {
+    id: "aAkVnPcpXiA",
+    key: "video3_title",
+  },
+  {
+    id: "iGYvo6E9etg",
+    key: "video4_title",
+  },
+  {
+    id: "wGdOyv8YGhg",
+    key: "video5_title",
+  },
+];
+
 
 export default async function Home() {
   const t = await getTranslations("home");
@@ -106,7 +132,12 @@ export default async function Home() {
             <div className="absolute md:top-6 md:right-6 md:block hidden">
               <span className="inline-flex items-center gap-2 bg-green-100 text-green-800 font-semibold px-4 py-2 rounded-full">
                 {/* simple check icon */}
-                <svg width="16" height="16" viewBox="0 0 24 24" className="inline-block"><path fill="currentColor" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z" /></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" className="inline-block">
+                  <path
+                    fill="currentColor"
+                    d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"
+                  />
+                </svg>
                 {t("next_edition.badge_open", { defaultValue: "Registration Open" })}
               </span>
             </div>
@@ -114,7 +145,12 @@ export default async function Home() {
             {/* Mobile badge (in flow) */}
             <div className="md:hidden flex justify-center mb-4">
               <span className="inline-flex items-center gap-2 bg-green-100 text-green-800 font-semibold px-4 py-2 rounded-full">
-                <svg width="16" height="16" viewBox="0 0 24 24" className="inline-block"><path fill="currentColor" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z" /></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" className="inline-block">
+                  <path
+                    fill="currentColor"
+                    d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"
+                  />
+                </svg>
                 {t("next_edition.badge_open", { defaultValue: "Registration Open" })}
               </span>
             </div>
@@ -176,24 +212,38 @@ export default async function Home() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
               <div className="relative aspect-[3/4]">
-                <Image src="/posters/poster1.jpg" alt="Poster 1" fill className="object-cover rounded-xl shadow-md" />
+                <Image
+                  src="/posters/poster1.jpg"
+                  alt="Poster 1"
+                  fill
+                  className="object-cover rounded-xl shadow-md"
+                />
               </div>
               <div className="relative aspect-[3/4]">
-                <Image src="/posters/poster2.jpg" alt="Poster 2" fill className="object-cover rounded-xl shadow-md" />
+                <Image
+                  src="/posters/poster2.jpg"
+                  alt="Poster 2"
+                  fill
+                  className="object-cover rounded-xl shadow-md"
+                />
               </div>
               <div className="relative aspect-[3/4]">
-                <Image src="/posters/poster3.jpg" alt="Poster 3" fill className="object-cover rounded-xl shadow-md" />
+                <Image
+                  src="/posters/poster3.jpg"
+                  alt="Poster 3"
+                  fill
+                  className="object-cover rounded-xl shadow-md"
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-
-      {/* Results 2025 Button Section */}
+      {/* 
+      // Results 2025 Button Section (temporarily disabled, kept for future use)
       <section className="w-full flex justify-center mb-20 px-6">
         <div className="relative bg-gradient-to-br from-green-600 via-green-500 to-green-700 text-white shadow-2xl rounded-2xl px-8 py-10 text-center max-w-2xl w-full overflow-hidden">
-          {/* Animated flag icon */}
           <div className="absolute top-[-10px] left-[-10px] text-6xl opacity-20 transform rotate-12 pointer-events-none animate-pulseSlow">
             🏁
           </div>
@@ -216,6 +266,11 @@ export default async function Home() {
           </Link>
         </div>
       </section>
+      */}
+
+      {/* Videos Section */}
+      <VideosSection />
+
 
       {/* Gallery Section */}
       <section className="relative w-full py-24 px-6 md:px-12 max-w-7xl mx-auto">
@@ -270,8 +325,12 @@ export default async function Home() {
           />
         </div>
         <div className="w-full lg:w-1/2">
-          <h2 className="text-4xl font-bold text-green-700 mb-6">{t("mountain_trail.title")}</h2>
-          <p className="text-gray-800 text-lg leading-relaxed font-medium">{t("mountain_trail.description")}</p>
+          <h2 className="text-4xl font-bold text-green-700 mb-6">
+            {t("mountain_trail.title")}
+          </h2>
+          <p className="text-gray-800 text-lg leading-relaxed font-medium">
+            {t("mountain_trail.description")}
+          </p>
         </div>
       </section>
 
@@ -327,7 +386,9 @@ export default async function Home() {
           />
         </div>
         <div className="w-full lg:w-1/2">
-          <h2 className="text-4xl font-bold text-green-700 mb-6">{t("rules.title")}</h2>
+          <h2 className="text-4xl font-bold text-green-700 mb-6">
+            {t("rules.title")}
+          </h2>
           <ul className="list-disc list-inside text-gray-800 font-medium space-y-4 text-lg">
             <li>{t("rules.point1")}</li>
             <li>{t("rules.point2")}</li>
@@ -342,7 +403,7 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section (NEW) */}
+      {/* Testimonials Section */}
       <section className="w-full py-20 px-6 md:px-12 max-w-7xl mx-auto">
         <h2 className="text-4xl font-extrabold text-green-700 text-center mb-10">
           {t("testimonials.title", { defaultValue: "What runners say" })}
@@ -356,7 +417,10 @@ export default async function Home() {
           {t("cta.title", { defaultValue: "Be part of the trail community" })}
         </h2>
         <p className="max-w-xl mx-auto font-medium mb-6">
-          {t("cta.description", { defaultValue: "Join runners from all over the region and take on the mountains of Mavrovo." })}
+          {t("cta.description", {
+            defaultValue:
+              "Join runners from all over the region and take on the mountains of Mavrovo.",
+          })}
         </p>
         <Link
           href={`/${currentLocale}/contact`}

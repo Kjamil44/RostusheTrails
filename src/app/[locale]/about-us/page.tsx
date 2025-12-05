@@ -14,6 +14,7 @@ export default function Page() {
   const teamMembers = [
     {
       name: t("team.haris"),
+      highlight: t("team.haris_highlight"),
       achievements: [
         t("team.haris_achievment1"),
         "Ohrid Ultra Trail – 2021  – 20 km",
@@ -37,10 +38,19 @@ export default function Page() {
         "Svilajnac Half Marathon – 21,09 km – 10.2024",
         "Salomon Cappadocia Ultra Trail – 60km – 10.2024",
         "Strumina Trails – 19 km – 11.2024",
+        "Ephesus Ultra trails – 61 km Finisher",
+        "High Scardus Ultra – Oshlak Sky Race – 35 km – 2200 D+ - Finisher",
+        "Galicnik trail run – 20 km – 3 place",
+        "Wizzair Skopje Marathon – 42,2 km Full Marathon – Finisher",
+        "Tirana Marathon – 21,1 km – Finisher",
+        "Manavgat Backyard ultra – 11 loops – 75 km –DNF",
+        "Momata Rock Trails – 20 km – Finisher",
+        "Strumina Trails – 18 km – Finisher"
       ],
     },
     {
       name: t("team.oktay"),
+      highlight: t("team.oktay_highlight"),
       achievements: [
         "Pelister Ultra Trail – 20 km – 09.2022 (1 место)",
         "High Scardus – 23 km – 09.2022",
@@ -49,10 +59,15 @@ export default function Page() {
         "High Scardus Ultra – 23 km (3 место) – 09.2023",
         "Ростушко – Корабска трансверзала – 51,5 км – 10.09.2023",
         "High Scardus Ultra – 20 km – 09.2024 (5 место)",
+        "High Scardus Ultra – Oshlak Sky Race – 35 km – 2200 D+ - Finisher",
+        "Galicnik trail run – 20 km – 2 place",
+        "Tirana Marathon – 21,1 km – Finisher",
+        "Momata Rock Trails – 20 km – Finisher"
       ],
     },
     {
       name: t("team.bilal"),
+      highlight: "",
       achievements: [
         "Rocky Trail Nish – 11 km – 11.2022",
         "Pelister Unique Marathon – 22 km – 06.2023",
@@ -62,6 +77,7 @@ export default function Page() {
     },
     {
       name: t("team.ahmed"),
+      highlight: "",
       achievements: [
         "Pelister Ultra Trail – 19 km – 09.2022",
         "Rocky Trail Nish – 11 km – 11.2022",
@@ -70,6 +86,7 @@ export default function Page() {
     },
     {
       name: t("team.kebir"),
+      highlight: "",
       achievements: [
         "Pelister Ultra Trail – 19 km – 09.2022",
         "Rocky Trail Nish – 11 km – 11.2022",
@@ -79,38 +96,47 @@ export default function Page() {
     },
     {
       name: t("team.harun"),
+      highlight: "",
       achievements: ["High Scardus – 22 km – 09.2023"],
     },
     {
       name: t("team.edah"),
+      highlight: t("team.kids_highlight"),
       achievements: ["Ohrid Kids Race – 11 km – 05.2024"],
     },
     {
       name: t("team.sunaj"),
+      highlight: t("team.kids_highlight"),
       achievements: ["Ohrid Kids Race – 11 km – 05.2024"],
     },
     {
       name: t("team.imran"),
+      highlight: t("team.kids_highlight"),
       achievements: ["Ohrid Kids Race – 11 km – 05.2024"],
     },
     {
       name: t("team.mustafa"),
+      highlight: "",
       achievements: ["Rocky Trail Nish – 11 km – 11.2022"],
     },
     {
       name: t("team.semih"),
+      highlight: t("team.kids_highlight"),
       achievements: ["Ohrid Kids Race – 05.2024"],
     },
     {
       name: t("team.berin"),
+      highlight: "",
       achievements: ["Pelister Ultra Trail – 20 km – 09.2022"],
     },
     {
       name: t("team.nermin"),
+      highlight: "",
       achievements: ["High Scardus – 20 km – 09.2022"],
     },
     {
       name: t("team.seval"),
+      highlight: "",
       achievements: [
         "Pelister Ultra Trail – 20 км – 09.2022 (1 место)",
         "High Scardus – 20 km – 09.2022",
@@ -120,11 +146,31 @@ export default function Page() {
     },
     {
       name: t("team.mirnes"),
+      highlight: "",
       achievements: [
         "Pelister Ultra Trail – 20 км – 09.2022",
       ],
     },
+    {
+      name: t("team.lejs"),
+      highlight: "",
+      achievements: [
+        "Rostushe trails – 11 km Finisher",
+        "Galicnik Trail Run  - 8 km Finisher",
+        "Momata Rock Trails – 10 km Finisher"
+      ],
+    },
+    {
+      name: t("team.halil"),
+      highlight: "",
+      achievements: [
+        "Rostushe trails – 11 km Finisher",
+        "Galicnik Trail Run  - 8 km Finisher",
+        "Momata Rock Trails – 10 km Finisher"
+      ],
+    },
   ];
+
   return (
     <>
       <NextSeo
@@ -183,22 +229,82 @@ export default function Page() {
             </div>
           </section>
 
-          {/* Association Section */}
-          <section className="flex flex-col lg:flex-row-reverse items-start gap-8 mb-20">
+          {/* Everesting Rostushe Club Section (new text, same photo) */}
+          <section className="flex flex-col lg:flex-row-reverse items-start gap-10 mb-20">
             <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
               <Image
                 src={associationpic}
                 alt={t("association_image")}
                 width={450}
                 height={300}
-                className="w-full max-w-[400px] h-auto object-contain rounded-2xl shadow-2xl"
+                className="w-full max-w-[400px] h-auto object-contain rounded-2xl shadow-2xl bg-white"
               />
             </div>
             <div className="w-full lg:w-1/2">
-              <h2 className="text-4xl font-bold text-green-700 mb-6">{t("association")}</h2>
-              <p className="text-gray-800 leading-relaxed font-sans">
-                {t("association_description")}
+              <h2 className="text-4xl font-bold text-green-700 mb-4">
+                {t("association")}
+              </h2>
+              <p className="text-gray-800 leading-relaxed font-sans mb-4">
+                {t("association_intro")}
               </p>
+
+              {/* Mission */}
+              <div className="mb-4">
+                <h3 className="text-xl font-semibold text-green-700 mb-2">
+                  {t("association_mission_title")}
+                </h3>
+                <ul className="list-disc list-inside text-gray-800 space-y-1">
+                  <li>{t("association_mission_1")}</li>
+                  <li>{t("association_mission_2")}</li>
+                  <li>{t("association_mission_3")}</li>
+                  <li>{t("association_mission_4")}</li>
+                </ul>
+              </div>
+
+              {/* Activities */}
+              <div className="mb-4">
+                <h3 className="text-xl font-semibold text-green-700 mb-2">
+                  {t("association_activities_title")}
+                </h3>
+                <ul className="list-disc list-inside text-gray-800 space-y-1">
+                  <li>{t("association_activity_1")}</li>
+                  <li>{t("association_activity_2")}</li>
+                  <li>{t("association_activity_3")}</li>
+                  <li>{t("association_activity_4")}</li>
+                  <li>{t("association_activity_5")}</li>
+                </ul>
+              </div>
+
+              {/* Goals */}
+              <div className="mb-4">
+                <h3 className="text-xl font-semibold text-green-700 mb-2">
+                  {t("association_goals_title")}
+                </h3>
+                <ul className="list-disc list-inside text-gray-800 space-y-1">
+                  <li>{t("association_goal_1")}</li>
+                  <li>{t("association_goal_2")}</li>
+                  <li>{t("association_goal_3")}</li>
+                  <li>{t("association_goal_4")}</li>
+                </ul>
+              </div>
+
+              {/* Membership */}
+              <div>
+                <h3 className="text-xl font-semibold text-green-700 mb-2">
+                  {t("association_members_title")}
+                </h3>
+                <p className="text-gray-800 mb-2">
+                  {t("association_members_intro")}
+                </p>
+                <ul className="list-disc list-inside text-gray-800 space-y-1">
+                  <li>{t("association_member_1")}</li>
+                  <li>{t("association_member_2")}</li>
+                  <li>{t("association_member_3")}</li>
+                </ul>
+                <p className="text-gray-800 mt-2">
+                  {t("association_members_benefits")}
+                </p>
+              </div>
             </div>
           </section>
 
@@ -218,22 +324,49 @@ export default function Page() {
               />
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+            {/* Modern grid of team cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {teamMembers.map((member, index) => (
-                <div
+                <article
                   key={index}
-                  className={`${index % 2 === 0 ? "bg-green-100" : "bg-white"
-                    } rounded-2xl shadow-md p-6 flex flex-col`}
+                  className="relative bg-white/90 border border-green-100 rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden"
                 >
-                  <h3 className="text-2xl font-bold text-gray-800 mb-4">
-                    {member.name}
-                  </h3>
-                  <ul className="list-disc list-inside text-gray-700 font-medium space-y-2 text-sm">
-                    {member.achievements.map((achievement, i) => (
-                      <li key={i}>{achievement}</li>
-                    ))}
-                  </ul>
-                </div>
+                  {/* Accent bar */}
+                  <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-green-500 via-emerald-500 to-green-700" />
+
+                  <div className="p-5 pt-6 flex flex-col h-full">
+                    <div className="flex items-baseline justify-between mb-3">
+                      <h3 className="text-xl font-bold text-gray-900">
+                        {member.name}
+                      </h3>
+                      <span className="text-xs uppercase tracking-wide text-green-700 bg-green-50 px-2 py-1 rounded-full">
+                        {index === 0
+                          ? t("team.badge_lead")
+                          : index <= 4
+                            ? t("team.badge_core")
+                            : t("team.badge_member")}
+                      </span>
+                    </div>
+
+                    {member.highlight && (
+                      <p className="text-sm text-green-800 font-medium mb-3">
+                        {member.highlight}
+                      </p>
+                    )}
+
+                    <div className="mt-1">
+                      <p className="text-xs font-semibold text-gray-500 mb-2">
+                        {t("team.achievements_label")}
+                      </p>
+                      {/* Scrollable achievements list, to keep card compact */}
+                      <ul className="list-disc list-inside text-gray-700 space-y-1 text-sm max-h-40 overflow-y-auto pr-1 custom-scrollbar">
+                        {member.achievements.map((achievement, i) => (
+                          <li key={i}>{achievement}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </article>
               ))}
             </div>
           </section>

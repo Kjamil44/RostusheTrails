@@ -4,7 +4,6 @@ import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
-  /* config options here */
   images: {
     remotePatterns: [
       {
@@ -13,7 +12,7 @@ const nextConfig: NextConfig = {
         pathname: '/wp-content/uploads/**',
       },
     ],
-    domains: ['drive.google.com'],
+    domains: ['drive.google.com', 'img.youtube.com'],
   },
 };
 

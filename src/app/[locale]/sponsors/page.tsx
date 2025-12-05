@@ -8,10 +8,10 @@ export default function Page() {
   const t = useTranslations("sponsors");
   const locale = useLocale();
 
-  const sponsors: string[] = [
-    "/sponsors/mavrovorostushe.png",
-    "/sponsors/npmavrovo.png",
-    "/sponsors/maya.png"
+  const sponsors = [
+     { logo: "/sponsors/mavrovorostushe.png", url: "https://www.mavrovoirostuse.gov.mk/", name: "OMiR" },
+     { logo: "/sponsors/npmavrovo.png", url: "https://npmavrovo.org.mk/", name: "NPM" },
+     { logo: "/sponsors/maya.png", url: "https://maya.mk/", name: "Maya" },
   ];
 
   return (
@@ -53,22 +53,53 @@ export default function Page() {
         </h1>
 
         {/* Sponsors Grid */}
-        {sponsors.length > 0 && (
+        {Array.isArray(sponsors) && sponsors.length > 0 && (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl w-full mb-16">
-            {sponsors.map((logo, index) => (
-              <div
-                key={index}
-                className="bg-white shadow-lg rounded-xl p-6 flex items-center justify-center"
-              >
+            {sponsors.map((item: any, index: number) => {
+              // Backward-compatible: allow either string or object
+              const isString = typeof item === "string";
+              const logo = isString ? item : item?.logo;
+              const url = isString ? undefined : item?.url;
+              const name = isString ? undefined : item?.name;
+
+              const img = (
                 <img
                   src={logo}
-                  alt={`${t("sponsor_alt")} ${index + 1}`}
-                  className="h-24 object-contain"
+                  alt={
+                    name
+                      ? `${name} — ${t("sponsor_alt")} ${index + 1}`
+                      : `${t("sponsor_alt")} ${index + 1}`
+                  }
+                  className="h-24 object-contain transition-transform duration-150 group-hover:scale-[1.03]"
+                  loading="lazy"
+                  decoding="async"
                 />
-              </div>
-            ))}
+              );
+
+              return (
+                <div
+                  key={index}
+                  className="bg-white shadow-lg rounded-xl p-6 flex items-center justify-center group"
+                >
+                  {url ? (
+                    <a
+                      href={url}
+                      target={/^https?:\/\//i.test(url) ? "_blank" : undefined}
+                      rel={/^https?:\/\//i.test(url) ? "noopener noreferrer" : undefined}
+                      aria-label={name ? `${name} — ${t("sponsor_alt")}` : t("sponsor_alt")}
+                      className="inline-flex"
+                    >
+                      {img}
+                    </a>
+                  ) : (
+                    img
+                  )}
+                </div>
+              );
+            })}
           </div>
         )}
+
 
         {/* CTA remains visible regardless */}
         <div className="text-center max-w-2xl">
