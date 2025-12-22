@@ -10,7 +10,8 @@
         "contact": "Contact",
         "results": "Results 2025",
         "sponsors": "Sponsors",
-        "gallery": "Gallery"
+        "gallery": "Gallery",
+        "accommodation": "Accommodation"
     },
     "home": {
         "welcome": "Welcome to Rostushe Trails",
@@ -194,7 +195,8 @@
         "follow_us": "Follow Us",
         "rights_reserved": "All rights reserved.",
         "navigation": "Navigation",
-        "gallery": "Gallery"
+        "gallery": "Gallery",
+        "accommodation": "Accommodation"
     },
     "eleven-km": {
         "overview": {
@@ -450,5 +452,75 @@
         "error": "Failed to load images.",
         "altText": "Gallery image",
         "view_more": "View more photos"
+    },
+    "accommodation": {
+        "meta": {
+            "title": "Accommodation | Rostushe Trails",
+            "description": "Find places to stay near Rostushe Trails—handpicked options for runners and hikers."
+        },
+        "hero": {
+            "kicker": "Stay close to the trails",
+            "title": "Accommodation",
+            "subtitle": "A small selection of places to stay around Mavrovo–Rostuše, perfect for race weekend and training camps.",
+            "chips": {
+                "nearStart": "Near Mavrovo–Rostuše",
+                "freeParking": "Parking options",
+                "flexibleStay": "Great for groups"
+            }
+        },
+        "listings": {
+            "title": "Recommended stays",
+            "subtitle": "Book directly through the provider. More options will be added over time.",
+            "tip": {
+                "label": "Tip",
+                "value": "For race weekend, book early."
+            }
+        },
+        "listing": {
+            "badges": {
+                "entireHome": "Entire home",
+                "airbnb": "Airbnb",
+                "new": "New"
+            },
+            "ataHouse": {
+                "title": "ATA House",
+                "location": "Mavrovo, North Macedonia",
+                "guests": "4 guests",
+                "bedrooms": "2 bedrooms • 4 beds",
+                "bath": "1 bath",
+                "description": "A chalet for rest and relaxation—good for winter and summer, around 3.5 km from the ski slopes.",
+                "perks": {
+                    "selfCheckIn": "Self check-in (lockbox)",
+                    "coffee": "Espresso + drip coffee",
+                    "kitchen": "Kitchen",
+                    "parking": "Free street parking",
+                    "tv": "TV",
+                    "ac": "Portable air conditioning"
+                }
+            },
+            "sidebar": {
+                "hostLabel": "Hosted by",
+                "hostValue": "Alek (Superhost)",
+                "note1": "Great option for small teams and families.",
+                "note2": "Easy arrival with self check-in.",
+                "note3": "Base yourself near the lake & trails.",
+                "cta": "View on Airbnb",
+                "disclaimer": "You’ll be redirected to Airbnb to see availability and pricing."
+            }
+        },
+        "comingSoon": {
+            "title": "More stays coming soon",
+            "text": "Want your guesthouse or hotel listed here? Contact us and we’ll add it after a quick review."
+        },
+        "placeholders": {
+            "title": "More accommodation soon",
+            "text": "We’re curating a few runner-friendly stays nearby. This slot will be replaced with a new listing.",
+            "badge": "Coming soon"
+        },
+        "cta": {
+            "title": "Want to list your accommodation?",
+            "text": "If you have a guesthouse, hotel, or apartment near the trails, contact us and we’ll add it here after a quick review.",
+            "button": "Contact Us"
+        }
     }
 }

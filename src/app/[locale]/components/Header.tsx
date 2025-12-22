@@ -68,10 +68,10 @@ export default function Header({
   const pages = [
     { label: t('home'), href: '' },
     { label: t('about-us'), href: 'about-us' },
+    { label: t('accommodation'), href: 'accommodation' },
     { label: t('sponsors'), href: 'sponsors' },
     { label: t('contact'), href: 'contact' },
     { label: t('gallery'), href: 'gallery' },
-    // "results" is handled separately now
   ];
 
   const trailPages = [

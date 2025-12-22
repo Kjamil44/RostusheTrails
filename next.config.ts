@@ -11,6 +11,10 @@ const nextConfig: NextConfig = {
         hostname: 'dstal.com.au',
         pathname: '/wp-content/uploads/**',
       },
+      {
+        protocol: "https",
+        hostname: "a0.muscache.com"
+      }
     ],
     domains: ['drive.google.com', 'img.youtube.com'],
   },
