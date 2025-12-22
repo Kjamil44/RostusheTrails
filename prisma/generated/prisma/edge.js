@@ -124,7 +124,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/vercel/sandbox/primary/prisma/generated/prisma",
+      "value": "C:\\Users\\kamil\\Desktop\\Programiranje\\RostusheTrails\\rostushe-trails\\prisma\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -133,16 +133,17 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "rhel-openssl-3.0.x",
+        "value": "windows",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/vercel/sandbox/primary/prisma/schema.prisma",
+    "sourceFilePath": "C:\\Users\\kamil\\Desktop\\Programiranje\\RostusheTrails\\rostushe-trails\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": null
+    "rootEnvPath": null,
+    "schemaEnvPath": "../../../.env"
   },
   "relativePath": "../..",
   "clientVersion": "6.5.0",
