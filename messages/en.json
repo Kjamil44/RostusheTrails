@@ -18,11 +18,15 @@
         "description": "Discover the beauty of nature and the excitement of our trails.",
         "ten_km_trail": {
             "title": "11 km - Bagrem Trail",
-            "description": "Explore the short trail through scenic landscapes."
+            "description": "Explore the short trail through scenic landscapes.",
+            "kicker": "Beginner friendly",
+            "cta": "Explore Bagrem 11K"
         },
         "twentyseven_km_trail": {
             "title": "27 km - Krchin Trail",
-            "description": "Challenge yourself with the extended adventure."
+            "description": "Challenge yourself with the extended adventure.",
+            "kicker": "Advanced challenge",
+            "cta": "Explore Krchin 27K"
         },
         "mountain_trail": {
             "title": "Mountain Trail",
@@ -96,7 +100,8 @@
             "video3_title": "Vidi Vaka - Haris Bekji champion in 'Everesting'",
             "video4_title": "Interview with Haris Bekjiri on National TV MRT1, about participating in the most prestigious race in Turkey",
             "video5_title": "Official Rostushe Trails Highlights with a drone"
-        }
+        },
+        "scroll_hint": "Scroll to discover more ↓"
     },
     "about-us": {
         "rostushe": "Rostushe",
@@ -160,7 +165,15 @@
             "badge_core": "Core team",
             "badge_member": "Member",
             "achievements_label": "Selected races & results"
-        }
+        },
+        "affiliations_title": "Affiliations",
+        "affiliations_note": "Official memberships and commissions connected with our club.",
+        "federation_logo_alt": "National federation logo",
+        "skyrunning_logo_alt": "Skyrunning commission logo",
+        "federation_link_label": "Open federation website",
+        "skyrunning_link_label": "Open skyrunning commission website",
+        "federation_name": "Mountaineering Federation of North Macedonia",
+        "skyrunning_name": "Skyrunning Commission within MFNM"
     },
     "contact-us": {
         "title": "Contact Us",
@@ -196,7 +209,8 @@
         "rights_reserved": "All rights reserved.",
         "navigation": "Navigation",
         "gallery": "Gallery",
-        "accommodation": "Accommodation"
+        "accommodation": "Accommodation",
+        "federation_intro": "Proud member of the Mountaineering Federation of North Macedonia and the Skyrunning commission under MFNM"
     },
     "eleven-km": {
         "overview": {

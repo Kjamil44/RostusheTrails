@@ -84,41 +84,104 @@ export default async function Home() {
     <main className="min-h-screen flex flex-col items-center font-sans">
       <RegistrationNotice />
 
-      {/* Hero Section */}
-      <section className="relative flex flex-col items-center text-center gap-8 py-24 md:px-12 animate-fadeIn">
-        <h1 className="text-5xl md:text-7xl font-extrabold text-green-700 leading-tight tracking-tight">
-          {t("welcome")}
-        </h1>
-        <p className="text-lg md:text-xl text-gray-800 font-medium max-w-3xl animate-fadeIn delay-200">
-          {t("description")}
-        </p>
-      </section>
-
-      {/* Trails Buttons Section */}
-      <section className="relative w-full flex justify-center mb-24">
-        <div className="relative w-full max-w-7xl overflow-hidden rounded-3xl shadow-lg group">
+      {/* Home Hero (Welcome + Trails CTAs on the image) */}
+      <section className="relative w-[100vw] ml-[calc(50%-50vw)] mb-28">
+        <div className="relative w-full overflow-hidden group">
+          {/* Background image */}
           <Image
             src={villageImage}
             alt={t("village_image_alt")}
-            className="w-full h-[500px] md:h-[600px] object-cover group-hover:scale-105 transition-transform duration-700"
+            className="w-full h-[780px] md:h-[900px] object-cover object-center
+                 transition-transform duration-700 group-hover:scale-105"
             priority
           />
-          <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-center gap-10">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl px-4">
-              <a
-                href={`/${currentLocale}/trails/eleven-km`}
-                className="bg-gradient-to-r from-green-500 to-green-700 text-white rounded-2xl py-8 px-6 text-center shadow-md hover:scale-105 transition-all duration-300"
-              >
-                <h2 className="text-2xl font-bold mb-2">{t("ten_km_trail.title")}</h2>
-                <p className="text-base font-medium">{t("ten_km_trail.description")}</p>
-              </a>
-              <a
-                href={`/${currentLocale}/trails/twentyseven-km`}
-                className="bg-gradient-to-r from-green-500 to-green-700 text-white rounded-2xl py-8 px-6 text-center shadow-md hover:scale-105 transition-all duration-300"
-              >
-                <h2 className="text-2xl font-bold mb-2">{t("twentyseven_km_trail.title")}</h2>
-                <p className="text-base font-medium">{t("twentyseven_km_trail.description")}</p>
-              </a>
+
+          {/* Border overlay */}
+          <div className="pointer-events-none absolute inset-0 ring-2 ring-green-600/35" />
+
+          {/* Elegant overlays */}
+          <div className="absolute inset-0 bg-black/45" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/20 to-black/55 pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.18),transparent_55%)] pointer-events-none" />
+
+          {/* Content */}
+          <div className="absolute inset-0 flex items-center">
+            <div className="mx-auto w-full max-w-7xl px-6 md:px-12">
+              {/* make the whole hero centered + wide */}
+              <div className="w-full">
+                {/* Welcome title */}
+                <h1
+                  className="text-center font-extrabold leading-tight tracking-tight md:whitespace-nowrap"
+                  style={{ fontSize: "clamp(2.2rem, 4.6vw, 4.3rem)" }}
+                >
+                  <span className="bg-gradient-to-r from-green-300 via-white to-emerald-200 bg-clip-text text-transparent drop-shadow">
+                    {t("welcome")}
+                  </span>
+                </h1>
+
+                {/* Description */}
+                <p className="mt-6 text-center text-lg md:text-xl text-white/90 font-medium leading-relaxed max-w-5xl mx-auto">
+                  {t("description")}
+                </p>
+
+                {/* CTAs */}
+                <div className="mt-12 grid w-full grid-cols-1 md:grid-cols-2 gap-8">
+                  {/* 11K */}
+                  <a
+                    href={`/${currentLocale}/trails/eleven-km`}
+                    className="
+            group/btn relative overflow-hidden rounded-3xl px-8 py-10 text-center
+            bg-white/10 backdrop-blur-md border border-white/25
+            shadow-xl transition-all duration-300
+            hover:scale-[1.03] hover:shadow-[0_0_45px_rgba(34,197,94,0.45)]
+            min-h-[210px] flex items-center justify-center
+          "
+                  >
+                    <span className="absolute inset-0 bg-gradient-to-br from-green-500/25 via-transparent to-emerald-600/30 opacity-0 group-hover/btn:opacity-100 transition" />
+                    <div className="relative w-full">
+                      <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+                        {t("ten_km_trail.title")}
+                      </h2>
+
+                      {/* keep the description from getting too narrow */}
+                      <p className="mt-3 text-white/90 font-medium text-base md:text-lg max-w-[34rem] mx-auto">
+                        {t("ten_km_trail.description")}
+                      </p>
+
+                      <div className="mt-6 inline-flex items-center gap-2 text-green-200 font-semibold">
+                        {t("ten_km_trail.cta", { defaultValue: "Explore Bagrem 11K" })} →
+                      </div>
+                    </div>
+                  </a>
+
+                  {/* 27K */}
+                  <a
+                    href={`/${currentLocale}/trails/twentyseven-km`}
+                    className="
+            group/btn relative overflow-hidden rounded-3xl px-8 py-10 text-center
+            bg-white/10 backdrop-blur-md border border-white/25
+            shadow-xl transition-all duration-300
+            hover:scale-[1.03] hover:shadow-[0_0_45px_rgba(16,185,129,0.45)]
+            min-h-[210px] flex items-center justify-center
+          "
+                  >
+                    <span className="absolute inset-0 bg-gradient-to-br from-emerald-500/25 via-transparent to-green-600/30 opacity-0 group-hover/btn:opacity-100 transition" />
+                    <div className="relative w-full">
+                      <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+                        {t("twentyseven_km_trail.title")}
+                      </h2>
+
+                      <p className="mt-3 text-white/90 font-medium text-base md:text-lg max-w-[34rem] mx-auto">
+                        {t("twentyseven_km_trail.description")}
+                      </p>
+
+                      <div className="mt-6 inline-flex items-center gap-2 text-emerald-200 font-semibold">
+                        {t("twentyseven_km_trail.cta", { defaultValue: "Explore Krchin 27K" })} →
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

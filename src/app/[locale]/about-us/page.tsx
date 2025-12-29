@@ -5,6 +5,8 @@ import Image from "next/image";
 import rostushepic from "../../../assets/images/rostushe-od-planina.jpg";
 import associationpic from "../../../assets/images/logo-detailed.jpg";
 import teamPic from "../../../assets/images/everesting-team-photo.jpg";
+import federationLogo from "../../../assets/images/fpsm-logo.png";
+import skyrunningLogo from "../../../assets/images/skyrunning-logo.png";
 import { NextSeo } from "next-seo";
 
 export default function Page() {
@@ -247,6 +249,52 @@ export default function Page() {
               <p className="text-gray-800 leading-relaxed font-sans mb-4">
                 {t("association_intro")}
               </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <a
+                  href="https://www.fpsm.org.mk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-white rounded-2xl border border-green-100 shadow-md hover:shadow-xl transition p-5"
+                  aria-label={t("federation_link_label")}
+                >
+                  <div className="flex items-center justify-center">
+                    <Image
+                      src={federationLogo}
+                      alt={t("federation_logo_alt")}
+                      width={260}
+                      height={120}
+                      className="h-16 md:h-20 w-auto object-contain"
+                    />
+                  </div>
+
+                  <p className="mt-4 text-center text-sm font-semibold text-gray-800">
+                    {t("federation_name")}
+                  </p>
+                </a>
+
+                <a
+                  href="https://www.facebook.com/skyrunningmk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-white rounded-2xl border border-green-100 shadow-md hover:shadow-xl transition p-5"
+                  aria-label={t("skyrunning_link_label")}
+                >
+                  <div className="flex items-center justify-center">
+                    <Image
+                      src={skyrunningLogo}
+                      alt={t("skyrunning_logo_alt")}
+                      width={260}
+                      height={120}
+                      className="h-16 md:h-20 w-auto object-contain"
+                    />
+                  </div>
+
+                  <p className="mt-4 text-center text-sm font-semibold text-gray-800">
+                    {t("skyrunning_name")}
+                  </p>
+                </a>
+              </div>
 
               {/* Mission */}
               <div className="mb-4">
