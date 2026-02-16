@@ -391,25 +391,34 @@
     },
     "registered-runners": {
         "title": "Registered Runners",
-        "table": {
-            "bibNumber": "BIB",
-            "fullName": "Name",
-            "club": "Club",
-            "trail": "Race",
-            "country": "Country"
-        },
+        "subtitle": "Latest registered runners for Rostushe Trails",
         "filter": {
             "trail": "Filter by trail:",
             "all": "All",
-            "27Km": "27 km - Krchin Trail",
-            "11km": "11 km - Bagrem Trail"
+            "11km": "Bagrem 11K",
+            "27Km": "Krchin 27K",
+            "reset": "Reset filters",
+            "reset_short": "Reset"
         },
+        "search_placeholder": "Search by name, bib, club or country...",
+        "showing": "Showing: {count}",
+        "showing_count": "Showing results: {count}",
+        "table": {
+            "bibNumber": "Bib",
+            "fullName": "Full name",
+            "club": "Club",
+            "trail": "Trail",
+            "country": "Country"
+        },
+        "no_results": "No runners match your filters.",
+        "fetch_error": "Error fetching runners list. Please try again.",
+        "last_update": "List refreshed from RunnerSpot.",
         "cta": {
             "title": "Want to be part of the list? Join us now!",
-            "krchin": "Join Krchin 27K",
-            "bagrem": "Join Bagrem 11К"
-        },
-        "no_runners": "No runners registered yet."
+            "subtitle": "Register for your preferred trail and secure your bib.",
+            "krchin": "Explore Krchin 27K",
+            "bagrem": "Explore Bagrem 11K"
+        }
     },
     "api": {
         "fetch_error": "Failed to fetch runners.",

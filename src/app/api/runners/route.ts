@@ -8,21 +8,49 @@ const API_KEY = process.env.API_KEY;
 
 // ❌ Temporarily disabled — return 403 for all requests
 
+// export async function GET(req: NextRequest) {
+//   // return NextResponse.json({ error: "This endpoint is currently disabled." }, { status: 403 });
+//   if (!isValidApiKey(req)) {
+//     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+//   }
+
+//   const locale = req.headers.get("x-locale") || "en"; // fallback if needed
+//   const t = await getTranslations({ locale, namespace: "api" });
+
+//   try {
+//     const runners = await prisma.registeredRunner.findMany();
+//     return NextResponse.json(runners, { status: 201 });
+//   } catch {
+//     return NextResponse.json({ error: t("fetch_error") }, { status: 500 });
+//   }
+// }
+
+//IMPORTANT: Created the endpoint to bypass CORS issues with the remote API. It will simply proxy requests to the remote API and pass through responses.
 export async function GET(req: NextRequest) {
-  // return NextResponse.json({ error: "This endpoint is currently disabled." }, { status: 403 });
   if (!isValidApiKey(req)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const locale = req.headers.get("x-locale") || "en"; // fallback if needed
-  const t = await getTranslations({ locale, namespace: "api" });
+  const { searchParams } = new URL(req.url);
+  const eventId = searchParams.get("eventId") ?? "43";
 
-  try {
-    const runners = await prisma.registeredRunner.findMany();
-    return NextResponse.json(runners, { status: 201 });
-  } catch {
-    return NextResponse.json({ error: t("fetch_error") }, { status: 500 });
-  }
+  const url =
+    `https://runnerspot-api.blackpond-5e9cc4af.germanywestcentral.azurecontainerapps.io/api/runner/getrunnersforevent?eventId=${encodeURIComponent(
+      eventId
+    )}`;
+
+  const res = await fetch(url, {
+    cache: "no-store",
+  });
+
+  // Pass through status and body
+  const text = await res.text();
+  return new NextResponse(text, {
+    status: res.status,
+    headers: {
+      "Content-Type": res.headers.get("content-type") ?? "application/json",
+    },
+  });
 }
 
 export async function POST(req: NextRequest) {
