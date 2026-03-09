@@ -479,24 +479,24 @@
     "accommodation": {
         "meta": {
             "title": "Accommodation | Rostushe Trails",
-            "description": "Find places to stay near Rostushe Trails—handpicked options for runners and hikers."
+            "description": "Find accommodation options for Rostushe Trails, including hotels, apartments, and local stays near the event."
         },
         "hero": {
             "kicker": "Stay close to the trails",
             "title": "Accommodation",
-            "subtitle": "A small selection of places to stay around Mavrovo–Rostuše, perfect for race weekend and training camps.",
+            "subtitle": "Choose from comfortable local stays, hotels, and apartments near Rostushe Trails.",
             "chips": {
-                "nearStart": "Near Mavrovo–Rostuše",
-                "freeParking": "Parking options",
-                "flexibleStay": "Great for groups"
+                "nearStart": "Near start area",
+                "freeParking": "Free parking options",
+                "flexibleStay": "Flexible stay choices"
             }
         },
         "listings": {
-            "title": "Recommended stays",
-            "subtitle": "Book directly through the provider. More options will be added over time.",
+            "title": "Places to stay",
+            "subtitle": "Recommended accommodation options for runners and visitors.",
             "tip": {
                 "label": "Tip",
-                "value": "For race weekend, book early."
+                "value": "Book early to secure the closest stays."
             }
         },
         "listing": {
@@ -505,45 +505,98 @@
                 "airbnb": "Airbnb",
                 "new": "New"
             },
-            "ataHouse": {
-                "title": "ATA House",
-                "location": "Mavrovo, North Macedonia",
-                "guests": "4 guests",
-                "bedrooms": "2 bedrooms • 4 beds",
-                "bath": "1 bath",
-                "description": "A chalet for rest and relaxation—good for winter and summer, around 3.5 km from the ski slopes.",
-                "perks": {
-                    "selfCheckIn": "Self check-in (lockbox)",
-                    "coffee": "Espresso + drip coffee",
-                    "kitchen": "Kitchen",
-                    "parking": "Free street parking",
-                    "tv": "TV",
-                    "ac": "Portable air conditioning"
-                }
+            "buttons": {
+                "airbnb": "Open on Airbnb",
+                "website": "Open Website",
+                "instagram": "Open on Instagram"
             },
             "sidebar": {
-                "hostLabel": "Hosted by",
-                "hostValue": "Alek (Superhost)",
-                "note1": "Great option for small teams and families.",
-                "note2": "Easy arrival with self check-in.",
-                "note3": "Base yourself near the lake & trails.",
-                "cta": "View on Airbnb",
-                "disclaimer": "You’ll be redirected to Airbnb to see availability and pricing."
+                "disclaimer": "Availability, pricing, and amenities may change. Please confirm directly with the host or property."
+            },
+            "ataHouse": {
+                "title": "Ata House",
+                "location": "Rostushe",
+                "guests": "4 guests",
+                "bedrooms": "2 bedrooms",
+                "bath": "1 bath",
+                "description": "A comfortable and practical stay option for runners who want a private home atmosphere close to the event.",
+                "perks": {
+                    "selfCheckIn": "Self check-in",
+                    "coffee": "Coffee",
+                    "kitchen": "Kitchen",
+                    "parking": "Parking",
+                    "tv": "TV",
+                    "ac": "Air conditioning"
+                }
+            },
+            "miasFavorite": {
+                "title": "Mia’s Favorite Hotel",
+                "location": "Mavrovo, Macedonia",
+                "guests": "2+ guests",
+                "bedrooms": "Multiple room types",
+                "bath": "Private bath",
+                "description": "A family boutique hotel in Mavrovo with eco-inspired lodging, breakfast, spa access, free Wi-Fi, and parking.",
+                "badges": {
+                    "boutique": "Boutique Hotel",
+                    "breakfast": "Breakfast",
+                    "spa": "Spa"
+                },
+                "perks": {
+                    "breakfast": "Bed & breakfast",
+                    "parking": "Free parking",
+                    "tv": "Netflix / TV",
+                    "spa": "Spa access",
+                    "family": "Family-friendly",
+                    "location": "Mavrovo location"
+                }
+            },
+            "hotelDeko": {
+                "title": "Hotel Deko",
+                "location": "Mavrovo / nearby area",
+                "guests": "See website",
+                "bedrooms": "Hotel rooms",
+                "bath": "Private bath",
+                "description": "A hotel option for visitors looking for accommodation in the wider Mavrovo-Rostushe area.",
+                "badges": {
+                    "hotel": "Hotel",
+                    "region": "Mavrovo Region",
+                    "booking": "Direct Booking"
+                },
+                "perks": {
+                    "rooms": "Private rooms",
+                    "bathroom": "Private bathroom",
+                    "mountain": "Mountain stay",
+                    "parking": "Check website for parking",
+                    "breakfast": "Check website for breakfast",
+                    "option": "Hotel option"
+                }
+            },
+            "rostuseRooms": {
+                "title": "Rostushe Rooms & Apartments",
+                "location": "Rostushe",
+                "guests": "See Instagram",
+                "bedrooms": "Rooms & apartments",
+                "bath": "Private bath",
+                "description": "A local stay option in Rostushe shared via Instagram, suitable for visitors who want to stay closer to the event area.",
+                "badges": {
+                    "local": "Local Stay",
+                    "rostushe": "Rostushe",
+                    "instagram": "Instagram"
+                },
+                "perks": {
+                    "rooms": "Rooms & apartments",
+                    "close": "Closer to Rostushe",
+                    "runners": "Suitable for runners",
+                    "flexible": "Flexible stay options",
+                    "contact": "Contact host directly",
+                    "parking": "Ask about parking"
+                }
             }
         },
-        "comingSoon": {
-            "title": "More stays coming soon",
-            "text": "Want your guesthouse or hotel listed here? Contact us and we’ll add it after a quick review."
-        },
-        "placeholders": {
-            "title": "More accommodation soon",
-            "text": "We’re curating a few runner-friendly stays nearby. This slot will be replaced with a new listing.",
-            "badge": "Coming soon"
-        },
         "cta": {
-            "title": "Want to list your accommodation?",
-            "text": "If you have a guesthouse, hotel, or apartment near the trails, contact us and we’ll add it here after a quick review.",
-            "button": "Contact Us"
+            "title": "Need help choosing where to stay?",
+            "text": "Contact us and we’ll help you find an accommodation option that fits your race weekend plans.",
+            "button": "Contact us"
         }
     }
 }

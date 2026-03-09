@@ -14,6 +14,10 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "a0.muscache.com"
+      },
+            {
+        protocol: "https",
+        hostname: "miasfavorite.com"
       }
     ],
     domains: ['drive.google.com', 'img.youtube.com'],
