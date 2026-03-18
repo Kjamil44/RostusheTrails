@@ -97,7 +97,7 @@
             "section_subtitle": "Watch official footage and interviews with Haris Bekjiri, the organizer of Rostushe Trails and president of Mountaineering Club 'Everesting Rostuše.'",
             "video1_title": "Haris Bekjiri on TV Telma – The boy who conquers the peaks by running",
             "video2_title": "Haris Bekjiri on TV Sitel, after his feat of running 8,848 m. in the Rostushe climb, was part of a race in Turkey.",
-            "video3_title": "Vidi Vaka - Haris Bekji champion in 'Everesting'",
+            "video3_title": "Vidi Vaka - Haris Bekjiri champion in 'Everesting'",
             "video4_title": "Interview with Haris Bekjiri on National TV MRT1, about participating in the most prestigious race in Turkey",
             "video5_title": "Official Rostushe Trails Highlights with a drone"
         },
@@ -357,36 +357,123 @@
         }
     },
     "guide": {
-        "overview": {
-            "title": "Trail Guide",
-            "description": "Explore the key features of both Krchin Trail 27K and Bagrem Trail 11К. Whether you seek a technical alpine challenge or a scenic beginner route, we have you covered."
+        "meta": {
+            "title": "Race Guide | Rostushe Trails",
+            "description": "Race guide for Rostushe Trails with rules summary, inline PDF, GPX downloads, mandatory equipment, time limits, and trail overview."
         },
-        "krchin": {
-            "title": "Krchin Trail 27K",
-            "description": "A challenging race for true mountain lovers. Starting in Rostushe, climbing through alpine forests to the rocky ridges and peak Golem Krchin (2341m), this route offers technical terrain, fast descents, and a view of Lokuv glacier lake."
+        "hero": {
+            "kicker": "Race Guide",
+            "title": "Your complete guide for race day",
+            "subtitle": "Everything runners need before arriving in Rostushe: routes, GPX downloads, official rules, mandatory equipment, safety notes, and practical race-day essentials.",
+            "chips": {
+                "rules": "Rules & Regulations",
+                "gpx": "GPX Downloads",
+                "safety": "Safety First"
+            },
+            "primaryButton": "Open rules center",
+            "secondaryButton": "Go to downloads"
         },
-        "bagrem": {
-            "title": "Bagrem Trail 11К",
-            "description": "Ideal for beginners and recreational runners. It follows the Radika River, passes through Janche and Adjievci, and returns to Rostushe, offering stunning views and cultural immersion."
+        "quick": {
+            "title": "Before you race",
+            "subtitle": "The most important things to check before arriving at the start.",
+            "card1": {
+                "title": "Know the limits",
+                "text": "27K starts at 08:00 with a 9-hour limit. 11K starts at 10:00 with a 4-hour limit."
+            },
+            "card2": {
+                "title": "Carry the right gear",
+                "text": "Mandatory gear can be checked during the race, and missing gear can lead to penalties or disqualification."
+            },
+            "card3": {
+                "title": "Be self-reliant",
+                "text": "The race is run in semi-autonomy, so runners must be ready to manage themselves in mountain conditions."
+            },
+            "card4": {
+                "title": "Respect the mountain",
+                "text": "Stay on marked routes, do not litter, and respect nature, volunteers, and other runners."
+            }
         },
-        "gpx": {
-            "title": "Download GPX Files",
-            "twentyseven_km": "Download 27Km Route (Krchin)",
-            "ten_km": "Download 11km Route (Bagrem)"
+        "trails": {
+            "title": "Choose your trail",
+            "subtitle": "Two routes, two different race experiences.",
+            "tipLabel": "Tip",
+            "tipValue": "Download the GPX before race day",
+            "longTitle": "Rostushe Trails 27K",
+            "longText": "A serious mountain effort with more climbing, stricter equipment expectations, and a full trail challenge.",
+            "shortTitle": "Rostushe Trails 11K",
+            "shortText": "A shorter and more accessible race, but still one that requires preparation, focus, and respect for the terrain.",
+            "viewTrail": "View trail details"
         },
-        "pictures": {
-            "title": "Trail Gallery"
+        "facts": {
+            "title": "Race essentials",
+            "subtitle": "Quick facts from the official rules and regulations.",
+            "leftTitle": "Dates, starts, and format",
+            "rightTitle": "What runners must remember",
+            "date": "15 August 2026",
+            "start27": "27K start: 08:00",
+            "start11": "11K start: 10:00",
+            "limit27": "27K limit: 9h",
+            "limit11": "11K limit: 4h",
+            "autonomy": "Semi-autonomy format",
+            "rule1": "Outside assistance is allowed only at refreshment stations.",
+            "rule2": "Pacers and third parties without a bib are not allowed to accompany runners on course.",
+            "rule3": "If a runner abandons outside an official checkpoint, they must inform the organizer immediately.",
+            "rule4": "The organizer may adapt routes or equipment rules if weather or safety conditions require it."
         },
         "rules": {
-            "title": "Rules and Regulations",
-            "bullet1": "The races take place in Mavrovo National Park on August 15, 2026 (11K and 27K).",
-            "bullet2": "Participation allowed from age 13 (11K with parental consent), 18+ for 27K.",
-            "bullet3": "Mandatory gear required (mobile phone, whistle, foil blanket, jacket, cup, etc).",
-            "bullet4": "Participants must strictly follow marked trails—deviation may lead to disqualification.",
-            "bullet5": "Nature protection is key – eco-rules enforced with penalties for littering.",
-            "bullet6": "Finisher medals, category awards, and full personal responsibility apply.",
-            "open": "Open full regulations (PDF)",
-            "note": "This document is only available in Macedonian. For more details, feel free to contact us."
+            "title": "Rules center",
+            "subtitle": "Read the official Macedonian rules directly on the page and use the summary cards on the right for a clearer runner-friendly overview.",
+            "viewerTitle": "Official rules and regulations document",
+            "viewerText": "This document is only available in Macedonian. For more details, feel free to contact us.",
+            "open": "Open in new tab",
+            "download": "Download PDF",
+            "translationBadge": "Translated guide summary",
+            "summaryTitle": "Rules summary",
+            "summary1": "The event takes place on 15 August 2026 and includes two races: 27K and 11K.",
+            "summary2": "Participation is at each runner’s own responsibility and requires physical and mental readiness.",
+            "summary3": "The race takes place in semi-autonomy, so runners must be prepared for changing mountain conditions and self-management.",
+            "summary4": "Runners must stay on the marked route and follow official instructions and checkpoint procedures.",
+            "summary5": "The organizer may change the route, stop the race, or update required gear for safety reasons.",
+            "summary6": "Respect for nature, volunteers, local community, and other runners is a core rule."
+        },
+        "gear": {
+            "title": "Mandatory gear",
+            "commonTitle": "Mandatory for both races",
+            "common1": "Charged mobile phone",
+            "common2": "Bib attached to the front of the body",
+            "common3": "Trail running shoes",
+            "common4": "Survival blanket",
+            "common5": "Whistle",
+            "common6": "Personal 150 ml cup",
+            "longTitle": "Additional mandatory gear for 27K",
+            "long1": "Running pack",
+            "long2": "Minimum 1 liter fluid capacity",
+            "long3": "Waterproof mountain jacket",
+            "long4": "Long-sleeve top"
+        },
+        "penalties": {
+            "title": "Penalties & disqualification",
+            "item1": "Leaving the marked route can lead to a time penalty or disqualification.",
+            "item2": "Refusing a mandatory gear check can lead to disqualification.",
+            "item3": "Not carrying mandatory gear can lead to disqualification or a time penalty.",
+            "item4": "Littering, threatening volunteers, or unsportsmanlike behavior can lead to disqualification.",
+            "item5": "Using another runner’s bib or racing with an invalid bib is not allowed."
+        },
+        "downloads": {
+            "title": "Downloads",
+            "subtitle": "Keep the essential files on your phone or watch before race day.",
+            "gpx27": "Download GPX for Rostushe Trails 27K",
+            "gpx11": "Download GPX for Rostushe Trails 11K",
+            "rulesPdf": "Download official rules PDF"
+        },
+        "cta": {
+            "title": "Prepare smart, race better",
+            "text": "Check the rules, download your route files, review your equipment, and arrive ready for a safe and strong day in the mountains.",
+            "line1": "Bring your phone fully charged",
+            "line2": "Check the weather before race day",
+            "line3": "Do not leave the marked route",
+            "button": "Contact organizer",
+            "secondary": "Back to rules"
         }
     },
     "registered-runners": {
