@@ -138,91 +138,6 @@ function Bullet({ children }: { children: React.ReactNode }) {
   );
 }
 
-function RulesTabs({
-  locale,
-  t
-}: {
-  locale: string;
-  t: Awaited<ReturnType<typeof getTranslations>>;
-}) {
-  const isMk = locale === "mk";
-
-  return (
-    <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-      <div className="h-full rounded-3xl border bg-background p-5 shadow-sm ring-1 ring-emerald-500/25">
-        <div className="mb-4 flex items-center gap-2">
-          <FileText className="h-5 w-5 text-emerald-700" />
-          <h3 className="text-lg font-semibold">{t("rules.summaryTitle")}</h3>
-        </div>
-
-        <div className="mb-4 flex flex-wrap gap-2">
-          <span className="rounded-full bg-emerald-600 px-3 py-1 text-xs font-medium text-white">
-            {isMk ? "МК" : "EN"}
-          </span>
-          <span className="rounded-full border px-3 py-1 text-xs font-medium">
-            {t("rules.translationBadge")}
-          </span>
-        </div>
-
-        <ul className="space-y-3">
-          <Bullet>{t("rules.summary1")}</Bullet>
-          <Bullet>{t("rules.summary2")}</Bullet>
-          <Bullet>{t("rules.summary3")}</Bullet>
-          <Bullet>{t("rules.summary4")}</Bullet>
-          <Bullet>{t("rules.summary5")}</Bullet>
-          <Bullet>{t("rules.summary6")}</Bullet>
-        </ul>
-      </div>
-
-      <div className="h-full rounded-3xl border bg-background p-5 shadow-sm ring-1 ring-emerald-500/25">
-        <div className="mb-4 flex items-center gap-2">
-          <Backpack className="h-5 w-5 text-emerald-700" />
-          <h3 className="text-lg font-semibold">{t("gear.title")}</h3>
-        </div>
-
-        <div className="grid gap-3">
-          <div className="rounded-2xl border bg-background/60 p-4">
-            <p className="text-sm font-semibold">{t("gear.commonTitle")}</p>
-            <ul className="mt-3 space-y-2 text-sm opacity-90">
-              <li>{t("gear.common1")}</li>
-              <li>{t("gear.common2")}</li>
-              <li>{t("gear.common3")}</li>
-              <li>{t("gear.common4")}</li>
-              <li>{t("gear.common5")}</li>
-              <li>{t("gear.common6")}</li>
-            </ul>
-          </div>
-
-          <div className="rounded-2xl border bg-background/60 p-4">
-            <p className="text-sm font-semibold">{t("gear.longTitle")}</p>
-            <ul className="mt-3 space-y-2 text-sm opacity-90">
-              <li>{t("gear.long1")}</li>
-              <li>{t("gear.long2")}</li>
-              <li>{t("gear.long3")}</li>
-              <li>{t("gear.long4")}</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div className="h-full rounded-3xl border bg-background p-5 shadow-sm ring-1 ring-emerald-500/25">
-        <div className="mb-4 flex items-center gap-2">
-          <AlertTriangle className="h-5 w-5 text-emerald-700" />
-          <h3 className="text-lg font-semibold">{t("penalties.title")}</h3>
-        </div>
-
-        <ul className="space-y-3">
-          <Bullet>{t("penalties.item1")}</Bullet>
-          <Bullet>{t("penalties.item2")}</Bullet>
-          <Bullet>{t("penalties.item3")}</Bullet>
-          <Bullet>{t("penalties.item4")}</Bullet>
-          <Bullet>{t("penalties.item5")}</Bullet>
-        </ul>
-      </div>
-    </div>
-  );
-}
-
 export default async function GuidePage({ params }: PageProps) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "guide" });
@@ -362,38 +277,6 @@ export default async function GuidePage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* RACE FACTS */}
-      <section className="mx-auto max-w-6xl px-4 pb-16">
-        <div className="mb-6">
-          <h2 className="text-2xl font-semibold">{t("facts.title")}</h2>
-          <p className="mt-1 opacity-80">{t("facts.subtitle")}</p>
-        </div>
-
-        <div className="grid gap-6 lg:grid-cols-2">
-          <div className="rounded-3xl border bg-background p-5 shadow-sm ring-1 ring-emerald-500/25">
-            <h3 className="text-lg font-semibold">{t("facts.leftTitle")}</h3>
-            <div className="mt-4 flex flex-wrap gap-2">
-              <Stat icon={Flag} label={t("facts.date")} />
-              <Stat icon={Clock3} label={t("facts.start27")} />
-              <Stat icon={Clock3} label={t("facts.start11")} />
-              <Stat icon={Mountain} label={t("facts.limit27")} />
-              <Stat icon={Mountain} label={t("facts.limit11")} />
-              <Stat icon={Route} label={t("facts.autonomy")} />
-            </div>
-          </div>
-
-          <div className="rounded-3xl border bg-background p-5 shadow-sm ring-1 ring-emerald-500/25">
-            <h3 className="text-lg font-semibold">{t("facts.rightTitle")}</h3>
-            <ul className="mt-4 space-y-3">
-              <Bullet>{t("facts.rule1")}</Bullet>
-              <Bullet>{t("facts.rule2")}</Bullet>
-              <Bullet>{t("facts.rule3")}</Bullet>
-              <Bullet>{t("facts.rule4")}</Bullet>
-            </ul>
-          </div>
-        </div>
-      </section>
-
       {/* RULES CENTER */}
       <section id="rules-center" className="mx-auto max-w-6xl px-4 pb-16">
         <div className="mb-6">
@@ -460,7 +343,10 @@ export default async function GuidePage({ params }: PageProps) {
         </div>
 
         {/* PDF VIEWER ALONE */}
-        <div id="rules-section" className="overflow-hidden rounded-3xl border bg-background shadow-sm ring-1 ring-emerald-500/25">
+        <div
+          id="rules-section"
+          className="overflow-hidden rounded-3xl border bg-background shadow-sm ring-1 ring-emerald-500/25"
+        >
           <div className="flex flex-col gap-3 border-b px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <h3 className="text-lg font-semibold">{t("rules.viewerTitle")}</h3>
@@ -502,7 +388,7 @@ export default async function GuidePage({ params }: PageProps) {
         </div>
 
         {/* BOTTOM CARDS */}
-        <div className="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-6 grid gap-6 md:grid-cols-2">
           <div className="h-full rounded-3xl border bg-background p-5 shadow-sm ring-1 ring-emerald-500/25">
             <div className="mb-4 flex items-center gap-2">
               <Backpack className="h-5 w-5 text-emerald-700" />
@@ -547,51 +433,6 @@ export default async function GuidePage({ params }: PageProps) {
               <Bullet>{t("penalties.item4")}</Bullet>
               <Bullet>{t("penalties.item5")}</Bullet>
             </ul>
-          </div>
-
-          <div className="h-full rounded-3xl border bg-background p-5 shadow-sm ring-1 ring-emerald-500/25 md:col-span-2 xl:col-span-1">
-            <div className="mb-4 flex items-center gap-2">
-              <CheckCircle2 className="h-5 w-5 text-emerald-700" />
-              <h3 className="text-lg font-semibold">{t("downloads.title")}</h3>
-            </div>
-
-            <div className="grid gap-3">
-              <a
-                href="/gpx/krchin-trail-27Km.gpx"
-                download
-                className="flex items-center justify-between rounded-2xl border bg-background/70 px-4 py-4 transition hover:bg-muted"
-              >
-                <div className="flex items-center gap-3">
-                  <MapPinned className="h-5 w-5 text-emerald-700" />
-                  <span className="font-medium">{t("downloads.gpx27")}</span>
-                </div>
-                <Download className="h-4 w-4" />
-              </a>
-
-              <a
-                href="/gpx/bagrem-trail-11km.gpx"
-                download
-                className="flex items-center justify-between rounded-2xl border bg-background/70 px-4 py-4 transition hover:bg-muted"
-              >
-                <div className="flex items-center gap-3">
-                  <MapPinned className="h-5 w-5 text-emerald-700" />
-                  <span className="font-medium">{t("downloads.gpx11")}</span>
-                </div>
-                <Download className="h-4 w-4" />
-              </a>
-
-              <a
-                href={pdfUrl}
-                download
-                className="flex items-center justify-between rounded-2xl border bg-background/70 px-4 py-4 transition hover:bg-muted"
-              >
-                <div className="flex items-center gap-3">
-                  <FileText className="h-5 w-5 text-emerald-700" />
-                  <span className="font-medium">{t("downloads.rulesPdf")}</span>
-                </div>
-                <Download className="h-4 w-4" />
-              </a>
-            </div>
           </div>
         </div>
       </section>
