@@ -14,7 +14,7 @@ interface Runner {
   country: string;
 }
 
-type SortKey = keyof Runner;
+type SortKey = keyof Runner | "number";
 type SortDirection = "asc" | "desc";
 
 export default function Page() {
@@ -105,9 +105,21 @@ export default function Page() {
   }, [runners, trailFilter, searchTerm]);
 
   const sorted = useMemo(() => {
-    return [...filtered].sort((a, b) => {
-      const aValue = a[sortKey];
-      const bValue = b[sortKey];
+    const numbered = filtered.map((runner, index) => ({
+      runner,
+      number: index + 1,
+    }));
+
+    return numbered.sort((a, b) => {
+      if (sortKey === "number") {
+        return sortDirection === "asc"
+          ? a.number - b.number
+          : b.number - a.number;
+      }
+
+      const aValue = a.runner[sortKey];
+      const bValue = b.runner[sortKey];
+
       if (aValue < bValue) return sortDirection === "asc" ? -1 : 1;
       if (aValue > bValue) return sortDirection === "asc" ? 1 : -1;
       return 0;
@@ -169,7 +181,7 @@ export default function Page() {
 
         {/* Sorting */}
         <div className="bg-white rounded-lg shadow-sm px-3 py-3 mb-4 flex flex-wrap gap-2">
-          {(["bibNumber", "fullName", "club", "trail", "country"] as SortKey[]).map((key) => (
+          {(["number", "bibNumber", "fullName", "club", "trail", "country"] as SortKey[]).map((key) => (
             <button
               key={key}
               onClick={() => handleSort(key)}
@@ -178,7 +190,7 @@ export default function Page() {
                 : "text-gray-600 hover:bg-gray-50"
                 }`}
             >
-              {t(`table.${key}`)}{" "}
+              {key === "number" ? "#" : t(`table.${key}`)}{" "}
               {sortKey === key ? (sortDirection === "asc" ? "▲" : "▼") : ""}
             </button>
           ))}
@@ -195,6 +207,9 @@ export default function Page() {
               <table className="min-w-full divide-y divide-gray-200">
                 <thead>
                   <tr>
+                    <th className="px-4 py-3 text-left text-sm font-bold">
+                      #
+                    </th>
                     <th className="px-4 py-3 text-left text-sm font-bold">
                       {t("table.bibNumber")}
                     </th>
@@ -213,7 +228,7 @@ export default function Page() {
                   </tr>
                 </thead>
                 <tbody>
-                  {sorted.map((runner) => {
+                  {sorted.map(({ runner, number }) => {
                     const manualOverrides: { [key: string]: string } = {
                       GER: "DE",
                       KOS: "XK",
@@ -228,6 +243,9 @@ export default function Page() {
 
                     return (
                       <tr key={runner.bibNumber} className="hover:bg-green-50">
+                        <td className="px-4 py-3 font-semibold text-gray-500">
+                          {number}
+                        </td>
                         <td className="px-4 py-3 font-semibold">
                           {runner.bibNumber}
                         </td>

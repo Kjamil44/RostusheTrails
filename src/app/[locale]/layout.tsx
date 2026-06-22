@@ -73,10 +73,7 @@ export const viewport = {
 export default async function RootLayout({
   children,
   params,
-}: Readonly<{
-  children: React.ReactNode;
-  params: { locale: Locale };
-}>) {
+}: LayoutProps<"/[locale]">) {
   const { locale } = await params;
   if (!routing.locales.includes(locale as Locale)) {
     notFound();
@@ -138,10 +135,10 @@ export default async function RootLayout({
                 },
               }}
             />
-            <Header locale={locale} params={params} />
+            <Header locale={locale as Locale} params={{ locale: locale as Locale }} />
             {children}
             <ScrollToTopButton />
-            <Footer locale={locale} params={params} />
+            <Footer locale={locale as Locale} params={{ locale: locale as Locale }} />
           </NextIntlClientProvider>
         </div>
       </body>
