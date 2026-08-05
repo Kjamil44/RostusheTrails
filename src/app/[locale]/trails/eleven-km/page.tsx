@@ -202,7 +202,7 @@ export default function Page() {
               </div>
             )}
             <iframe
-              src="https://tracedetrail.fr/en/iframe/6811"
+              src="https://tracedetrail.fr/en/iframe/10484"
               allowFullScreen
               className="absolute inset-0 w-full h-[890px] border-0"
               scrolling="no"
