@@ -23,8 +23,17 @@ export default function Page() {
   const [runners, setRunners] = useState<Runner[]>([]);
   const [trailFilter, setTrailFilter] = useState<string>("all");
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const [sortKey, setSortKey] = useState<SortKey>("bibNumber");
-  const [sortDirection, setSortDirection] = useState<SortDirection>("asc");
+  type SortConfig = {
+    key: SortKey;
+    direction: SortDirection;
+  };
+
+  const [sortConfig, setSortConfig] = useState<SortConfig>({
+    key: "bibNumber",
+    direction: "asc",
+  });
+
+  const { key: sortKey, direction: sortDirection } = sortConfig;
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -80,51 +89,101 @@ export default function Page() {
   }, [currentLocale, t]);
 
   const handleSort = (key: SortKey) => {
-    if (sortKey === key) {
-      setSortDirection(sortDirection === "asc" ? "desc" : "asc");
-    } else {
-      setSortKey(key);
-      setSortDirection("asc");
-    }
-  };
-
-  const filtered = useMemo(() => {
-    const byTrail =
-      trailFilter === "all" ? runners : runners.filter((r) => r.trail === trailFilter);
-
-    const s = searchTerm.trim().toLowerCase();
-    if (!s) return byTrail;
-
-    return byTrail.filter(
-      (r) =>
-        String(r.bibNumber).includes(s) ||
-        r.fullName.toLowerCase().includes(s) ||
-        (r.club || "").toLowerCase().includes(s) ||
-        (r.country || "").toLowerCase().includes(s)
-    );
-  }, [runners, trailFilter, searchTerm]);
-
-  const sorted = useMemo(() => {
-    const numbered = filtered.map((runner, index) => ({
-      runner,
-      number: index + 1,
-    }));
-
-    return numbered.sort((a, b) => {
-      if (sortKey === "number") {
-        return sortDirection === "asc"
-          ? a.number - b.number
-          : b.number - a.number;
+    setSortConfig((current) => {
+      if (current.key === key) {
+        return {
+          key,
+          direction: current.direction === "asc" ? "desc" : "asc",
+        };
       }
 
-      const aValue = a.runner[sortKey];
-      const bValue = b.runner[sortKey];
-
-      if (aValue < bValue) return sortDirection === "asc" ? -1 : 1;
-      if (aValue > bValue) return sortDirection === "asc" ? 1 : -1;
-      return 0;
+      return {
+        key,
+        direction: "asc",
+      };
     });
-  }, [filtered, sortKey, sortDirection]);
+  };
+
+  const resetTable = () => {
+    setTrailFilter("all");
+    setSearchTerm("");
+    setSortConfig({
+      key: "bibNumber",
+      direction: "asc",
+    });
+  };
+  const displayedRunners = useMemo(() => {
+    const normalizedSearch = searchTerm.trim().toLocaleLowerCase(currentLocale);
+
+    const filteredRunners = runners
+      .map((runner, originalIndex) => ({
+        runner,
+        originalIndex,
+      }))
+      .filter(({ runner }) => {
+        const matchesTrail =
+          trailFilter === "all" || runner.trail === trailFilter;
+
+        if (!matchesTrail) {
+          return false;
+        }
+
+        if (!normalizedSearch) {
+          return true;
+        }
+
+        return [
+          String(runner.bibNumber),
+          runner.fullName,
+          runner.club,
+          runner.trail,
+          runner.country,
+        ].some((value) =>
+          String(value ?? "")
+            .toLocaleLowerCase(currentLocale)
+            .includes(normalizedSearch)
+        );
+      });
+
+    filteredRunners.sort((a, b) => {
+      let comparison = 0;
+
+      if (sortKey === "number") {
+        // "#" represents the original registration/API order.
+        comparison = a.originalIndex - b.originalIndex;
+      } else if (sortKey === "bibNumber") {
+        comparison = a.runner.bibNumber - b.runner.bibNumber;
+      } else {
+        const aValue = String(a.runner[sortKey] ?? "").trim();
+        const bValue = String(b.runner[sortKey] ?? "").trim();
+
+        comparison = aValue.localeCompare(bValue, currentLocale, {
+          sensitivity: "base",
+          numeric: true,
+        });
+      }
+
+      if (comparison === 0) {
+        // Stable fallback when two values are identical.
+        comparison = a.originalIndex - b.originalIndex;
+      }
+
+      return sortDirection === "asc" ? comparison : -comparison;
+    });
+
+    return filteredRunners.map(({ runner, originalIndex }, index) => ({
+      runner,
+      originalIndex,
+      displayNumber: index + 1,
+    }));
+  }, [
+    runners,
+    trailFilter,
+    searchTerm,
+    sortKey,
+    sortDirection,
+    currentLocale,
+  ]);
 
   return (
     <main className="relative">
@@ -158,25 +217,40 @@ export default function Page() {
       <section className="mx-auto max-w-6xl px-4 pb-16">
 
         {/* Filters + Search */}
-        <div className="flex flex-col md:flex-row md:items-center gap-3 mb-4">
+        <div className="mb-4 flex flex-col gap-3 md:flex-row md:items-center">
           <select
             value={trailFilter}
             onChange={(e) => setTrailFilter(e.target.value)}
-            className="border border-gray-300 bg-white rounded-md px-3 py-2 text-sm shadow-sm focus:ring-2 focus:ring-green-200"
+            className="rounded-md border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm focus:ring-2 focus:ring-green-200"
           >
             <option value="all">{t("filter.all")}</option>
             <option value="11km">{t("filter.11km")}</option>
             <option value="27km">{t("filter.27Km")}</option>
           </select>
 
-          <div className="ml-auto w-full md:w-1/2">
+          <div className="w-full md:ml-auto md:w-1/2">
             <input
+              type="search"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder={t("search_placeholder")}
-              className="w-full px-4 py-2 rounded-md border border-gray-300 bg-white shadow-sm text-sm focus:ring-2 focus:ring-green-200"
+              className="w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-sm shadow-sm focus:ring-2 focus:ring-green-200"
             />
           </div>
+
+          <button
+            type="button"
+            onClick={resetTable}
+            disabled={
+              trailFilter === "all" &&
+              searchTerm === "" &&
+              sortKey === "bibNumber" &&
+              sortDirection === "asc"
+            }
+            className="rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm transition hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            {t.has("filter.reset") ? t("filter.reset") : "Reset"}
+          </button>
         </div>
 
         {/* Sorting */}
@@ -228,43 +302,47 @@ export default function Page() {
                   </tr>
                 </thead>
                 <tbody>
-                  {sorted.map(({ runner, number }) => {
-                    const manualOverrides: { [key: string]: string } = {
-                      GER: "DE",
-                      KOS: "XK",
-                      MKD: "MK",
-                      SUI: "CH",
-                      ENG: "GB",
-                    };
+                  {displayedRunners.map(
+                    ({ runner, displayNumber, originalIndex }) => {
+                      const manualOverrides: { [key: string]: string } = {
+                        GER: "DE",
+                        KOS: "XK",
+                        MKD: "MK",
+                        SUI: "CH",
+                        ENG: "GB",
+                      };
 
-                    const alpha2 =
-                      manualOverrides[runner.country] ||
-                      countries.alpha3ToAlpha2(runner.country);
+                      const alpha2 =
+                        manualOverrides[runner.country] ||
+                        countries.alpha3ToAlpha2(runner.country);
 
-                    return (
-                      <tr key={runner.bibNumber} className="hover:bg-green-50">
-                        <td className="px-4 py-3 font-semibold text-gray-500">
-                          {number}
-                        </td>
-                        <td className="px-4 py-3 font-semibold">
-                          {runner.bibNumber}
-                        </td>
-                        <td className="px-4 py-3">{runner.fullName}</td>
-                        <td className="px-4 py-3">{runner.club || "-"}</td>
-                        <td className="px-4 py-3">{runner.trail}</td>
-                        <td className="px-4 py-3 flex items-center gap-2">
-                          {alpha2 && (
-                            <img
-                              src={`https://flagcdn.com/w20/${alpha2.toLowerCase()}.png`}
-                              alt={runner.country}
-                              className="w-6 h-4 rounded-sm"
-                            />
-                          )}
-                          {runner.country}
-                        </td>
-                      </tr>
-                    );
-                  })}
+                      return (
+                        <tr
+                          key={`${runner.bibNumber}-${runner.fullName}-${originalIndex}`}
+                          className="hover:bg-green-50"
+                        >
+                          <td className="px-4 py-3 font-semibold text-gray-500">
+                            {displayNumber}
+                          </td>
+                          <td className="px-4 py-3 font-semibold">
+                            {runner.bibNumber}
+                          </td>
+                          <td className="px-4 py-3">{runner.fullName}</td>
+                          <td className="px-4 py-3">{runner.club || "-"}</td>
+                          <td className="px-4 py-3">{runner.trail}</td>
+                          <td className="px-4 py-3 flex items-center gap-2">
+                            {alpha2 && (
+                              <img
+                                src={`https://flagcdn.com/w20/${alpha2.toLowerCase()}.png`}
+                                alt={runner.country}
+                                className="w-6 h-4 rounded-sm"
+                              />
+                            )}
+                            {runner.country}
+                          </td>
+                        </tr>
+                      );
+                    })}
                 </tbody>
               </table>
             </div>
