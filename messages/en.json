@@ -77,7 +77,10 @@
             "notify": "Get Notified",
             "image1_alt": "Runners on a forest singletrack",
             "image2_alt": "Mountain ridge with runners",
-            "image3_alt": "Village finish line vibes"
+            "image3_alt": "Village finish line vibes",
+            "badge_closed": "Registration Closed",
+            "description_closed": "Registration for Rostushe Trails 2026 is now closed. We look forward to welcoming all registered runners to Rostushe on 15 August 2026. See you at the starting line!",
+            "registered_runners": "210 registered runners"
         },
         "popup": {
             "badge": "Registration Open",
@@ -277,8 +280,10 @@
         "registration": {
             "title": "Registration",
             "register_here": "Register Here",
-            "results_2025": "Results of 2025 Edition",
-            "powered_by": "Powered by RunnerSpot"
+            "results_2025": "Results` of 2025 Edition",
+            "powered_by": "Powered by RunnerSpot",
+            "closed": "Registration Closed",
+            "closed_description": "Registration for Bagrem Trail 11K is now closed. Thank you to everyone who registered — see you at the starting line!"
         }
     },
     "twentyseven-km": {
@@ -353,7 +358,9 @@
             "title": "Registration",
             "register_here": "Register Here",
             "results_2025": "Results of 2025 Edition",
-            "powered_by": "Powered by RunnerSpot"
+            "powered_by": "Powered by RunnerSpot",
+            "closed": "Registration Closed",
+            "closed_description": "Registration for Krchin Trail 27K is now closed. Thank you to everyone who registered — see you at the starting line!"
         }
     },
     "guide": {

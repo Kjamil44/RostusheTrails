@@ -187,34 +187,49 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Next Edition (Registration OPEN) */}
+      {/* Next Edition */}
       <section className="relative w-full max-w-7xl mx-auto mb-24 px-6 md:px-12">
         <div className="rounded-3xl overflow-hidden bg-white shadow-xl">
           <div className="relative p-8 md:p-12">
-            {/* Ribbon / Badge */}
+            {/* Registration Closed Badge - Desktop */}
             <div className="absolute md:top-6 md:right-6 md:block hidden">
-              <span className="inline-flex items-center gap-2 bg-green-100 text-green-800 font-semibold px-4 py-2 rounded-full">
-                {/* simple check icon */}
-                <svg width="16" height="16" viewBox="0 0 24 24" className="inline-block">
+              <span className="inline-flex items-center gap-2 bg-gray-100 text-gray-700 font-semibold px-4 py-2 rounded-full">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  className="inline-block"
+                >
                   <path
                     fill="currentColor"
-                    d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"
+                    d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.3 13.9-1.4 1.4L12 14.4l-2.9 2.9-1.4-1.4 2.9-2.9-2.9-2.9 1.4-1.4 2.9 2.9 2.9-2.9 1.4 1.4-2.9 2.9 2.9 2.9Z"
                   />
                 </svg>
-                {t("next_edition.badge_open", { defaultValue: "Registration Open" })}
+
+                {t("next_edition.badge_closed", {
+                  defaultValue: "Registration Closed",
+                })}
               </span>
             </div>
 
-            {/* Mobile badge (in flow) */}
+            {/* Registration Closed Badge - Mobile */}
             <div className="md:hidden flex justify-center mb-4">
-              <span className="inline-flex items-center gap-2 bg-green-100 text-green-800 font-semibold px-4 py-2 rounded-full">
-                <svg width="16" height="16" viewBox="0 0 24 24" className="inline-block">
+              <span className="inline-flex items-center gap-2 bg-gray-100 text-gray-700 font-semibold px-4 py-2 rounded-full">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  className="inline-block"
+                >
                   <path
                     fill="currentColor"
-                    d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"
+                    d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.3 13.9-1.4 1.4L12 14.4l-2.9 2.9-1.4-1.4 2.9-2.9-2.9-2.9 1.4-1.4 2.9 2.9 2.9-2.9 1.4 1.4-2.9 2.9 2.9 2.9Z"
                   />
                 </svg>
-                {t("next_edition.badge_open", { defaultValue: "Registration Open" })}
+
+                {t("next_edition.badge_closed", {
+                  defaultValue: "Registration Closed",
+                })}
               </span>
             </div>
 
@@ -231,46 +246,60 @@ export default async function Home() {
             </div>
 
             {/* Event Date */}
-            <p className="text-3xl md:text-3xl font-extrabold text-green-700 text-center mb-6">
-              {t("next_edition.date", { defaultValue: "15 August 2026" })}
-            </p>
-
-            {/* Description */}
-            <p className="text-gray-800 text-lg md:text-xl font-medium max-w-3xl mx-auto text-center">
-              {t("next_edition.description_open", {
-                defaultValue:
-                  "Secure your spot for the next unforgettable Rostushe Trails edition. Limited entries available—register today!",
+            <p className="text-3xl font-extrabold text-green-700 text-center mb-4">
+              {t("next_edition.date", {
+                defaultValue: "15 August 2026",
               })}
             </p>
 
-            {/* CTA */}
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+            {/* Registered Runners */}
+            <div className="flex justify-center mb-7">
               <Link
-                href={`/${currentLocale}/trails/eleven-km`}
-                className="inline-block text-white text-lg font-bold py-4 px-8 rounded-2xl shadow-lg transition-all duration-300
-               bg-gradient-to-r from-green-600 via-green-700 to-emerald-700
-               hover:from-green-700 hover:via-emerald-800 hover:to-green-900
-               hover:shadow-[0_0_20px_rgba(34,197,94,0.45)] hover:scale-105"
+                href={`/${currentLocale}/trails/registered-runners`}
+                className="
+      group inline-flex items-center gap-3
+      bg-green-50 border border-green-200
+      rounded-2xl px-6 py-3
+      transition-all duration-300
+      hover:bg-green-100 hover:border-green-300
+      hover:shadow-md hover:scale-[1.03]
+    "
               >
-                {t("next_edition.cta_bagrem", { defaultValue: "Register – Bagrem 11K" })}
-              </Link>
+                <svg
+                  className="w-6 h-6 text-green-700 transition-transform duration-300 group-hover:scale-110"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-2.99 1.34-2.99 3 1.33 3 2.99 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5.01 6.34 5.01 8 6.34 11 8 11zm0 2c-2.33 0-7 1.17-7 3.5V20h14v-3.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V20h6v-3.5c0-2.33-4.67-3.5-7-3.5z" />
+                </svg>
 
-              <Link
-                href={`/${currentLocale}/trails/twentyseven-km`}
-                className="inline-block text-white text-lg font-bold py-4 px-8 rounded-2xl shadow-lg transition-all duration-300
-               bg-gradient-to-r from-emerald-600 via-green-700 to-green-800
-               hover:from-emerald-700 hover:via-green-800 hover:to-green-900
-               hover:shadow-[0_0_20px_rgba(16,185,129,0.45)] hover:scale-105"
-              >
-                {t("next_edition.cta_krchin", { defaultValue: "Register – Krchin 27K" })}
+                <span className="text-green-800 font-bold text-lg">
+                  {t("next_edition.registered_runners", {
+                    defaultValue: "210 registered runners",
+                  })}
+                </span>
+
+                <span className="text-green-700 transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
               </Link>
             </div>
+
+            {/* Description */}
+            <p className="text-gray-800 text-lg md:text-xl font-medium max-w-3xl mx-auto text-center">
+              {t("next_edition.description_closed", {
+                defaultValue:
+                  "Registration for Rostushe Trails 2026 is now closed. We look forward to welcoming all registered runners to Rostushe on 15 August 2026. See you at the starting line!",
+              })}
+            </p>
           </div>
 
-          {/* Posters Grid (unchanged) */}
+          {/* Posters Grid */}
           <div className="p-6 md:p-8 bg-gradient-to-br from-green-50 to-white">
             <h3 className="text-2xl font-bold text-green-700 text-center mb-6">
-              {t("next_edition.posters_title", { defaultValue: "Promotion Posters" })}
+              {t("next_edition.posters_title", {
+                defaultValue: "Promotion Posters",
+              })}
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -282,6 +311,7 @@ export default async function Home() {
                   className="object-cover rounded-xl shadow-md"
                 />
               </div>
+
               <div className="relative aspect-[3/4]">
                 <Image
                   src="/posters/poster2.jpg"
@@ -290,6 +320,7 @@ export default async function Home() {
                   className="object-cover rounded-xl shadow-md"
                 />
               </div>
+
               <div className="relative aspect-[3/4]">
                 <Image
                   src="/posters/poster3.jpg"

@@ -213,27 +213,44 @@ export default function Page() {
         </section>
 
         <section className="bg-white shadow-xl rounded-xl p-8 w-full max-w-4xl mb-10 text-center">
-          <h2 className="text-2xl font-bold text-green-700 mb-6">
+          <h2 className="text-2xl font-bold text-green-700 mb-4">
             {t("registration.title", { defaultValue: "Registration" })}
           </h2>
 
-          <div className="flex justify-center mb-4">
-            <Link
-              href="https://runnerspot.com/eventRegistration?event=RostusheTrails&marathon=Trail&package=Bagrem%20Trail%2011KM"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block text-white text-lg font-bold py-4 px-10 rounded-2xl shadow-lg transition-all duration-300 
-                 bg-gradient-to-r from-green-600 via-green-700 to-emerald-700 
-                 hover:from-green-700 hover:via-emerald-800 hover:to-green-900 
-                 hover:shadow-[0_0_20px_rgba(34,197,94,0.5)] hover:scale-105"
-            >
-              {t("registration.register_here", { defaultValue: "Register Here" })}
-            </Link>
-          </div>
-
-          <p className="text-sm text-gray-500 mt-2">
-            {t("registration.powered_by", { defaultValue: "Powered by RunnerSpot" })}
+          <p className="text-gray-700 text-lg font-medium mb-6 max-w-xl mx-auto">
+            {t("registration.closed_description", {
+              defaultValue:
+                "Registration for Bagrem Trail 11K is now closed. Thank you to everyone who registered — see you at the starting line!",
+            })}
           </p>
+
+          {/* Disabled Registration Button */}
+          <button
+            type="button"
+            disabled
+            aria-disabled="true"
+            className="
+      inline-flex items-center justify-center
+      text-gray-500 text-lg font-bold
+      py-4 px-10 rounded-2xl
+      bg-gray-200 border border-gray-300
+      cursor-not-allowed
+      opacity-80
+    "
+          >
+            <svg
+              className="w-5 h-5 mr-2"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.3 13.9-1.4 1.4L12 14.4l-2.9 2.9-1.4-1.4 2.9-2.9-2.9-2.9 1.4-1.4 2.9 2.9 2.9-2.9 1.4 1.4-2.9 2.9 2.9 2.9Z" />
+            </svg>
+
+            {t("registration.closed", {
+              defaultValue: "Registration Closed",
+            })}
+          </button>
         </section>
 
       </div>
