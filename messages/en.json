@@ -8,7 +8,7 @@
         "guide": "Guide",
         "registered-runners": "Registered Runners",
         "contact": "Contact",
-        "results": "Results 2025",
+        "results": "Results",
         "sponsors": "Sponsors",
         "gallery": "Gallery",
         "accommodation": "Accommodation"
@@ -55,9 +55,9 @@
             "join": "Contact Us"
         },
         "results": {
-            "title": "See the 2025 Race Results!",
+            "title": "See the 2026 Race Results!",
             "description": "Check official times and rankings from this year's races.",
-            "button": "View Results 2025"
+            "button": "View Results 2026"
         },
         "gallery": {
             "title": "Moments from the Trails",
@@ -206,7 +206,7 @@
         "guide": "Guide",
         "registered-runners": "Registered Runners",
         "contact": "Contact",
-        "results": "Results 2025",
+        "results": "Results",
         "sponsors": "Sponsors",
         "follow_us": "Follow Us",
         "rights_reserved": "All rights reserved.",
@@ -531,7 +531,9 @@
         "sponsor_visit": "Visit sponsor"
     },
     "results": {
-        "title": "Results 2025",
+        "title": "Results",
+        "edition": "Edition",
+        "official_results": "Official Results",
         "description": "Explore the official results from Bagrem Trail 11K and Krchin Trail 27K.",
         "tab": {
             "bagrem": "Bagrem Trail 11KM",

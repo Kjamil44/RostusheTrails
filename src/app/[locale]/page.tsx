@@ -82,7 +82,7 @@ export default async function Home() {
 
   return (
     <main className="min-h-screen flex flex-col items-center font-sans">
-      <RegistrationNotice />
+      {/* <RegistrationNotice /> */}
 
       {/* Home Hero (Welcome + Trails CTAs on the image) */}
       <section className="relative w-[100vw] ml-[calc(50%-50vw)] mb-28">
@@ -188,10 +188,11 @@ export default async function Home() {
       </section>
 
       {/* Next Edition */}
+      {/*
       <section className="relative w-full max-w-7xl mx-auto mb-24 px-6 md:px-12">
         <div className="rounded-3xl overflow-hidden bg-white shadow-xl">
           <div className="relative p-8 md:p-12">
-            {/* Registration Closed Badge - Desktop */}
+            //Registration Closed Badge - Desktop
             <div className="absolute md:top-6 md:right-6 md:block hidden">
               <span className="inline-flex items-center gap-2 bg-gray-100 text-gray-700 font-semibold px-4 py-2 rounded-full">
                 <svg
@@ -212,7 +213,7 @@ export default async function Home() {
               </span>
             </div>
 
-            {/* Registration Closed Badge - Mobile */}
+            //Registration Closed Badge - Mobile
             <div className="md:hidden flex justify-center mb-4">
               <span className="inline-flex items-center gap-2 bg-gray-100 text-gray-700 font-semibold px-4 py-2 rounded-full">
                 <svg
@@ -233,7 +234,7 @@ export default async function Home() {
               </span>
             </div>
 
-            {/* Headline Image */}
+            //Headline Image
             <div className="mb-4 flex justify-center">
               <Image
                 src="/headline.png"
@@ -245,14 +246,14 @@ export default async function Home() {
               />
             </div>
 
-            {/* Event Date */}
+            // Event Date
             <p className="text-3xl font-extrabold text-green-700 text-center mb-4">
               {t("next_edition.date", {
                 defaultValue: "15 August 2026",
               })}
             </p>
 
-            {/* Registered Runners */}
+           //Registered Runners
             <div className="flex justify-center mb-7">
               <Link
                 href={`/${currentLocale}/trails/registered-runners`}
@@ -285,7 +286,7 @@ export default async function Home() {
               </Link>
             </div>
 
-            {/* Description */}
+            // Description 
             <p className="text-gray-800 text-lg md:text-xl font-medium max-w-3xl mx-auto text-center">
               {t("next_edition.description_closed", {
                 defaultValue:
@@ -294,7 +295,7 @@ export default async function Home() {
             </p>
           </div>
 
-          {/* Posters Grid */}
+          // Posters Grid
           <div className="p-6 md:p-8 bg-gradient-to-br from-green-50 to-white">
             <h3 className="text-2xl font-bold text-green-700 text-center mb-6">
               {t("next_edition.posters_title", {
@@ -333,9 +334,8 @@ export default async function Home() {
           </div>
         </div>
       </section>
+      */}
 
-      {/* 
-      // Results 2025 Button Section (temporarily disabled, kept for future use)
       <section className="w-full flex justify-center mb-20 px-6">
         <div className="relative bg-gradient-to-br from-green-600 via-green-500 to-green-700 text-white shadow-2xl rounded-2xl px-8 py-10 text-center max-w-2xl w-full overflow-hidden">
           <div className="absolute top-[-10px] left-[-10px] text-6xl opacity-20 transform rotate-12 pointer-events-none animate-pulseSlow">
@@ -360,7 +360,6 @@ export default async function Home() {
           </Link>
         </div>
       </section>
-      */}
 
       {/* Videos Section */}
       <VideosSection />

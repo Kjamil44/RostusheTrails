@@ -12,7 +12,12 @@ export async function fetchGoogleDriveImages(folderId: string): Promise<string[]
   // query only image/* mimeTypes in the given folder
   const q = encodeURIComponent(`'${folderId}' in parents and mimeType contains 'image/'`);
   const fields = encodeURIComponent("files(id,name,mimeType)");
-  const url = `https://www.googleapis.com/drive/v3/files?key=${apiKey}&q=${q}&fields=${fields}`;
+  const url =
+    `https://www.googleapis.com/drive/v3/files` +
+    `?key=${apiKey}` +
+    `&q=${q}` +
+    `&fields=${fields}` +
+    `&pageSize=30`;
 
   const res = await fetch(url);
   if (!res.ok) {
@@ -22,5 +27,7 @@ export async function fetchGoogleDriveImages(folderId: string): Promise<string[]
 
   const data = await res.json() as { files: DriveFile[] };
   // construct direct-view URLs
-  return data.files.map(f => `https://drive.google.com/uc?export=view&id=${f.id}`);
+  return data.files.map(
+    (f) => `https://drive.google.com/thumbnail?id=${f.id}&sz=w1600`
+  );
 }
