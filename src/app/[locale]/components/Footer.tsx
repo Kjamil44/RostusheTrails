@@ -42,6 +42,7 @@ export default function Footer({
                             <li><Link href={`/${locale}/gallery`} className="hover:text-green-400 transition">{t("gallery")}</Link></li>
                             <li><Link href={`/${locale}/accommodation`} className="hover:text-green-400 transition">{t("accommodation")}</Link></li>
                             <li><Link href={`/${locale}/contact`} className="hover:text-green-400 transition">{t("contact")}</Link></li>
+                            <li><Link href={`/${locale}/sponsors`} className="hover:text-green-400 transition">{t("sponsors")}</Link></li>
                         </ul>
                     </div>
 
@@ -134,7 +135,7 @@ export default function Footer({
 
                     <div className="flex justify-center mt-4 mb-2">
                         <a
-                            href="https://www.linkedin.com/company/wzlio"
+                            href="https://www.linkedin.com/in/kjamil-kakaleski-823178226"
                             target="_blank"
                             rel="noopener noreferrer"
                         >

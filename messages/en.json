@@ -67,11 +67,11 @@
             "badge_open": "Registration Open",
             "cta_bagrem": "Register – Bagrem 11K",
             "cta_krchin": "Register – Krchin 27K",
-            "description_open": "Secure your spot for the 2026 edition. Limited entries—register today!",
-            "date": "15 August 2026",
+            "description_open": "Secure your spot for the 2027 edition. Limited entries—register today!",
+            "date": "14 August 2027",
             "posters_title": "Next Edition Posters",
-            "badge": "Registration opens soon",
-            "description": "Get ready for another unforgettable trail experience next year. Course details, registration fees, and schedule will be announced shortly.",
+            "badge": "Registration Open",
+            "description": "After two successful editions, Rostushe Trails invites you once again on an adventure through Krchin, the Radika Valley, and the breathtaking nature of Rostushe. Join us on August 14, 2027, for the next edition of Rostushe Trails!",
             "cta_disabled": "Registration Soon",
             "cta_disabled_title": "Registration opening soon",
             "notify": "Get Notified",
@@ -79,13 +79,13 @@
             "image2_alt": "Mountain ridge with runners",
             "image3_alt": "Village finish line vibes",
             "badge_closed": "Registration Closed",
-            "description_closed": "Registration for Rostushe Trails 2026 is now closed. We look forward to welcoming all registered runners to Rostushe on 15 August 2026. See you at the starting line!",
+            "description_closed": "Registration for Rostushe Trails 2027 is now closed. We look forward to welcoming all registered runners to Rostushe on 14 August 2027. See you at the starting line!",
             "registered_runners": "210 registered runners"
         },
         "popup": {
             "badge": "Registration Open",
-            "title": "Registrations for 2026 are open!",
-            "message": "Choose your trail and secure your spot for the 2026 edition.",
+            "title": "Registrations for 2027 are open!",
+            "message": "Choose your trail and secure your spot for the 2027 edition.",
             "cta_bagrem": "Bagrem 11K",
             "cta_krchin": "Krchin 27K",
             "powered_by": "Powered by RunnerSpot",
@@ -180,21 +180,32 @@
     },
     "contact-us": {
         "title": "Contact Us",
-        "get_in_touch": "Get in Touch",
-        "send_message": "Send a Message",
+        "eyebrow": "ROSTUSHE TRAILS • GET IN TOUCH",
+        "intro": "Have a question about the race, partnerships, or anything else? We'd love to hear from you.",
+        "get_in_touch": "Get in touch",
+        "contactDescription": "Reach out to us directly using the details below.",
         "phone": "Phone",
         "email": "Email",
+        "helpNote": "For race questions, sponsorship opportunities, or media inquiries, feel free to contact our team.",
+        "send_message": "Send us a message",
+        "formDescription": "Fill out the form below and we'll get back to you as soon as possible.",
         "form": {
-            "name": "Name",
-            "name_placeholder": "Enter your name",
-            "email": "Email",
-            "email_placeholder": "Enter your email",
-            "message": "Message",
-            "message_placeholder": "Enter your message",
-            "submit": "Send",
+            "name": "Your name",
+            "name_placeholder": "Enter your full name",
+            "email": "Email address",
+            "email_placeholder": "Enter your email address",
+            "message": "Your message",
+            "message_placeholder": "How can we help you?",
+            "submit": "Send message",
             "sending": "Sending...",
             "success_message": "Your message has been sent successfully!",
-            "error_message": "Failed to send your message. Please try again."
+            "error_message": "Something went wrong. Please try again."
+        },
+        "seo": {
+            "title": "Contact Us | Rostushe Trails",
+            "description": "Get in touch with Rostushe Trails for race information, partnerships, or media inquiries.",
+            "ogDescription": "Send a message or find contact details for the Rostushe Trails team.",
+            "imageAlt": "Rostushe Trails Contact"
         }
     },
     "footer": {
@@ -216,151 +227,161 @@
         "federation_intro": "Proud member of the Mountaineering Federation of North Macedonia and the Skyrunning commission under MFNM"
     },
     "eleven-km": {
-        "overview": {
-            "title": "Bagrem Trail 11К / 520 D+",
-            "description": "Beginners and runners who enjoy dynamic and vivid sections will love our shortest trail — Bagrem Trail 11К. Starting from Rostushe village, it follows the Radika River, passes through authentic rural landscapes to Janche (checkpoint), then loops back via Adzievci to the finish in Rostushe."
+        "seo": {
+            "title": "Bagrem Trail 11K | Rostushe Trails",
+            "description": "Discover Bagrem Trail 11K: 11 km, 520 m ascent, registration prices, starter pack and route.",
+            "imageAlt": "Bagrem Trail 11K route preview"
         },
-        "race_info": {
-            "start": "Start: August 15, 2026, 10:00, Rostushe",
-            "distance": "Distance: 11 km",
-            "elevation": "Elevation gain/loss: 520 m",
-            "time_limit": "Time limit: 4 hours",
-            "aid_station": "Aid station: 1 (Janche – 5 km)",
-            "max_participants": "Max participants: 200"
+        "overview": {
+            "title": "Bagrem Trail",
+            "description": "Follow the Radika River through beech forests and fresh mountain meadows. A memorable trail experience in the heart of the Mavrovo region.",
+            "terrain": "Radika · Beech forests · Meadows"
+        },
+        "facts": {
+            "title": "Race facts",
+            "distance": "Distance",
+            "elevation": "Elevation gain",
+            "start": "Start time",
+            "date": "Date",
+            "limit": "Time limit",
+            "hours": "{hours} hours"
         },
         "pricing": {
-            "title": "Entry Fees",
-            "table": {
-                "tier": "Tier",
-                "price_mkd": "Price (MKD)",
-                "note": "Deadline"
+            "title": "Registration fees",
+            "subtitle": "2027 registration periods and prices for Bagrem Trail 11K.",
+            "currency": "MKD",
+            "early": {
+                "title": "Early registration",
+                "dates": "Until January 31, 2027"
             },
-            "rows": {
-                "first_call": {
-                    "label": "First Call",
-                    "price": "800 ден",
-                    "hint": "until 01.03.2026"
-                },
-                "regular_call": {
-                    "label": "Regular Call",
-                    "price": "1,100 ден",
-                    "hint": "01.03 – 30.06.2026"
-                },
-                "last_chance": {
-                    "label": "Last Chance",
-                    "price": "1,300 ден",
-                    "hint": "01.07 – 10.08.2026, NO T-shirt"
-                }
+            "regular": {
+                "title": "Regular registration",
+                "dates": "February 1 – June 30, 2027"
+            },
+            "last": {
+                "title": "Last Chance",
+                "dates": "July 1 – September 9, 2027",
+                "note": "No T-shirt — bandana only"
             }
         },
         "starter_pack": {
-            "title": "Starter Pack",
-            "items": [
-                "Race bib with timing chip",
-                "Finisher medal",
-                "Dry Fit T-shirt (S, M, L, XL) (except for Last Chance packages)",
-                "Refreshment stations",
-                "Free race photos",
-                "Online results + finisher diploma",
-                "Sponsor products and vouchers",
-                "Awards for top male and female finishers",
-                "After-race party"
-            ]
+            "title": "Starter pack",
+            "subtitle": "What your registration includes",
+            "lastChanceNote": "Last Chance registrations receive a bandana instead of the Dry-Fit T-shirt.",
+            "items": {
+                "bib": "Race bib and marked course",
+                "medal": "Finisher medal",
+                "shirt": "Dry-Fit T-shirt (S, M, L, XL), except Last Chance",
+                "gift": "Branded gift",
+                "ride": "Entry ticket to Mavrovo National Park",
+                "refreshments": "Water, food and drinks",
+                "medical": "Rescue and medical assistance",
+                "photos": "Free photos and video",
+                "sponsors": "Sponsor products and vouchers",
+                "results": "Online results and diploma",
+                "party": "Finish-line celebration"
+            }
         },
-        "audience": {
-            "title": "Who is it for?",
-            "description": "Bagrem Trail is ideal for recreational runners, families, and friends of participants in longer races who also want a taste of the mountain running experience."
+        "raceDay": {
+            "title": "Race-day essentials",
+            "description": "Bagrem Trail 11K starts at 10:00 with a 4-hour time limit. Rescue and medical support are included.",
+            "audience": "Trail running for adventure seekers"
         },
         "route": {
-            "title": "Route & GPX File",
-            "description": "Download the GPX file and preview the route to prepare for your trail run.",
+            "title": "Explore the route",
+            "description": "Review the interactive trail map or download the GPX track before race day.",
             "download": "Download GPX",
-            "image_alt": "Bagrem Trail Route Image"
+            "mapTitle": "Bagrem Trail 11K interactive map"
+        },
+        "notice": {
+            "title": "Important note:",
+            "description": "The organizer reserves the right to change the route, start times and other details depending on weather conditions and participant safety."
         },
         "registration": {
-            "title": "Registration",
-            "register_here": "Register Here",
-            "results_2025": "Results` of 2025 Edition",
-            "powered_by": "Powered by RunnerSpot",
-            "closed": "Registration Closed",
-            "closed_description": "Registration for Bagrem Trail 11K is now closed. Thank you to everyone who registered — see you at the starting line!"
+            "title": "Ready for Bagrem Trail?",
+            "description": "Choose your trail, feel the mountains and join us in Rostushe. Registration is handled securely on RunnerSpot.",
+            "button": "Register on RunnerSpot",
+            "poweredBy": "Powered by RunnerSpot"
         }
     },
     "twentyseven-km": {
-        "overview": {
-            "title": "Krchin Trail 27K / 1700 D+",
-            "description": "One peak. One mission. No excuses. Krchin Trail 27K is for true mountain lovers seeking serious challenges. Starting from Rostushe in the Mavrovo National Park, it climbs through alpine forests and rocky terrain toward the striking Krchin ridgeline."
+        "seo": {
+            "title": "Krchin Trail 27K | Rostushe Trails",
+            "description": "Explore Krchin Trail 27K: race information, registration fees, starter pack and route.",
+            "imageAlt": "Krchin Trail 27K route preview"
         },
-        "race_info": {
-            "start": "Start: August 15, 2026, 08:00, Rostushe",
-            "distance": "Distance: 27 km",
-            "elevation": "Elevation: +1700m / -1700m",
-            "time_limit": "Time limit: 9 hours",
-            "aid_stations": "Aid stations: 3 (Kutel, Crkviche, Lokuv)",
-            "max_participants": "Max participants: 150 runners"
+        "overview": {
+            "title": "Krchin Trail",
+            "description": "Take on a demanding mountain trail towards Golem Krchin, through alpine forests, rocky terrain and the Lokuv lake area.",
+            "highest_point": "Krchin Peak – 2341 m",
+            "terrain": "Alpine forests · Rocky terrain · Lokuv · Macedonian/Albanian border"
+        },
+        "facts": {
+            "title": "Race facts",
+            "distance": "Distance",
+            "elevation": "Elevation gain",
+            "start": "Start time",
+            "limit": "Time limit",
+            "hours": "{hours} hours",
+            "date": "Date",
+            "toConfirm": "To be confirmed"
         },
         "pricing": {
-            "title": "Entry Fees",
-            "table": {
-                "tier": "Tier",
-                "price_mkd": "Price (MKD)",
-                "note": "Deadline"
+            "title": "Registration fees",
+            "subtitle": "2027 registration periods and prices for Krchin Trail 27K.",
+            "currency": "MKD",
+            "early": {
+                "title": "Early registration",
+                "dates": "Until January 31, 2027"
             },
-            "rows": {
-                "first_call": {
-                    "label": "First Call",
-                    "price": "1,300 ден",
-                    "hint": "until 01.03.2026"
-                },
-                "regular_call": {
-                    "label": "Regular Call",
-                    "price": "1,600 ден",
-                    "hint": "01.03 – 30.06.2026"
-                },
-                "last_chance": {
-                    "label": "Last Chance",
-                    "price": "1,800 ден",
-                    "hint": "01.07 – 10.08.2026, NO T-shirt"
-                }
+            "regular": {
+                "title": "Regular registration",
+                "dates": "February 1 – June 30, 2027"
+            },
+            "last": {
+                "title": "Last Chance",
+                "dates": "July 1 – September 9, 2027",
+                "note": "No T-shirt — bandana only"
             }
         },
         "starter_pack": {
-            "title": "Starter Pack",
-            "items": [
-                "Race bib with timing chip",
-                "Finisher medal",
-                "Dry Fit T-shirt (S, M, L, XL) (except for Last Chance packages)",
-                "Refreshment stations",
-                "Free race photos",
-                "Online results + finisher diploma",
-                "Sponsor products and vouchers",
-                "Awards for top male and female finishers",
-                "After-race party"
-            ]
+            "title": "Starter pack",
+            "subtitle": "What your registration includes",
+            "lastChanceNote": "Last Chance registrations receive a bandana instead of the Dry-Fit T-shirt.",
+            "items": {
+                "bib": "Race bib and marked course",
+                "medal": "Finisher medal",
+                "shirt": "Dry-Fit T-shirt (S, M, L, XL), except Last Chance",
+                "gift": "Branded gift",
+                "ride": "Entry ticket to Mavrovo National Park",
+                "refreshments": "Water, food and drinks",
+                "medical": "Rescue and medical assistance",
+                "photos": "Free photos and video",
+                "sponsors": "Sponsor products and vouchers",
+                "results": "Online results and diploma",
+                "party": "Finish-line celebration"
+            }
         },
-        "audience": {
-            "title": "Why choose Krchin Trail?",
-            "reasons": [
-                "Climb a 2341 meter peak",
-                "Run along some of the highest alpine ridgelines in the region",
-                "Pass by a hidden glacial lake — Lokuv",
-                "Challenging technical terrain — true mountain running",
-                "Experience authentic nature in Mavrovo National Park"
-            ]
+        "raceDay": {
+            "title": "Race-day essentials",
+            "description": "Krchin Trail 27K starts at 08:00 with an 8-hour time limit. Rescue and medical support are included.",
+            "audience": "A challenging mountain trail for experienced runners"
         },
         "route": {
-            "title": "Route & GPX",
-            "description": "Download the official route file and preview the landscape.",
+            "title": "Explore the route",
+            "description": "Review the interactive trail map or download the GPX track before race day.",
             "download": "Download GPX",
-            "image_alt": "Krchin Trail route"
+            "mapTitle": "Krchin Trail 27K interactive map"
+        },
+        "notice": {
+            "title": "Important note:",
+            "description": "The organizer reserves the right to change the route, start times and other details depending on weather conditions and participant safety."
         },
         "registration": {
-            "title": "Registration",
-            "register_here": "Register Here",
-            "results_2025": "Results of 2025 Edition",
-            "powered_by": "Powered by RunnerSpot",
-            "closed": "Registration Closed",
-            "closed_description": "Registration for Krchin Trail 27K is now closed. Thank you to everyone who registered — see you at the starting line!"
+            "title": "Ready for Krchin Trail?",
+            "description": "Choose your trail, feel the mountains and join us in Rostushe. Registration is handled securely on RunnerSpot.",
+            "button": "Register on RunnerSpot",
+            "poweredBy": "Powered by RunnerSpot"
         }
     },
     "guide": {
@@ -525,10 +546,40 @@
     },
     "sponsors": {
         "title": "Sponsors",
-        "coming_soon": "Our 2025 sponsors will be announced soon. Stay tuned!",
-        "contact_us": "Contact us for sponsorship",
         "sponsor_alt": "Sponsor",
-        "sponsor_visit": "Visit sponsor"
+        "contact_us": "Contact us for sponsorship",
+        "eyebrow": "ROSTUSHE TRAILS • STRONGER TOGETHER",
+        "intro": "Behind every great race are people, organizations, and businesses who believe in the same vision.",
+        "partnersLabel": "OUR SUPPORTERS",
+        "partnersTitle": "The people and brands behind the race",
+        "partnersDescription": "With gratitude, we recognize the sponsors, partners, and supporters who are part of the Rostushe Trails story.",
+        "impactLabel": "MORE THAN A RACE",
+        "impactTitle": "Together, we create something bigger",
+        "impactDescription": "The support of our partners helps bring together sport, community, and the natural beauty of our region.",
+        "impact": {
+            "community": {
+                "title": "Local Community",
+                "description": "Bringing local organizations, businesses, and people together around a shared purpose."
+            },
+            "nature": {
+                "title": "Nature & Adventure",
+                "description": "Celebrating the mountain trails and natural landscapes of our region."
+            },
+            "partnership": {
+                "title": "Partnership",
+                "description": "Building relationships that support the growth of trail running."
+            }
+        },
+        "ctaEyebrow": "BE PART OF THE STORY",
+        "ctaTitle": "Let's create something unforgettable together.",
+        "ctaDescription": "Interested in supporting Rostushe Trails? We'd love to explore how your business or organization can become part of our event.",
+        "thankYou": "Thank you for being part of our journey.",
+        "visitWebsite": "Visit website",
+        "seo": {
+            "title": "Sponsors | Rostushe Trails",
+            "description": "Partners and sponsors supporting Rostushe Trails – thank you for your trust.",
+            "imageAlt": "Rostushe Trails Sponsors"
+        }
     },
     "results": {
         "title": "Results",

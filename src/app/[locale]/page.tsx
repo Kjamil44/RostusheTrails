@@ -82,7 +82,8 @@ export default async function Home() {
 
   return (
     <main className="min-h-screen flex flex-col items-center font-sans">
-      {/* <RegistrationNotice /> */}
+      <RegistrationNotice />
+
 
       {/* Home Hero (Welcome + Trails CTAs on the image) */}
       <section className="relative w-[100vw] ml-[calc(50%-50vw)] mb-28">
@@ -188,153 +189,98 @@ export default async function Home() {
       </section>
 
       {/* Next Edition */}
-      {/*
-      <section className="relative w-full max-w-7xl mx-auto mb-24 px-6 md:px-12">
-        <div className="rounded-3xl overflow-hidden bg-white shadow-xl">
-          <div className="relative p-8 md:p-12">
-            //Registration Closed Badge - Desktop
-            <div className="absolute md:top-6 md:right-6 md:block hidden">
-              <span className="inline-flex items-center gap-2 bg-gray-100 text-gray-700 font-semibold px-4 py-2 rounded-full">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  className="inline-block"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.3 13.9-1.4 1.4L12 14.4l-2.9 2.9-1.4-1.4 2.9-2.9-2.9-2.9 1.4-1.4 2.9 2.9 2.9-2.9 1.4 1.4-2.9 2.9 2.9 2.9Z"
-                  />
-                </svg>
 
-                {t("next_edition.badge_closed", {
-                  defaultValue: "Registration Closed",
-                })}
-              </span>
-            </div>
+      <section className="relative mx-auto mb-24 w-full max-w-7xl px-6 md:px-12">
+        <div className="overflow-hidden rounded-3xl border border-emerald-100 bg-white shadow-xl">
 
-            //Registration Closed Badge - Mobile
-            <div className="md:hidden flex justify-center mb-4">
-              <span className="inline-flex items-center gap-2 bg-gray-100 text-gray-700 font-semibold px-4 py-2 rounded-full">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  className="inline-block"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.3 13.9-1.4 1.4L12 14.4l-2.9 2.9-1.4-1.4 2.9-2.9-2.9-2.9 1.4-1.4 2.9 2.9 2.9-2.9 1.4 1.4-2.9 2.9 2.9 2.9Z"
-                  />
-                </svg>
+          {/* EDITION INFORMATION */}
+          <div className="relative overflow-hidden px-6 py-10 md:px-12 md:py-14">
 
-                {t("next_edition.badge_closed", {
-                  defaultValue: "Registration Closed",
-                })}
-              </span>
-            </div>
+            {/* Background decorations */}
+            <div className="pointer-events-none absolute inset-0">
+              <div className="absolute -top-32 right-[-8rem] h-80 w-80 rounded-full bg-emerald-500/10 blur-3xl" />
 
-            //Headline Image
-            <div className="mb-4 flex justify-center">
-              <Image
-                src="/headline.png"
-                alt="Rostushe Trails Headline"
-                width={500}
-                height={200}
-                className="h-auto w-auto max-w-full"
-                priority
+              <div className="absolute -bottom-32 left-[-8rem] h-80 w-80 rounded-full bg-sky-500/10 blur-3xl" />
+
+              <div
+                className="absolute inset-0 opacity-[0.06]"
+                style={{
+                  backgroundImage:
+                    "radial-gradient(currentColor 1px, transparent 1px)",
+                  backgroundSize: "18px 18px",
+                }}
               />
             </div>
 
-            // Event Date
-            <p className="text-3xl font-extrabold text-green-700 text-center mb-4">
-              {t("next_edition.date", {
-                defaultValue: "15 August 2026",
-              })}
-            </p>
+            <div className="relative">
 
-           //Registered Runners
-            <div className="flex justify-center mb-7">
-              <Link
-                href={`/${currentLocale}/trails/registered-runners`}
-                className="
-      group inline-flex items-center gap-3
-      bg-green-50 border border-green-200
-      rounded-2xl px-6 py-3
-      transition-all duration-300
-      hover:bg-green-100 hover:border-green-300
-      hover:shadow-md hover:scale-[1.03]
-    "
-              >
-                <svg
-                  className="w-6 h-6 text-green-700 transition-transform duration-300 group-hover:scale-110"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-2.99 1.34-2.99 3 1.33 3 2.99 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5.01 6.34 5.01 8 6.34 11 8 11zm0 2c-2.33 0-7 1.17-7 3.5V20h14v-3.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V20h6v-3.5c0-2.33-4.67-3.5-7-3.5z" />
-                </svg>
+              {/* EDITION BADGE */}
+              <div className="mb-6 flex justify-center">
+                <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-5 py-2 text-sm font-bold text-emerald-700">
+                  <span className="h-2 w-2 rounded-full bg-emerald-500" />
 
-                <span className="text-green-800 font-bold text-lg">
-                  {t("next_edition.registered_runners", {
-                    defaultValue: "210 registered runners",
+                  {t("next_edition.badge", {
+                    defaultValue: "2027 Edition",
                   })}
                 </span>
+              </div>
 
-                <span className="text-green-700 transition-transform duration-300 group-hover:translate-x-1">
-                  →
-                </span>
-              </Link>
+              {/* HEADLINE IMAGE */}
+              <div className="mb-5 flex justify-center">
+                <Image
+                  src="/headline.png"
+                  alt="Rostushe Trails"
+                  width={500}
+                  height={200}
+                  className="h-auto w-auto max-w-full"
+                  priority
+                />
+              </div>
+
+              {/* EVENT DATE */}
+              <div className="mb-6 text-center">
+                <p className="text-3xl font-extrabold tracking-tight text-green-700 md:text-4xl">
+                  {t("next_edition.date", {
+                    defaultValue: "14 August 2027",
+                  })}
+                </p>
+              </div>
+
+              {/* DESCRIPTION */}
+              <p className="mx-auto max-w-3xl text-center text-base font-medium leading-relaxed text-gray-700 md:text-xl">
+                {t("next_edition.description", {
+                  defaultValue:
+                    "The mountains are calling again! Join us on 14 August 2027 for the next edition of Rostushe Trails. Discover breathtaking landscapes, unforgettable trails, and the spirit of mountain running.",
+                })}
+              </p>
             </div>
-
-            // Description 
-            <p className="text-gray-800 text-lg md:text-xl font-medium max-w-3xl mx-auto text-center">
-              {t("next_edition.description_closed", {
-                defaultValue:
-                  "Registration for Rostushe Trails 2026 is now closed. We look forward to welcoming all registered runners to Rostushe on 15 August 2026. See you at the starting line!",
-              })}
-            </p>
           </div>
 
-          // Posters Grid
-          <div className="p-6 md:p-8 bg-gradient-to-br from-green-50 to-white">
-            <h3 className="text-2xl font-bold text-green-700 text-center mb-6">
-              {t("next_edition.posters_title", {
-                defaultValue: "Promotion Posters",
-              })}
-            </h3>
+          {/* SINGLE PROMOTIONAL POSTER */}
+          <div className="border-t border-emerald-100 bg-gradient-to-br from-emerald-50/70 to-white px-6 py-10 md:px-12">
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-              <div className="relative aspect-[3/4]">
-                <Image
-                  src="/posters/poster1.jpg"
-                  alt="Poster 1"
-                  fill
-                  className="object-cover rounded-xl shadow-md"
-                />
-              </div>
+            <div className="mb-7 text-center">
+              <h3 className="text-2xl font-bold text-green-700">
+                {t("next_edition.posters_title", {
+                  defaultValue: "Rostushe Trails 2027",
+                })}
+              </h3>
+            </div>
 
-              <div className="relative aspect-[3/4]">
+            <div className="mx-auto max-w-lg">
+              <div className="group relative aspect-[3/4] overflow-hidden rounded-2xl border border-emerald-100 bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                 <Image
-                  src="/posters/poster2.jpg"
-                  alt="Poster 2"
+                  src="/posters/poster1.png"
+                  alt="Rostushe Trails 2027 promotional poster"
                   fill
-                  className="object-cover rounded-xl shadow-md"
-                />
-              </div>
-
-              <div className="relative aspect-[3/4]">
-                <Image
-                  src="/posters/poster3.jpg"
-                  alt="Poster 3"
-                  fill
-                  className="object-cover rounded-xl shadow-md"
+                  sizes="(max-width: 640px) 90vw, 512px"
+                  className="object-contain transition-transform duration-500 group-hover:scale-[1.02]"
                 />
               </div>
             </div>
           </div>
         </div>
       </section>
-      */}
 
       <section className="w-full flex justify-center mb-20 px-6">
         <div className="relative bg-gradient-to-br from-green-600 via-green-500 to-green-700 text-white shadow-2xl rounded-2xl px-8 py-10 text-center max-w-2xl w-full overflow-hidden">

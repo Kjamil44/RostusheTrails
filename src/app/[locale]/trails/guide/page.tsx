@@ -142,7 +142,7 @@ export default async function GuidePage({ params }: PageProps) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "guide" });
 
-  const pdfUrl = "/pdfs/pravila-i-propisi-rostushe-trails-2026.pdf";
+  const pdfUrl = "/pdfs/pravila-i-propisi-rostushe-trails-2027.pdf";
 
   return (
     <main className="relative">

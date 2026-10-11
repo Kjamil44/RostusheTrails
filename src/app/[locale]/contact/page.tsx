@@ -1,9 +1,17 @@
+
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import toast from "react-hot-toast";
 import { NextSeo } from "next-seo";
+import {
+  Mail,
+  Phone,
+  Send,
+  MessageCircle,
+  ArrowUpRight,
+} from "lucide-react";
 
 export default function Page() {
   const t = useTranslations("contact-us");
@@ -17,8 +25,11 @@ export default function Page() {
 
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (loading) return;
+
     setLoading(true);
 
     try {
@@ -27,19 +38,30 @@ export default function Page() {
         headers: {
           "Content-Type": "application/json",
           "x-locale": currentLocale,
-          "x-api-key": process.env.NEXT_PUBLIC_API_KEY ?? ""
+          "x-api-key": process.env.NEXT_PUBLIC_API_KEY ?? "",
         },
         body: JSON.stringify(formData),
       });
 
       if (response.ok) {
         toast.success(t("form.success_message"));
-        setFormData({ name: "", email: "", message: "" });
+
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
       } else {
-        const errorData = await response.json();
-        toast.error(errorData.error || t("form.error_message"));
+        const errorData = await response
+          .json()
+          .catch(() => ({}));
+
+        toast.error(
+          errorData.error || t("form.error_message")
+        );
       }
     } catch (error) {
+      console.error("Contact form error:", error);
       toast.error(t("form.error_message"));
     } finally {
       setLoading(false);
@@ -49,110 +71,260 @@ export default function Page() {
   return (
     <>
       <NextSeo
-        title={currentLocale === "mk" ? "Контакт | Ростуше Треилс" : "Contact Us | Rostushe Trails"}
-        description={
-          currentLocale === "mk"
-            ? "Контактирајте не за информации за трките, партнерства или медиумски прашања."
-            : "Get in touch with us for race info, partnerships, or media inquiries."
-        }
+        title={t("seo.title")}
+        description={t("seo.description")}
         openGraph={{
           url: `https://rostushetrails.com/${currentLocale}/contact`,
-          title: currentLocale === "mk" ? "Контакт | Ростуше Треилс" : "Contact Us | Rostushe Trails",
-          description:
-            currentLocale === "mk"
-              ? "Испратете порака или најдете детали за контакт со тимот на Ростуше Треилс."
-              : "Send a message or find contact details for the Rostushe Trails team.",
+          title: t("seo.title"),
+          description: t("seo.ogDescription"),
           images: [
             {
               url: "https://rostushetrails.com/logo-detailed.jpg",
               width: 1200,
               height: 630,
-              alt: "Rostushe Trails Contact"
-            }
+              alt: t("seo.imageAlt"),
+            },
           ],
           siteName: "Rostushe Trails",
           type: "website",
-          locale: currentLocale === "mk" ? "mk_MK" : "en_US"
+          locale:
+            currentLocale === "mk" ? "mk_MK" : "en_US",
         }}
         twitter={{
-          cardType: "summary_large_image"
+          cardType: "summary_large_image",
         }}
       />
 
-      <div className="min-h-screen p-6 flex flex-col items-center font-sans">
-        <h1 className="text-5xl font-extrabold text-green-700 mb-10 text-center">
-          {t("title")}
-        </h1>
+      <main className="relative min-h-screen">
+        {/* HERO */}
+        <section className="relative overflow-hidden">
+          <div className="pointer-events-none absolute inset-0">
+            <div className="absolute -top-40 right-[-10rem] h-[28rem] w-[28rem] rounded-full bg-emerald-500/15 blur-3xl" />
 
-        {/* Contact Info */}
-        <section className="bg-white shadow-lg rounded-xl p-8 w-full max-w-3xl mb-10">
-          <h2 className="text-2xl font-bold text-green-700 mb-4">{t("get_in_touch")}</h2>
-          <p className="text-gray-800 font-medium mb-2">
-            📞 <strong>{t("phone")}:</strong>{" "}
-            <a href="tel:+38970123456" className="text-blue-600 hover:underline">+389 78 394 477</a>
-          </p>
-          <p className="text-gray-800 font-medium">
-            📧 <strong>{t("email")}:</strong>{" "}
-            <a href="mailto:contact@rostushetrails.com" className="text-blue-600 hover:underline">contact@rostushetrails.com</a>
-          </p>
+            <div className="absolute -bottom-40 left-[-10rem] h-[28rem] w-[28rem] rounded-full bg-sky-500/10 blur-3xl" />
+
+            <div
+              className="absolute inset-0 opacity-[0.08]"
+              style={{
+                backgroundImage:
+                  "radial-gradient(currentColor 1px, transparent 1px)",
+                backgroundSize: "18px 18px",
+              }}
+            />
+          </div>
+
+          <div className="relative mx-auto max-w-6xl px-4 pb-10 pt-12 sm:pb-14 sm:pt-16">
+            <p className="text-sm font-medium opacity-80">
+              {t("eyebrow")}
+            </p>
+
+            <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-green-700 sm:text-5xl">
+              {t("title")}
+            </h1>
+
+            <p className="mt-4 max-w-2xl text-base leading-relaxed opacity-80 sm:text-lg">
+              {t("intro")}
+            </p>
+          </div>
         </section>
 
-        {/* Contact Form */}
-        <section className="bg-white shadow-lg rounded-xl p-8 w-full max-w-3xl mb-20">
-          <h2 className="text-2xl font-bold text-green-700 mb-4">{t("send_message")}</h2>
-          <form className="space-y-6" onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor="name" className="block text-gray-800 font-semibold mb-1">
-                {t("form.name")}
-              </label>
-              <input
-                type="text"
-                id="name"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 font-medium"
-                placeholder={t("form.name_placeholder")}
-                required
-              />
+        {/* CONTENT */}
+        <section className="mx-auto max-w-6xl px-4 pb-16">
+          <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-5 lg:gap-8">
+            {/* CONTACT DETAILS */}
+            <div className="lg:col-span-2">
+              <div className="rounded-2xl border border-gray-200/80 bg-white p-6 shadow-sm sm:p-8">
+                <div className="mb-7">
+                  <h2 className="text-xl font-bold tracking-tight text-gray-900 sm:text-2xl">
+                    {t("get_in_touch")}
+                  </h2>
+
+                  <p className="mt-2 text-sm leading-6 text-gray-500">
+                    {t("contactDescription")}
+                  </p>
+                </div>
+
+                <div className="space-y-6">
+                  {/* EMAIL */}
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700">
+                      <Mail className="h-5 w-5" />
+                    </div>
+
+                    <div className="min-w-0 flex-1">
+                      <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-gray-500">
+                        {t("email")}
+                      </p>
+
+                      <a
+                        href="mailto:contact@rostushetrails.com"
+                        className="inline-flex max-w-full items-center gap-1.5 break-all text-sm font-semibold text-gray-900 transition-colors hover:text-emerald-700"
+                      >
+                        contact@rostushetrails.com
+
+                        <ArrowUpRight className="h-4 w-4 shrink-0" />
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* PHONE */}
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700">
+                      <Phone className="h-5 w-5" />
+                    </div>
+
+                    <div className="min-w-0 flex-1">
+                      <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-gray-500">
+                        {t("phone")}
+                      </p>
+
+                      <a
+                        href="tel:+38978394477"
+                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-gray-900 transition-colors hover:text-emerald-700"
+                      >
+                        +389 78 394 477
+
+                        <ArrowUpRight className="h-4 w-4 shrink-0" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* SMALL HELPFUL NOTE */}
+              <div className="mt-5 flex items-start gap-3 rounded-2xl border border-emerald-100 bg-emerald-50/60 p-5">
+                <MessageCircle className="mt-0.5 h-5 w-5 shrink-0 text-emerald-700" />
+
+                <p className="text-sm leading-6 text-gray-600">
+                  {t("helpNote")}
+                </p>
+              </div>
             </div>
-            <div>
-              <label htmlFor="email" className="block text-gray-800 font-semibold mb-1">
-                {t("form.email")}
-              </label>
-              <input
-                type="email"
-                id="email"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 font-medium"
-                placeholder={t("form.email_placeholder")}
-                required
-              />
+
+            {/* CONTACT FORM */}
+            <div className="lg:col-span-3">
+              <div className="rounded-2xl border border-gray-200/80 bg-white p-6 shadow-sm sm:p-8">
+                <div className="mb-7">
+                  <h2 className="text-xl font-bold tracking-tight text-gray-900 sm:text-2xl">
+                    {t("send_message")}
+                  </h2>
+
+                  <p className="mt-2 text-sm leading-6 text-gray-500">
+                    {t("formDescription")}
+                  </p>
+                </div>
+
+                <form
+                  className="space-y-5"
+                  onSubmit={handleSubmit}
+                >
+                  {/* NAME */}
+                  <div>
+                    <label
+                      htmlFor="name"
+                      className="mb-2 block text-sm font-semibold text-gray-700"
+                    >
+                      {t("form.name")}
+                    </label>
+
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      autoComplete="name"
+                      value={formData.name}
+                      onChange={(e) =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          name: e.target.value,
+                        }))
+                      }
+                      placeholder={t("form.name_placeholder")}
+                      required
+                      disabled={loading}
+                      className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 shadow-sm outline-none transition placeholder:text-gray-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 disabled:opacity-60"
+                    />
+                  </div>
+
+                  {/* EMAIL */}
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="mb-2 block text-sm font-semibold text-gray-700"
+                    >
+                      {t("form.email")}
+                    </label>
+
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      autoComplete="email"
+                      value={formData.email}
+                      onChange={(e) =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          email: e.target.value,
+                        }))
+                      }
+                      placeholder={t("form.email_placeholder")}
+                      required
+                      disabled={loading}
+                      className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 shadow-sm outline-none transition placeholder:text-gray-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 disabled:opacity-60"
+                    />
+                  </div>
+
+                  {/* MESSAGE */}
+                  <div>
+                    <label
+                      htmlFor="message"
+                      className="mb-2 block text-sm font-semibold text-gray-700"
+                    >
+                      {t("form.message")}
+                    </label>
+
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={6}
+                      value={formData.message}
+                      onChange={(e) =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          message: e.target.value,
+                        }))
+                      }
+                      placeholder={t("form.message_placeholder")}
+                      required
+                      disabled={loading}
+                      className="w-full resize-y rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 shadow-sm outline-none transition placeholder:text-gray-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 disabled:opacity-60"
+                    />
+                  </div>
+
+                  {/* SUBMIT */}
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-600 px-6 py-3.5 text-sm font-bold text-white shadow-sm transition-all duration-200 hover:bg-emerald-700 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
+                  >
+                    {loading ? (
+                      <>
+                        <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />
+                        {t("form.sending")}
+                      </>
+                    ) : (
+                      <>
+                        <Send className="h-4 w-4" />
+                        {t("form.submit")}
+                      </>
+                    )}
+                  </button>
+                </form>
+              </div>
             </div>
-            <div>
-              <label htmlFor="message" className="block text-gray-800 font-semibold mb-1">
-                {t("form.message")}
-              </label>
-              <textarea
-                id="message"
-                rows={5}
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 font-medium"
-                placeholder={t("form.message_placeholder")}
-                required
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-green-700 hover:bg-green-800 text-white text-lg font-bold py-3 px-6 rounded-xl transition duration-300 shadow-md"
-              disabled={loading}
-            >
-              {loading ? t("form.sending") : t("form.submit")}
-            </button>
-          </form>
+          </div>
         </section>
-      </div>
+      </main>
     </>
   );
 }
