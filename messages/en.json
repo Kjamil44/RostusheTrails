@@ -406,7 +406,7 @@
             "subtitle": "The most important things to check before arriving at the start.",
             "card1": {
                 "title": "Know the limits",
-                "text": "27K starts at 08:00 with a 9-hour limit. 11K starts at 10:00 with a 4-hour limit."
+                "text": "Krchin Trail 27km starts at 08:00 with an 8-hour limit. Bagrem Trail 11km starts at 10:00 with a 4-hour limit."
             },
             "card2": {
                 "title": "Carry the right gear",
@@ -426,9 +426,9 @@
             "subtitle": "Two routes, two different race experiences.",
             "tipLabel": "Tip",
             "tipValue": "Download the GPX before race day",
-            "longTitle": "Rostushe Trails 27K",
+            "longTitle": "Krchin Trail 27km",
             "longText": "A serious mountain effort with more climbing, stricter equipment expectations, and a full trail challenge.",
-            "shortTitle": "Rostushe Trails 11K",
+            "shortTitle": "Bagrem Trail 11km",
             "shortText": "A shorter and more accessible race, but still one that requires preparation, focus, and respect for the terrain.",
             "viewTrail": "View trail details"
         },
@@ -437,11 +437,11 @@
             "subtitle": "Quick facts from the official rules and regulations.",
             "leftTitle": "Dates, starts, and format",
             "rightTitle": "What runners must remember",
-            "date": "15 August 2026",
-            "start27": "27K start: 08:00",
-            "start11": "11K start: 10:00",
-            "limit27": "27K limit: 9h",
-            "limit11": "11K limit: 4h",
+            "date": "14 August 2027",
+            "start27": "27km start: 08:00",
+            "start11": "11km start: 10:00",
+            "limit27": "27km limit: 8h",
+            "limit11": "11km limit: 4h",
             "autonomy": "Semi-autonomy format",
             "rule1": "Outside assistance is allowed only at refreshment stations.",
             "rule2": "Pacers and third parties without a bib are not allowed to accompany runners on course.",
